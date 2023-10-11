@@ -30,3 +30,7 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 * Soria Casali, Alvaro - Analista en Sistemas
 
 * Cura, Nahir Aixa - Estudiante
+
+## Inspiración
+
+1. [Motorola](https://www.motorola.com.ar) Presentación, estética.
