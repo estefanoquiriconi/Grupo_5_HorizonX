@@ -1,4 +1,4 @@
-# grupo_5_HorizonX
+# Grupo_5_HorizonX
 
 ## HorizonX Marketplace
 Se especializa en la venta de teléfonos móviles y dispositivos relacionados. Ofrecemos a nuestros clientes una amplia gama de productos y servicios que incluyen: 
@@ -7,7 +7,7 @@ Se especializa en la venta de teléfonos móviles y dispositivos relacionados. O
 
 2. Accesorios para Móviles: Además de los teléfonos, proporcionamos una selección de accesorios, como fundas, protectores de pantalla, cargadores y auriculares.
 
-## HorizonX Exchange
+#### HorizonX Exchange
 3. Servicios de Reparación y Mantenimiento: Colaboramos con técnicos expertos que pueden reparar dispositivos dañados y brindar servicios de mantenimiento.
 
 ## Audiencia Objetivo
