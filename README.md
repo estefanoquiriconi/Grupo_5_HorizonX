@@ -34,4 +34,3 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 ## Inspiración
 
 1. [Motorola](https://www.motorola.com.ar) Presentación, estética.
-2. [Samsung] (https://shop.samsung.com/ar/) Presentacion, estetica
