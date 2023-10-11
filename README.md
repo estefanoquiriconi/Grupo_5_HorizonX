@@ -1,4 +1,4 @@
-# grupo_5_ConnectAR
+# grupo_5_HorizonX
 
 ## HorizonX Marketplace
 Se especializa en la venta de teléfonos móviles y dispositivos relacionados. Ofrecemos a nuestros clientes una amplia gama de productos y servicios que incluyen: Venta de Teléfonos Móviles, Ofrecemos una variedad de marcas y modelos, desde smartphones de gama alta hasta dispositivos más asequibles.
