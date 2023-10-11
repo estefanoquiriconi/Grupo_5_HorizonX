@@ -19,8 +19,12 @@ Personas en Necesidad de Reparación: Individuos con teléfonos dañados que nec
 
 ## Equipo de desarrollo
 
-Miguel, Esteban Daniel - Estudiante de Programacion
-Quiriconi, Estéfano - Estudiante de Programacion
-Mendez, Marcos - Estudiante LSI
-Soria Casali, Alvaro - Analista en Sistemas
-Cura, Nahir Aixa - Estudiante
+* Miguel, Esteban Daniel - Estudiante de Programacion
+
+* Quiriconi, Estéfano - Estudiante de Programacion
+
+* Mendez, Marcos - Estudiante LSI
+
+* Soria Casali, Alvaro - Analista en Sistemas
+
+* Cura, Nahir Aixa - Estudiante
