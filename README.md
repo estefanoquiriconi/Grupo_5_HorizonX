@@ -35,6 +35,7 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 
 1. [Motorola](https://www.motorola.com.ar) Presentación, estética.
 2. [Samsung](https://shop.samsung.com/ar/) Presentacion
+3. [Apple](https://www.apple.com) Presentación, estética.
 
 ## Paleta de colores
 
