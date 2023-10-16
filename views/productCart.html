@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+          <a href="/" class="home-link">
+            <div class="navbar-logo"></div>
+            HORIZON X
+          </a>
+          <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="navbar-menu" aria-labelledby="navbar-toggle">
+            <ul class="navbar-links">
+                <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/login">About</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/register">Black Polnareff</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/productCart">Contact</a></li>
+              </ul>
+          </div>
+        </nav>
+      
+        <script>const navbarToggle = navbar.querySelector("#navbar-toggle");
+          const navbarMenu = document.querySelector("#navbar-menu");
+          const navbarLinksContainer = navbarMenu.querySelector(".navbar-links");
+          let isNavbarExpanded = navbarToggle.getAttribute("aria-expanded") === "true";
+      
+          const toggleNavbarVisibility = () => {
+            isNavbarExpanded = !isNavbarExpanded;
+            navbarToggle.setAttribute("aria-expanded", isNavbarExpanded);
+          };
+      
+          navbarToggle.addEventListener("click", toggleNavbarVisibility);
+      
+          navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
+          navbarMenu.addEventListener("click", toggleNavbarVisibility);</script>
+      </header>
+      <div class="separador"></div>
+    CARRITO
+</body>
+</html>
