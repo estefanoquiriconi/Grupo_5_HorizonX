@@ -46,3 +46,8 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 1. [Montserrat](https://fonts.google.com/specimen/Montserrat?query=Montse)
 
 
+## Tablero de trabajo
+
+* [Trello HorizonX](https://trello.com/b/uhKA3elP/horizonx)
+
+
