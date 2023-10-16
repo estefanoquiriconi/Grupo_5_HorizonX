@@ -35,3 +35,10 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 
 1. [Motorola](https://www.motorola.com.ar) Presentación, estética.
 2. [Samsung](https://shop.samsung.com/ar/) Presentacion
+
+## Paleta de colores
+
+1. [Black](https://colorhunt.co/palette/0f0f0f232d3f005b41008170)
+2. [Beige](https://colorhunt.co/palette/f8f0e5eadbc8dac0a3102c57)
+
+
