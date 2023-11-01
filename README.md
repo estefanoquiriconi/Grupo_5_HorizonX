@@ -41,7 +41,7 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 
 ## Paleta de colores
 
-1. [Paleta de coleres](https://colorhunt.co/palette/27374d526d829db2bfdde6ed)
+1. [Paleta](https://colorhunt.co/palette/27374d526d829db2bfdde6ed)
 
 ## Fonts
 
