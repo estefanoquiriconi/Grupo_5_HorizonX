@@ -46,8 +46,6 @@ En HorizonX, nos dirigimos a una audiencia diversa de amantes de la tecnología,
 ## Fonts
 
 1. [Montserrat](https://fonts.google.com/specimen/Montserrat?query=Montse)
-2. [Black Ops One](https://fonts.google.com/specimen/Black+Ops+One)
-3. [Amatic SC](https://fonts.google.com/specimen/Amatic+SC)
 
 
 ## Tablero de trabajo
