@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HorizonX</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <link rel="icon" href="/images/logo.png" />
   </head>
   <body>
     <header class="main-header">
       <div class="main-header-top-bar">
-        <h1 class="main-header-logo">HorizonX</h1>
-        <ul class="top-navbar">
-          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <a href="/"><h1 class="main-header-logo">HorizonX</h1></a>
+        <ul class="navbar-top">
+          <li>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
           <li>
             <a href="#"><i class="fa-solid fa-bars"></i></a>
           </li>
@@ -22,7 +27,7 @@
       <div class="input-search">
         <input type="text" placeholder="Buscar..." />
       </div>
-      <ul class="bottom-navbar">
+      <ul class="navbar-bottom">
         <li><a href="#">Smartphones</a></li>
         <li><a href="#">Accesorios</a></li>
         <li><a href="#">Servicio Técnico</a></li>
@@ -39,13 +44,60 @@
       </div>
     </header>
     <main class="container">
-      <h1>CONTAINER</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab fugiat
-        totam obcaecati quidem nesciunt ipsa corrupti quisquam, aliquid esse est
-        distinctio quod corporis quaerat unde voluptas voluptatibus minima
-        impedit.
-      </p>
+      <article class="product">
+        <h2 class="product-title">Moto Rarz 40 Ultra</h2>
+        <p class="product-detail">
+          Diseño exclusivo con pantalla flexible de 6.9" y bisagra "gota" sin
+          espacios entre sus lados.
+        </p>
+        <p class="product-price">$749.999,00</p>
+        <button class="product-buy-btn">Comprar</button>
+        <img
+          class="product-image"
+          src="images/celulares/moto-razr-40ultra.png"
+          alt="moto-razr-40ultra"
+        />
+      </article>
+      <article class="product">
+        <h2 class="product-title">Moto E22</h2>
+        <p class="product-detail">
+          Da vida a tu contenido de entretenimiento con la pantalla fluida de
+          90Hz.
+        </p>
+        <p class="product-price">$79.999,00</p>
+        <button class="product-buy-btn">Comprar</button>
+        <img
+          class="product-image"
+          src="images/celulares/moto-e22.png"
+          alt="moto-e22"
+        />
+      </article>
+      <article class="product">
+        <h2 class="product-title">Moto G72</h2>
+        <p class="product-detail">
+          Sistema de cámaras con sensor principal de 108 MP.
+        </p>
+        <p class="product-price">$209.999,00</p>
+        <button class="product-buy-btn">Comprar</button>
+        <img
+          class="product-image"
+          src="images/celulares/moto-g72-white.png"
+          alt="moto-g72-white"
+        />
+      </article>
+      <article class="product">
+        <h2 class="product-title">Moto G72</h2>
+        <p class="product-detail">
+          Sistema de cámaras con sensor principal de 108 MP.
+        </p>
+        <p class="product-price">$209.999,00</p>
+        <button class="product-buy-btn">Comprar</button>
+        <img
+          class="product-image"
+          src="images/celulares/moto-g72-white.png"
+          alt="moto-g72-white"
+        />
+      </article>
     </main>
   </body>
 </html>
