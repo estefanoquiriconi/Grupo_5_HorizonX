@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <title>Registrate</title>
 </head>
+
 <body>
-    
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <a href="/">
+                <div>
+                    <img class="headerimg" src="/images/celulares/2logo.png" alt="Logo">
+                    <p class="nombrehorizon">HorizonX</p>
+                    
+                </div>
+            </a>
+            <ul class="navbar-top">
+                <li>
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bars"></i></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-reg">
+        <div class="form-div">
+            <h3>Registrate</h3>
+            <h4>Información personal</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" placeholder="Nombre" class="txt-inp">
+                <input type="text" name="apellido" placeholder="Apellido" class="txt-inp">
+                <input type="email" name="mail" placeholder="Tu email" class="txt-inp">
+                <input type="password" name="pass" placeholder="Contraseña" class="txt-inp">
+                <input type="password" name="repass" placeholder="Repite la contraseña" class="txt-inp">
+                <div class="check-div"><input type="checkbox" name="check" id=""><label for="check">Acepto <u>términos y
+                            condiciones</u></label></div>
+                <button type="submit" id="reg-pr-btn">REGISTRARSE</button>
+                <button type="submit" id="goog-btn">Registrarme con Google</button>
+                <button type="submit" id="face-btn">Registrarme con Facebook</button>
+            </form>
+        </div>
+    </main>
 </body>
+
 </html>

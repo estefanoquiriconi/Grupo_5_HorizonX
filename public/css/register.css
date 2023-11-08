@@ -1,0 +1,102 @@
+:root {
+    --plt-darker: #27374D;
+    --plt-dark:#526D82;
+    --plt-light:#9DB2BF;
+    --plt-lighter:#DDE6ED;
+    --x-plt-1:#5176ad; 
+    --x-plt-2:#a5b7d4;
+    --x-plt-3:#24344c;
+    --x-plt-4:#6c849c;
+    --x-plt-5:#9cb4c4;
+}
+
+.main-reg {
+    text-align: center;
+    background-color: var(--x-plt-2);
+    display:flex;
+    flex-direction: column;
+    padding: 24px 0;
+}
+
+.form-div {
+    align-self: center;
+    display:flex;
+    flex-direction: column;
+    text-align: justify;
+    width: fit-content;
+    background-color: var(--x-plt-1);
+    padding: 20px 40px;
+    border-radius: 8%;
+}
+
+.form-div > h3 {
+    margin-bottom: 6px;
+}
+
+.form-div > h4 {
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.form-div > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.txt-inp {
+    margin-top: 2px;
+    margin-bottom: 16px;
+    width: 90%;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.check-div > input {
+    transform: scale(1.6);
+    margin-right: 6px
+}
+
+.check-div {
+    color:#ffffff;
+    padding: 6px 0;
+}
+
+#reg-pr-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--plt-darker);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#goog-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color:  var(--plt-darker);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#face-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color:  var(--plt-darker);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (min-width:520px) {
+    .txt-inp {
+        width: 400px;
+    }
+
+}
