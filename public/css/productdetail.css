@@ -1,0 +1,91 @@
+/* Estilos productDetail */
+.product-detailsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6e6e6e;
+    color: #fff;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px 12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px 18px inset;
+    }
+    .headerimg {
+      max-width: 50px;
+      height: auto;
+      justify-content: baseline;
+      margin-left: 10px;
+    }
+    
+    .ulproductdetail {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      flex-direction:row;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    .boton:hover{
+      color: #27374d;
+    }
+    
+    
+      .button-container {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    nav {
+      display: flex;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    .product-section {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      position: block;
+    }
+    
+    .product-image {
+      display: flex;
+      justify-content:flex-start;
+      width: 500px;
+      height: 500px;
+      left: 0px;
+      border: 2px solid #ccc; 
+      margin:50px ;
+      border-radius: 20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    .name{
+      padding-left: 50px;
+    }
+    .precio{
+      padding-left: 200px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .product-details {
+      flex-direction:column;
+      max-width: 50%;
+      border: 2px solid #ccc; /* Añadir un borde al contenedor */
+      width: 500px;
+      height: 500px;
+      margin:50px ;
+      border-radius: 20px;
+      display: block;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
