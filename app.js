@@ -6,11 +6,17 @@ const app = express();
 
 app.use(express.static(path.resolve("./public")));
 
+app.get("/", (req, res)=>{
+    res.sendFile(path.resolve("./views/index.html"));
+})
+
+app.get("/cart", (req, res)=>{
+    res.sendFile(path.resolve("./views/productCart.html"));
+})
+
 app.listen(port, ()=>{
     console.log(`Server corriendo en http://localhost:${port}`);
 })
 
-app.get("/", (req, res)=>{
-    res.sendFile(path.resolve("./views/index.html"));
-})
+
 
