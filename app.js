@@ -4,11 +4,11 @@ const port = 8080;
 
 const app = express();
 
-app.use(express.static(path.resolve("./public")));
+app.listen(port, () => {
+    console.log(`Servidor habilitado http://localhost:${port}`);
+});
 
-app.listen(port, ()=>{
-    console.log(`Server corriendo en http://localhost:${port}`);
-})
+app.use(express.static(path.resolve("./public")));
 
 app.get("/", (req, res)=>{
     res.sendFile(path.resolve("./views/index.html"));

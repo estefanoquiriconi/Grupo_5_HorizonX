@@ -27,6 +27,7 @@
     background-color: var(--x-plt-1);
     padding: 20px 40px;
     border-radius: 8%;
+    box-shadow: -5px 7px 9px -1px rgba(36,52,76,1);
 }
 
 .form-div > h3 {
@@ -51,9 +52,14 @@
     border-radius: 5px;
 }
 
+.txt-inp:focus-visible {
+    outline: var(--plt-darker) auto 1px;
+}
+
 .check-div > input {
     transform: scale(1.6);
-    margin-right: 6px
+    margin-right: 6px;
+    accent-color: var(--plt-darker)
 }
 
 .check-div {
@@ -61,13 +67,19 @@
     padding: 6px 0;
 }
 
+button {
+    transition: all .4s;
+}
+
+
+
 #reg-pr-btn {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
     background-color: var(--plt-darker);
     color: #fff;
-    border: none;
+    border: 6px outset var(--x-plt-3);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -78,7 +90,7 @@
     padding: 10px 20px;
     background-color:  var(--plt-darker);
     color: #fff;
-    border: none;
+    border: 6px outset var(--x-plt-3);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -89,9 +101,53 @@
     padding: 10px 20px;
     background-color:  var(--plt-darker);
     color: #fff;
-    border: none;
+    border: 6px outset var(--x-plt-3);
     border-radius: 5px;
     cursor: pointer;
+}
+
+#reg-pr-btn:hover {
+    border-color: var(--x-plt-2);
+}
+
+button:active {
+    animation: button-clicked 1s 1;
+}
+
+button:focus:not(:active) {
+    animation: button-unclicked .5s 1;
+}
+
+@keyframes button-clicked {
+    0% {
+        
+        border-width: 6px;
+    }
+
+    50% {
+        background-color:  var(--plt-lighter);
+        color:var(--plt-darker);
+        border-width: 0px;
+        
+    }
+
+}
+
+@keyframes button-unclicked {
+    0% {
+        background-color:  var(--plt-lighter);
+        color:var(--plt-darker);
+        border-width: 0px;
+        
+    }
+
+    100% {
+        border-width: 6px;
+        background-color:  var(--plt-darker);
+        color: #fff;
+        
+    }
+
 }
 
 @media (min-width:520px) {

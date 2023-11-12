@@ -1,0 +1,219 @@
+:root {
+  --color1: #27374D;
+  --color2: #526D82;
+  --color3: #9DB2BF;
+  --color4: #DDE6ED;
+}
+
+.container_cart {
+  width: 100%;
+  background-color: var(--color3);
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.conteiner_all_cart {
+  border: solid 3px var(--color1);
+  width: 80%;
+  margin: 10px 10%;
+}
+
+/* CARRO 1 */
+
+.form_up_cart {
+  width: 100%;
+  height: 20%;
+  background-color: var(--color4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form_cart {
+  width: 100%;
+  height: 80%;
+  background-color: var(--color4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_cart {
+  width: 45px;
+}
+
+.ventana_cart {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.boton_secciones_cart {
+  width: 10px;
+  height: 6px;
+  background-color: var(--color2);
+  color: white;
+  padding: 0.75em 1.5em;
+  margin: 20px;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.boton_secciones_cart_2 {
+  width: 10px;
+  height: 6px;
+  background-color: var(--color3);
+  color: white;
+  padding: 0.75em 1.5em;
+  margin: 20px;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.img_product {
+  width: 15%;
+}
+
+.datos_adicionales {
+  width: 35%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.name_product {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.precio_cantidad {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.detalle_compra {
+  background-color: #F1EAFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 420px;
+  border: solid 2px black;
+  margin: 20px;
+  padding: 10px;
+}
+
+.boton_detalles {
+  background-color: var(--color3);
+  color: white;
+  height: 10px;
+  padding: 0.75em 1.5em;
+  margin: 10px;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.texto_detalle {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.formulario_cart {
+  display: flex;
+  justify-content: space-between;
+  height: 15px;
+  align-items: center;
+}
+
+.div_span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div_span_total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 25px;
+  margin: 20px 10px;
+}
+
+.botones_finales {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-buy-btn {
+  background-color: #27374d;
+  height: 35px;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+/* CAMBIOS CARRO 2 */
+
+.datos_demas_carros {
+  width: 45%;
+  height: 100%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+.terminos_condiciones {
+  font-size: 12px;
+}
+
+/* CAMBIOS CARRO 3 */
+
+.datos_envio {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* CAMBIOS CARRO 4 */
+
+.boton_pagos {
+  background-color: #27374d;
+  height: 40px;
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+.botones_finales_div {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalles_carro_cuatro {
+  width: 70% ;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

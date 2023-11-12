@@ -7,32 +7,33 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="icon" href="/images/logo.png" />
-
   </head>
   <body>
     <header class="main-header">
       <div class="main-header-top-bar">
-        <a href="/"><h1 class="main-header-logo">HorizonX</h1></a>
-        <ul type="none" class="navbar-top">
+        <a href="/"
+          ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
+        /></a>
+        <input class="input-search" type="text" placeholder="Buscar..." />
+        <ul class="navbar-top">
+          <li><a href="#">Smartphones</a></li>
+          <li><a href="#">Accesorios</a></li>
+          <li><a href="#">Servicio Técnico</a></li>
+          <li><a href="/login"><i class="fa-solid fa-user"></i> Cuenta</a></li>
+          <li><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        </ul>
+        <ul class="navbar-bottom">
           <li>
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="/login"><i class="fa-solid fa-user"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <li>
             <a href="#"><i class="fa-solid fa-bars"></i></a>
           </li>
         </ul>
       </div>
-      <div class="input-search">
-        <input type="text" placeholder="Buscar..." />
-      </div>
-      <ul type="none" class="navbar-bottom">
-        <li><a href="#">Smartphones</a></li>
-        <li><a href="#">Accesorios</a></li>
-        <li><a href="#">Servicio Técnico</a></li>
-      </ul>
       <div class="main-header-banner">
         <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
         <button type="button" class="main-header-banner-btn">Comprar</button>
@@ -92,7 +93,9 @@
           Sistema de cámaras con sensor principal de 108 MP.
         </p>
         <p class="product-price">$209.999,00</p>
-        <button class="product-buy-btn">Comprar</button>
+        <form action="/productDetail" method="GET">
+          <button type="submit" class="product-buy-btn">Comprar</button>
+        </form>
         <img
           class="product-image"
           src="images/celulares/moto-g72-white.png"
@@ -109,7 +112,9 @@
           <a href=""> <i class="fa-brands fa-twitter"></i></a>
         </div>
       </section>
-      <small>Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small>
+      <small
+        >Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small
+      >
     </footer>
   </body>
 </html>
