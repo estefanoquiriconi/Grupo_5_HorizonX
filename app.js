@@ -18,6 +18,14 @@ app.get("/register", (req,res) => {
     res.sendFile(path.resolve("./views/register.html"));
 })
 
-app.get("/Detail", (req,res) => {
-    res.sendFile(path.resolve("./views/Detail.html"));
+app.get("/detail", (req,res) => {
+    res.sendFile(path.resolve("./views/detail.html"));
+})  
+
+app.get("/login", (req,res) => {
+    res.sendFile(path.resolve("./views/login.html"));
+})
+
+app.get("/productCart", (req,res) => {
+    res.sendFile(path.resolve("./views/productCart.html"));
 })
