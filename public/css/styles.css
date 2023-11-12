@@ -13,7 +13,17 @@ body{
   background-color: #DDE6ED;
 }
 
-/* Estilos index */
+.main-header{
+  width: 100%;
+}
+
+.navbar-top{
+  display: none;
+}
+
+.navbar-bottom{
+  display: flex;
+}
 
 .main-header-top-bar {
   display: flex;
@@ -24,15 +34,11 @@ body{
 }
 
 .main-header-logo{
-  font-weight: 500;
+  width: 65px;
 }
 
 .navbar-top, .navbar-bottom {
   list-style-type: none;
-}
-
-.navbar-top {
-  display: flex;
 }
 
 .main-header li {
@@ -42,25 +48,22 @@ body{
 .main-header a {
   text-decoration: none;
   color: black;
-  font-size: 20px;
   margin-left: 5px;
 }
 
 .input-search{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.input-search input{
-  width: 90%;
+  width: 40%;
+  padding: 5px;
   height: 40px;
-  border-radius: 5px;
-  max-width: 600px;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
-.navbar-bottom{
-  display: none;
+.input-search:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(39, 55, 77, 0.5);
 }
 
 .main-header-banner{
@@ -118,11 +121,12 @@ footer{
   justify-content: space-around;
   align-items: center;
   background-color: #fff;
-  padding: 20px;
   margin: auto;
   text-align: center;
   width: 100%;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .footer-social{
   display: flex;
@@ -157,6 +161,15 @@ footer{
     display: block;
   }
 
+  .navbar-top{
+    display: flex;
+    font-size: 14px;
+  }
+
+  .navbar-bottom{
+    display: none;
+  }
+
   .main-header-banner-title{
     top: 30%;
     left: 20%;
@@ -169,19 +182,15 @@ footer{
     left: 20%;
     transform: translate(-50%, -50%);
   }
-
-  .navbar-bottom {
-    display: flex;
-    justify-content: space-between;
-  }
   
   footer{
     flex-direction: row-reverse;
   }
 
+
 }
 
-@media(min-width: 1200px){
+@media(min-width: 1024px){
     .main-header {
         max-width: 1440px;
         margin: auto;
