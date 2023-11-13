@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - HorizonX</title>
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <link rel="stylesheet" href="/public/css/login.css" />
-    <link rel="icon" href="/public/images/celulares/2logo.png" />
+    <title>HorizonX</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="icon" href="/images/celulares/2logo.png" />
 </head>
 <body>
-  <header>
-    <div>
-      <img class="headerimg" src="/public/images/celulares/2logo.png" alt="Logo">
-    </div>
-    <div>
-      <h2 class="nombrehorizon">HorizonX</h2>
-    </div>
+  <header class="main-header">
+      <div class="main-header-top-bar">
+        <a href="/"><h1 class="main-header-logo">HorizonX</h1></a>
+        <ul type="none" class="navbar-top">
+          <li>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="input-search">
+        <input type="text" placeholder="Buscar..." />
+      </div>
   </header>
   <main>
     <div class="main-welcome">
@@ -25,7 +36,7 @@
       <p>Inicie sesion para continuar</p>
     </div>
     <div class="main-form">
-      <form class="main-form1" action="" method="POST">
+      <form action="" method="POST">
         <nav>
           <label class="main-em">E-mail:</label>
         </nav>
@@ -49,8 +60,15 @@
   </main>
   <footer>
     <section>
-      <a class="foot-horiX" href="">www.HorizonX.com</a>
-      <p class="foot-copyr">Copyright©2023 HorizonX. Todos los derechos reservados.</p>
+      <section class="footer-social">
+        <small>Seguinos</small>
+        <div class="footer-social-icons">
+          <a href=""><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""> <i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </section>
+      <small>Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small>
     </section>
   </footer>
 </body>

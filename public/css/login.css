@@ -1,9 +1,86 @@
-/*
-PRUEBA PORQUE NO FUNCIONA LRC
-*/
-div.welcome{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+div.main-welcome{
+    display: flex;
     text-align: center;
-    font-size: 68px;
-    color: blue;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: large;
+    color: #091a30;
 }
+
+div.main-log-conti{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.77);
+    margin: 16px auto;
+    font-weight: bold;
+}
+
+div.main-form{
+    align-items: center;
+    display:flex;
+    text-align: justify;
+    width: 300px;
+    background-color: #5176ad;
+    padding: 20px 40px;
+    border-radius: 8%;
+    box-shadow: -5px 7px 9px -1px rgba(36,52,76,1);
+}
+
+label.main-em{
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+input.main-em1{
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 14px;
+    width: 100%;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-align: left;
+    flex-direction: column;
+}
+
+label.main-pass{
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input.main-pass1{
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 14px;
+    width: 100%;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-align: left;
+    flex-direction: column;
+}
+
+button.main-bott-sub{
+    display: flex;
+    margin: 20px auto;
+    padding: 9px 13px;
+    background-color: #27374D;
+    color: #fff;
+    border: 6px dashed #24344c;
+    border-radius: 6px;
+    cursor: pointer;
+}
+    
+button.main-bott-sub2{
+    display: flex;
+    margin: 15px auto;
+    padding: 9px 12px;
+    background-color: #27374D;
+    color: #fff;
+    border: 6px dashed #24344c;
+    border-radius: 6px;
+    cursor: pointer;
+}
+    
