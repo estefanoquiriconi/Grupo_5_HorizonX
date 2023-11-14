@@ -48,10 +48,20 @@ body{
   padding: 5px;
 }
 
-.main-header a {
+.navbar-top a, .navbar-bottom a {
+  font-weight: 600;
   text-decoration: none;
   color: black;
   margin-left: 5px;
+  transition: all;
+  transition-duration: 300ms;
+  padding: 2px;
+}
+
+.navbar-top a:hover{
+  box-shadow: 0 0 5px rgba(39, 55, 77, 0.5);
+  border-radius: 5px;
+  padding: 2px;
 }
 
 .input-search{
@@ -165,15 +175,6 @@ footer{
     display: block;
   }
 
-  .navbar-top{
-    display: flex;
-    font-size: 14px;
-  }
-
-  .navbar-bottom{
-    display: none;
-  }
-
   .main-header-banner-title{
     top: 30%;
     left: 20%;
@@ -198,5 +199,14 @@ footer{
     .main-header-banner {
         max-width: 1440px;
         margin: auto;
-      }  
+      }
+
+      .navbar-top{
+        display: flex;
+        font-size: 14px;
+      }
+    
+      .navbar-bottom{
+        display: none;
+      }
 }
