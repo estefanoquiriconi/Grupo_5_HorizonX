@@ -12,329 +12,338 @@
 
 <body>
 
-    <body>
-        <header class="main-header">
-            <div class="main-header-top-bar">
-              <a href="/"
-                ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
-              /></a>
-              <input class="input-search" type="text" placeholder="Buscar..." />
-              <ul class="navbar-top">
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <a href="/"><img class="main-header-logo" src="/images/2logo.png" alt="Logo" /></a>
+            <input class="input-search" type="text" placeholder="Buscar..." />
+            <ul class="navbar-top">
                 <li><a href="#">Smartphones</a></li>
                 <li><a href="#">Accesorios</a></li>
                 <li><a href="#">Servicio Técnico</a></li>
                 <li><a href="/login"><i class="fa-solid fa-user"></i> Cuenta</a></li>
                 <li><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-              </ul>
-              <ul class="navbar-bottom">
+            </ul>
+            <ul class="navbar-bottom">
                 <li>
-                  <a href="/login"><i class="fa-solid fa-user"></i></a>
+                    <a href="/login"><i class="fa-solid fa-user"></i></a>
                 </li>
                 <li>
-                  <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa-solid fa-bars"></i></a>
+                    <a href="#"><i class="fa-solid fa-bars"></i></a>
                 </li>
-              </ul>
-            </div>
-          </header>
+            </ul>
+        </div>
+    </header>
 
-        <main class="container_cart">
+    <main class="container_cart">
 
-            <!-- PRIMER CARRO -->
 
-            <!-- seccion superior del carro -->
-            <section class="conteiner_all_cart">
-                <section class="form_up_cart">
-                    <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                    <div class="ventana_cart">
-                        <button class="boton_secciones_cart_2">1</button>
-                        <button class="boton_secciones_cart">2</button>
-                        <button class="boton_secciones_cart">3</button>
-                        <button class="boton_secciones_cart">4</button>
-                    </div>
-                </section>
-                <!-- seccione general del carro -->
-                <section class="form_cart">
-                    <!-- imagen del producto -->
+
+
+
+        <!-- PRIMER CARRO -->
+
+        <!-- seccion superior del carro -->
+        <section class="conteiner_all_cart">
+            <header class="form_up_cart">
+                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
+                <div class="ventana_cart">
+                    <button class="boton_secciones_cart_2">1</button>
+                    <button class="boton_secciones_cart">2</button>
+                    <button class="boton_secciones_cart">3</button>
+                    <button class="boton_secciones_cart">4</button>
+                </div>
+            </header>
+            <!-- seccione general del carro -->
+            <article class="form_cart">
+                <!-- imagen del producto -->
+                <div class="product_img_detalle">
                     <img class="img_product" src="/images/celulares/moto-edge-40.png" alt="">
                     <!-- seccion media del carro -->
                     <div class="datos_adicionales">
-                        <p class="name_product">Mogo edge 40 lite</p>
+                        <p class="name_product">Moto edge 40 lite</p>
                         <p> Lugar para cantidad</p>
                         <p class="precio_cantidad"> $$$$$ </p>
                     </div>
-                    <!-- Ventana de datos de compra (hasta linea 95)-->
-                    <div class="detalle_compra">
-                        <p class="texto_detalle">Entrega</p>
-                        <p>Codigo postal</p>
-                        <form action="productCart.html" method="POST">
-                            <p class="formulario_cart">
-                                <label for="Codigo postal"></label>
-                                <input type="text" name="Codigo postal" id="Codigo postal">
-                                <button class="boton_detalles">Calcular</button>
-
-                            </p>
-                            <p class="texto_detalle">Cupon</p>
-                            <p class="formulario_cart">
-                                <label for="Cupon"></label>
-                                <input type="text" name="Cupon" id="Cupon">
-                                <button class="boton_detalles">Agregar</button>
-
-                            </p>
-                            <p class="texto_detalle">Resumen de compra</p>
-                            <div class="div_span">
-                                <span>Subtototal</span>
-                                <span> $$$$ </span>
-                            </div>
-                            <div class="div_span">
-                                <span>Costo de envio</span>
-                                <span> $$$$ </span>
-                            </div>
-                            <div class="div_span_total">
-                                <span>Importe total</span>
-                                <span> $$$$ </span>
-                                <!-- Hasta aqui ventana de compras -->
-                            </div>
-                            <div class="botones_finales">
-                                <button class="product-buy-btn">Comprar</button>
-                                <button class="product-buy-btn">Volver</button>
-                            </div>
-                    </div>
-                </section>
-            </section>
-
-            <!-- SEGUNDO CARRO-->
-
-            <section class="conteiner_all_cart">
-                <section class="form_up_cart">
-                    <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                    <div class="ventana_cart">
-                        <button class="boton_secciones_cart">1</button>
-                        <button class="boton_secciones_cart_2">2</button>
-                        <button class="boton_secciones_cart">3</button>
-                        <button class="boton_secciones_cart">4</button>
-                    </div>
-                </section>
-                <!-- seccion general del carro -->
-                <section class="form_cart">
-                    <!-- seccion media del carro -->
-                    <div class="datos_demas_carros">
-                        <p class="name_product">Identificacion</p>
-                        <form action="productCart.html" method="POST">
-                            <label>E-mail:</label>
-                            <input type="email" name="email" required>
-                            <label>Nombre:</label>
-                            <input type="text" name="nombre" required>
-                            <label>Apellido:</label>
-                            <input type="text" name="apellido" required>
-                            <label>N° Documento:</label>
-                            <input type="number" name="D.N.I" required>
-                            <label>Telefono:</label>
-                            <input type="tel" name="telefono" required>
-                            <p> </p>
-                            <p> </p>
-                            <p class="negrita">Noticias y promociones</p>
-                            <label class="terminos_condiciones"><input type="radio"> Recibir emails con
-                                promociones</label>
-                            <p class="negrita">Terminos y condiciones</p>
-                            <label class="terminos_condiciones"><input type="radio"> Acepto los <a href="">terminos y
-                                    condiciones</a></label>
-
-
-                            <div class="botones_finales">
-                                <button class="product-buy-btn">Continuar</button>
-                            </div>
-                    </div>
-                    <!-- Ventana de datos de compra -->
-                    <div class="detalle_compra">
-                        <p class="texto_detalle">Detalle de compra</p>
-                        </p>
-                        <p class="texto_detalle">Moto edge 40 lite</p>
-                        <div class="div_span">
-                            <span>Subtototal</span>
-                            <span> $$$$ </span>
-                        </div>
-                        <div class="div_span">
-                            <span>Costo de envio</span>
-                            <span> $$$$ </span>
-                        </div>
-                        <div class="div_span_total">
-                            <span>Importe total</span>
-                            <span> $$$$ </span>
-                            <!-- Hasta aqui ventana de compras -->
-                        </div>
-                    </div>
-                </section>
-            </section>
-
-            <!-- TERCER CARRO -->
-
-            <section class="conteiner_all_cart">
-                <section class="form_up_cart">
-                    <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                    <div class="ventana_cart">
-                        <button class="boton_secciones_cart">1</button>
-                        <button class="boton_secciones_cart">2</button>
-                        <button class="boton_secciones_cart_2">3</button>
-                        <button class="boton_secciones_cart">4</button>
-                    </div>
-                </section>
-                <!-- seccione general del carro -->
-                <section class="form_cart">
-                    <div class="datos_demas_carros">
-                        <p class="precio_cantidad">Envío</p>
-                        <p class="name_product">Método de entrega</p>
-                        <label><input type="radio" name="envio"> Retiro en sucursal</label>
-                        <label><input type="radio" name="envio"> Envio a domicilio</label>
-                        <div class="datos_envio">
-                            <form action="productCart.html" method="POST">
-                                <label>Calle*</label>
-                                <input type="text" name="calle" required>
-                                <div class="div_span">
-                                    <label>Numeracion*</label>
-                                    <input type="number" name="numero" required>
-                                    <label>Piso o Dpto</label>
-                                    <input type="text" name="piso" required>
-                                </div>
-                                <label>Barrio*</label>
-                                <input type="text" name="barrio" required>
-                                <div class="div_span">
-                                    <label>Provincia</label>
-                                    <select name="Provincia" id="">
-                                        <option value="">Santiago del estero</option>
-                                        <option value="">Buenos Aires</option>
-                                        <option value="">Mendoza"</option>
-                                        <option value="">Tucuman</option>
-                                        <option value="">Misiones</option>
-                                        <option value="">Santa fé</option>
-                                        <option value="">Cordoba</option>
-                                    </select>
-                                    <label>Ciudad</label>
-                                    <select name="Ciudad" id="">
-                                        <option value="">Capital</option>
-                                        <option value="">Monte Quemado</option>
-                                        <option value="">La Banda"</option>
-                                        <option value="">Bandera</option>
-                                        <option value="">CABA</option>
-                                        <option value="">Quimilí</option>
-                                        <option value="">Pintos</option>
-                                    </select>
-                                </div>
-                                <div class="botones_finales">
-                                    <button class="product-buy-btn">Continuar</button>
-                                </div>
+                </div>
+                <!-- Ventana de datos de compra (hasta linea 95)-->
+                <div class="detalle_compra">
+                    <p class="texto_detalle">Entrega</p>
+                    <p>Codigo postal</p>
+                    <form action="productCart.html" method="POST">
+                        <div class="formulario_cart">
+                            <label for="Codigo postal"></label>
+                            <input class="control" type="text" name="Codigo postal" id="Codigo postal">
+                            <button class="boton_detalles">Calcular</button>
 
                         </div>
-                    </div>
-                    <!-- Ventana de datos de compra -->
-                    <div class="detalle_compra">
-
-                        <p class="texto_detalle">Detalle de compra</p>
-                        </p>
-                        <p class="texto_detalle">Moto edge 40 lite</p>
-
-                        </p>
+                        <p class="texto_detalle">Cupon</p>
+                        <div class="formulario_cart">
+                            <label for="Cupon"></label>
+                            <input class="control" type="text" name="Cupon" id="Cupon">
+                            <button class="boton_detalles">Agregar</button>
+                        </div>
                         <p class="texto_detalle">Resumen de compra</p>
                         <div class="div_span">
-                            <span>Subtototal</span>
-                            <span> $$$$ </span>
+                            <p>Subtototal</p>
+                            <p> $$$$ </p>
                         </div>
                         <div class="div_span">
-                            <span>Costo de envio</span>
-                            <span> $$$$ </span>
+                            <p>Costo de envio</p>
+                            <p> $$$$ </p>
                         </div>
                         <div class="div_span_total">
-                            <span>Importe total</span>
-                            <span> $$$$ </span>
-
-                        </div>
-
-                    </div>
-                </section>
-            </section>
-
-            <!-- CUARTO CARRO -->
-
-            <section class="conteiner_all_cart">
-                <section class="form_up_cart">
-                    <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                    <div class="ventana_cart">
-                        <button class="boton_secciones_cart">1</button>
-                        <button class="boton_secciones_cart">2</button>
-                        <button class="boton_secciones_cart">3</button>
-                        <button class="boton_secciones_cart_2">4</button>
-                    </div>
-                </section>
-                <!-- seccione general del carro -->
-                <section class="form_cart">
-
-                    <!-- seccion media del carro -->
-                    <div class="datos_demas_carros">
-                        <p class="name_product">Metodos de pago</p>
-                        <div class="detalles_carro_cuatro">
-
-                            <div class="botones_finales_div">
-                                <button class="boton_pagos">Debito</button>
-
-                                <button class="boton_pagos">Credito</button>
-
-                                <button class="boton_pagos">Efectivo</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <!-- Ventana de datos de compra -->
-                    <div class="detalle_compra">
-                        <p class="texto_detalle">Detalle de compra</p>
-                        <p class="texto_detalle">Moto edge 40 lite</p>
-
-                        </p>
-                        <p class="texto_detalle">Resumen de compra</p>
-                        <div class="div_span">
-                            <span>Subtototal</span>
-                            <span> $$$$ </span>
-                        </div>
-                        <div class="div_span">
-                            <span>Costo de envio</span>
-                            <span> $$$$ </span>
-                        </div>
-                        <div class="div_span_total">
-                            <span>Importe total</span>
-                            <span> $$$$ </span>
+                            <p>Importe total</p>
+                            <p> $$$$ </p>
                             <!-- Hasta aqui ventana de compras -->
                         </div>
                         <div class="botones_finales">
-                            <button class="boton_pagos">Finalizar Compra</button>
-                            <!-- <button class="product-buy-btn">Volver</button> -->
+                            <button class="product-buy-btn">Comprar</button>
+                            <button class="product-buy-btn">Volver</button>
                         </div>
-                    </div>
-                </section>
-            </section>
-
-        </main>
-
-
-
-
-
-
-
-
-        <footer>
-            <section class="footer-social">
-                <small>Seguinos</small>
-                <div class="footer-social-icons">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""> <i class="fa-brands fa-twitter"></i></a>
+                    </form>
                 </div>
-            </section>
-            <small>Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small>
-        </footer>
+            </article>
+        </section>
 
-    </body>
+        <!-- SEGUNDO CARRO-->
+
+        <section class="conteiner_all_cart">
+            <header class="form_up_cart">
+                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
+                <div class="ventana_cart">
+                    <button class="boton_secciones_cart">1</button>
+                    <button class="boton_secciones_cart_2">2</button>
+                    <button class="boton_secciones_cart">3</button>
+                    <button class="boton_secciones_cart">4</button>
+                </div>
+            </header>
+            <!-- seccion general del carro -->
+            <article class="form_cart">
+                <!-- seccion media del carro -->
+                <div class="datos_demas_carros">
+                    <p class="name_product">Identificacion</p>
+                    <form action="productCart.html" method="POST">
+                        <label>E-mail:</label>
+                        <input class="control" type="email" name="email" required>
+                        <br>
+                        </br>
+                        <label>Nombre:</label>
+                        <input class="control" type="text" name="nombre" required>
+                        <br></br>
+                        <label>Apellido:</label>
+                        <input class="control" type="text" name="apellido" required>
+                        <br></br>
+                        <label>N° Documento:</label>
+                        <input class="control" type="number" name="D.N.I" required>
+                        <br></br>
+                        <label>Telefono:</label>
+                        <input class="control" type="tel" name="telefono" required>
+                        <br></br>
+                        <p class="negrita">Noticias y promociones</p>
+                        <label class="terminos_condiciones"><input type="radio"> Recibir emails con
+                            promociones</label>
+                        <br></br>
+                        <p class="negrita">Terminos y condiciones</p>
+                        <label class="terminos_condiciones"><input type="radio"> Acepto los <a href="">terminos y
+                                condiciones</a></label>
+                        <br></br>
+                        <div class="botones_finales">
+                            <button class="product-buy-btn">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Ventana de datos de compra -->
+                <div class="detalle_compra">
+                    <p class="texto_detalle">Detalle de compra</p>
+                    </p>
+                    <p class="texto_detalle">Moto edge 40 lite</p>
+                    <div class="div_span">
+                        <p>Subtototal</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span">
+                        <p>Costo de envio</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span_total">
+                        <p>Importe total</p>
+                        <p> $$$$ </p>
+                        <!-- Hasta aqui ventana de compras -->
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- TERCER CARRO -->
+
+        <section class="conteiner_all_cart">
+            <header class="form_up_cart">
+                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
+                <div class="ventana_cart">
+                    <button class="boton_secciones_cart">1</button>
+                    <button class="boton_secciones_cart">2</button>
+                    <button class="boton_secciones_cart_2">3</button>
+                    <button class="boton_secciones_cart">4</button>
+                </div>
+            </header>
+            <!-- seccione general del carro -->
+            <article class="form_cart">
+                <div class="datos_demas_carros">
+                    <p class="precio_cantidad">Envío</p>
+                    <br></br>
+                    <p class="name_product">Método de entrega</p>
+                    <label><input type="radio" name="envio"> Retiro en sucursal</label>
+                    <label><input type="radio" name="envio"> Envio a domicilio</label>
+                    <br></br>
+
+                    <div class="datos_envio">
+                        <form action="productCart.html" method="POST">
+                            <label>Calle*</label>
+                            <input type="text" name="calle" required>
+                            <br></br>
+
+                            <label>Numeracion*</label>
+                            <input type="number" name="numero" required>
+                            <br></br>
+                            <label>Piso o Dpto</label>
+                            <input type="text" name="piso" required>
+                            <br></br>
+
+                            <label>Barrio*</label>
+                            <input type="text" name="barrio" required>
+                            <br></br>
+
+                            <label>Provincia</label>
+                            <select name="Provincia" id="">
+                                <option value="">Santiago del estero</option>
+                                <option value="">Buenos Aires</option>
+                                <option value="">Mendoza"</option>
+                                <option value="">Tucuman</option>
+                                <option value="">Misiones</option>
+                                <option value="">Santa fé</option>
+                                <option value="">Cordoba</option>
+                            </select>
+                            <label>Ciudad</label>
+                            <select name="Ciudad" id="">
+                                <option value="">Capital</option>
+                                <option value="">Monte Quemado</option>
+                                <option value="">La Banda"</option>
+                                <option value="">Bandera</option>
+                                <option value="">CABA</option>
+                                <option value="">Quimilí</option>
+                                <option value="">Pintos</option>
+                            </select>
+                            <div class="botones_finales">
+                                <button class="product-buy-btn">Continuar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- Ventana de datos de compra -->
+                <div class="detalle_compra">
+
+                    <p class="texto_detalle">Detalle de compra</p>
+                    </p>
+                    <p class="texto_detalle">Moto edge 40 lite</p>
+
+                    </p>
+                    <p class="texto_detalle">Resumen de compra</p>
+                    <div class="div_span">
+                        <p>Subtototal</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span">
+                        <p>Costo de envio</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span_total">
+                        <p>Importe total</p>
+                        <p> $$$$ </p>
+
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- CUARTO CARRO -->
+
+        <section class="conteiner_all_cart">
+            <header class="form_up_cart">
+                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
+                <div class="ventana_cart">
+                    <button class="boton_secciones_cart">1</button>
+                    <button class="boton_secciones_cart">2</button>
+                    <button class="boton_secciones_cart">3</button>
+                    <button class="boton_secciones_cart_2">4</button>
+                </div>
+            </header>
+            <!-- seccione general del carro -->
+            <article class="form_cart">
+
+                <!-- seccion media del carro -->
+                <div class="datos_demas_carros">
+                    <p class="name_product">Metodos de pago</p>
+                    <div class="detalles_carro_cuatro">
+
+
+                        <button class="boton_pagos">Debito</button>
+
+                        <button class="boton_pagos">Credito</button>
+
+                        <button class="boton_pagos">Efectivo</button>
+
+                    </div>
+
+
+                </div>
+                <!-- Ventana de datos de compra -->
+                <div class="detalle_compra">
+                    <p class="texto_detalle">Detalle de compra</p>
+                    <p class="texto_detalle">Moto edge 40 lite</p>
+
+                    </p>
+                    <p class="texto_detalle">Resumen de compra</p>
+                    <div class="div_span">
+                        <p>Subtototal</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span">
+                        <p>Costo de envio</p>
+                        <p> $$$$ </p>
+                    </div>
+                    <div class="div_span_total">
+                        <p>Importe total</p>
+                        <p> $$$$ </p>
+                        <!-- Hasta aqui ventana de compras -->
+                    </div>
+                    <div class="botones_finales">
+                        <button class="boton_pagos">Finalizar Compra</button>
+
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <section class="footer-social">
+            <small>Seguinos</small>
+            <div class="footer-social-icons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""> <i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </section>
+        <small>Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small>
+    </footer>
+
+</body>
 
 </html>
