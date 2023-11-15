@@ -1,26 +1,26 @@
 <!-- Sprint 1 -->
 
-Comenzar a hacer: 
+Comenzar a hacer: Trabajar en el sprint 2
 
 Hacer más: Reuniones 
 
-Continuar haciendo: 
+Continuar haciendo:  División de trabajo
 
-Hacer menos: 
+Hacer menos: Nada
 
-Dejar de hacer: 
+Dejar de hacer: Nada
 
 <!-- Sprint 2 -->
 
-Comenzar a hacer:
+Comenzar a hacer: Weekly
 
-Hacer más:
+Hacer más: Corroborar entre todos el trabajo de cada uno
 
-Continuar haciendo: 
+Continuar haciendo: División de trabajo
 
-Hacer menos: 
+Hacer menos: Nada
 
-Dejar de hacer:
+Dejar de hacer: Nada
 
 
 <!-- Sprint 3 -->
