@@ -11,20 +11,14 @@ app.set('view engine','ejs');
 app.use(express.static(path.resolve("./public")));
 
 const mainRoutes = require('./routers/main.routes');
+const usersRoutes = require('./routers/users.routes')
 
 app.use("/", mainRoutes);
-
-app.get("/register", (req,res) => {
-    res.render("./users/register");
-})
+app.use("/users", usersRoutes);
 
 app.get("/detail", (req,res) => {
     res.render("./products/detail");
 })  
-
-app.get("/login", (req,res) => {
-    res.render('./users/login');
-})
 
 app.get("/productCart", (req,res) => {
     res.render("./products/productCart");
