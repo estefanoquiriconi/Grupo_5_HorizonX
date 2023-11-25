@@ -9,32 +9,7 @@
     <link rel="icon" href="/images/logo.png" />
   </head>
   <body>
-    <header class="main-header">
-      <div class="main-header-top-bar">
-        <a href="/"
-          ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
-        /></a>
-        <input class="input-search" type="text" placeholder="Buscar..." />
-        <ul class="navbar-top">
-          <li><a href="#">Smartphones</a></li>
-          <li><a href="#">Accesorios</a></li>
-          <li><a href="#">Servicio Técnico</a></li>
-          <li><a href="/login"><i class="fa-solid fa-user"></i> Cuenta</a></li>
-          <li><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
-        </ul>
-        <ul class="navbar-bottom">
-          <li>
-            <a href="/login"><i class="fa-solid fa-user"></i></a>
-          </li>
-          <li>
-            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-solid fa-bars"></i></a>
-          </li>
-        </ul>
-      </div>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
       <button type="button" class="main-header-banner-btn">Comprar</button>
@@ -109,17 +84,6 @@
         />
       </article>
     </main>
-    <footer>
-      <section class="footer-social">
-        <small>Seguinos</small>
-        <div class="footer-social-icons">
-          <a href=""><i class="fa-brands fa-facebook"></i></a>
-          <a href=""><i class="fa-brands fa-instagram"></i></a>
-          <a href=""> <i class="fa-brands fa-twitter"></i></a>
-        </div>
-      </section>
-      <small
-        >Copyright&copy;2023 HorizonX. Todos los derechos reservados.</small>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
   </body>
 </html>

@@ -7,25 +7,25 @@ const app = express();
 app.listen(port, () => {
     console.log(`Servidor habilitado http://localhost:${port}`);
 });
-
+app.set('view engine','ejs');
 app.use(express.static(path.resolve("./public")));
 
 app.get("/", (req, res)=>{
-    res.sendFile(path.resolve("./views/index.html"));
+    res.render("index");
 })
 
 app.get("/register", (req,res) => {
-    res.sendFile(path.resolve("./views/register.html"));
+    res.render("register");
 })
 
 app.get("/detail", (req,res) => {
-    res.sendFile(path.resolve("./views/detail.html"));
+    res.render("detail");
 })  
 
 app.get("/login", (req,res) => {
-    res.sendFile(path.resolve("./views/login.html"));
+    res.render('login');
 })
 
 app.get("/productCart", (req,res) => {
-    res.sendFile(path.resolve("./views/productCart.html"));
+    res.render("productCart");
 })
