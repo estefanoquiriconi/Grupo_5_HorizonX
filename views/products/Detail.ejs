@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/productDetail.css" />
-    <title>HorizonX</title>
-  </head>
+  <%- include('../partials/head.ejs', {title: 'Detalle', styles: '/css/productDetail.css'}) %>
   <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
     <main class="container">
       <div class="product-section">
         <div class="product">
@@ -105,6 +99,6 @@
         </div>
       </div>
     </main>
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
   </body>
 </html>

@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HorizonX</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/login.css" />
-    <link rel="icon" href="/images/celulares/2logo.png" />
-</head>
+<%- include('../partials/head.ejs', {title: 'Login', styles: '/css/login.css'}) %>
 <body>
-  <%- include('./partials/header.ejs') %>
+  <%- include('../partials/header.ejs') %>
   <main>
     <div class="main-welcome">
       <h1 class="">Bienvenido a HorizonX</h1>
@@ -42,6 +35,6 @@
       </form>
     </div>
   </main>
-  <%- include('./partials/footer.ejs') %>
+  <%- include('../partials/footer.ejs') %>
 </body>
 </html>

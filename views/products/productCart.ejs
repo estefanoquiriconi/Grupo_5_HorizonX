@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HorizonX</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/cart.css">
-</head>
-
+<%- include('../partials/head.ejs', {title: 'Carrito', styles: '/css/cart.css'}) %>
 <body>
 
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
 
     <main class="container_cart">
 
@@ -309,7 +300,7 @@
     </main>
 
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
 </body>
 

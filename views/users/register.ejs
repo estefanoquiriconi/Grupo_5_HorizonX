@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/register.css" />
-    <title>Registrate</title>
-</head>
-
+<%- include('../partials/head.ejs', {title: 'Registrate', styles: '/css/register.css'}) %>
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('../partials/header.ejs') %>
     <main class="main-reg">
         <div class="form-div">
             <h3>Registrate</h3>
@@ -30,7 +21,7 @@
             </form>
         </div>
     </main>
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
     
 </body>
 

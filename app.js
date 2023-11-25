@@ -10,22 +10,22 @@ app.listen(port, () => {
 app.set('view engine','ejs');
 app.use(express.static(path.resolve("./public")));
 
-app.get("/", (req, res)=>{
-    res.render("index");
-})
+const mainRoutes = require('./routers/main.routes');
+
+app.use("/", mainRoutes);
 
 app.get("/register", (req,res) => {
-    res.render("register");
+    res.render("./users/register");
 })
 
 app.get("/detail", (req,res) => {
-    res.render("detail");
+    res.render("./products/detail");
 })  
 
 app.get("/login", (req,res) => {
-    res.render('login');
+    res.render('./users/login');
 })
 
 app.get("/productCart", (req,res) => {
-    res.render("productCart");
+    res.render("./products/productCart");
 })
