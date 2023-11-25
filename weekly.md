@@ -5,4 +5,4 @@ Retro, implementar EJS.
 Ninguno
 
 ## Qué se va a hacer esta semana.
-Actualizar el tablero de trabajo, Separar las vistas en carpetas.
+Actualizar el tablero de trabajo, Separar las vistas en carpetas, Aplicar MVC.
