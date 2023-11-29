@@ -1,47 +1,100 @@
-<!-- Sprint 1 -->
+# Retrospectiva Sprint 2!
+Principales conclusiones de la retro del primer sprint.
+## Start Doing:
+Trabajar en el sprint 2
 
-Comenzar a hacer: Trabajar en el sprint 2
+ ## More Of:
+ Reuniones 
 
-Hacer más: Reuniones 
+## Keep Doing:
+  División de trabajo
 
-Continuar haciendo:  División de trabajo
+## Less Off:
+Nada
 
-Hacer menos: Nada
+## Stop Doing:
+Nada
 
-Dejar de hacer: Nada
+# Retrospectiva Sprint 2!
+## Start Doing:
+Weekly
 
-<!-- Sprint 2 -->
+## More Of:
+Corroborar entre todos el trabajo de cada uno
 
-Comenzar a hacer: Weekly
+## Keep Doing:
+División de trabajo
 
-Hacer más: Corroborar entre todos el trabajo de cada uno
+## Less Off:
+Nada
 
-Continuar haciendo: División de trabajo
-
-Hacer menos: Nada
-
-Dejar de hacer: Nada
-
-
-<!-- Sprint 3 -->
-
-Comenzar a hacer:
-
-Hacer más:
-
-Continuar haciendo: 
-
-Hacer menos: 
-
-Dejar de hacer:
+## Stop Doing:
+Nada
 
 
-<!-- Sprint 4 -->
+# Retrospectiva Sprint 3!
+## Start Doing:
+## More Of:
 
-<!-- Sprint 5 -->
+## Keep Doing:
 
-<!-- Sprint 6 -->
+## Less Off:
 
-<!-- Sprint 7 -->
+## Stop Doing:
 
-<!-- Sprint 8 -->
+
+# Retrospectiva Sprint 4!
+## Start Doing:
+
+## More Of:
+
+## Keep Doing:
+
+## Less Off:
+
+## Stop Doing:
+
+# Retrospectiva Sprint 5!
+## Start Doing:
+
+## More Of:
+
+## Keep Doing:
+
+## Less Off:
+
+## Stop Doing:
+
+# Retrospectiva Sprint 6!
+## Start Doing:
+
+## More Of:
+
+## Keep Doing:
+
+## Less Off:
+
+## Stop Doing:
+
+# Retrospectiva Sprint 7!
+## Start Doing:
+
+## More Of:
+
+## Keep Doing:
+
+## Less Off:
+
+## Stop Doing:
+
+# Retrospectiva Sprint 8!
+## Start Doing:
+
+## More Of:
+
+## Keep Doing:
+
+## Less Off:
+
+## Stop Doing:
+
