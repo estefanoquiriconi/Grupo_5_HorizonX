@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/create.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <div class="form-container">
+        <form action="#" method="post">
+
+            <label for="brand">Marca:</label>
+            <input type="text" id="brand" name="brand" class="input-field" required>
+
+            <label for="model">Modelo:</label>
+            <input type="text" id="model" name="model" class="input-field" required>
+
+            <label for="category">Caregoría:</label>
+            <select name="category" id="category" class="input-field">
+                <option value="celular">Celular</option>
+                <option value="accesorio">Accesorio</option>
+            </select>
+
+            <label for="brand">Código:</label>
+            <input type="text" id="brand" name="brand" class="input-field" required>
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" class="input-field" rows="4" required></textarea>
+
+            <label for="image">Image:</label>
+            <input type="file" src="" alt="" accept="image/png,image/jpg">
+
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" class="input-field" required>
+
+            <label for="price">Precio:</label>
+            <input type="text" id="price" name="price" class="input-field" required>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
