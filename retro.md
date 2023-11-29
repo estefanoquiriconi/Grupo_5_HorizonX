@@ -1,5 +1,6 @@
-# Retrospectiva Sprint 2!
+# Retrospectiva Sprint 1!
 Principales conclusiones de la retro del primer sprint.
+
 ## Start Doing:
 Trabajar en el sprint 2
 
@@ -16,6 +17,8 @@ Nada
 Nada
 
 # Retrospectiva Sprint 2!
+Principales conclusiones de la retro del segundo sprint.
+
 ## Start Doing:
 Weekly
 
