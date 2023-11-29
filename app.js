@@ -12,14 +12,16 @@ app.use(express.static(path.resolve("./public")));
 
 const mainRoutes = require('./routers/main.routes');
 const usersRoutes = require('./routers/users.routes')
+const productsRoutes = require('./routers/products.routes')
 
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
+app.use("/products", productsRoutes)
 
-app.get("/detail", (req,res) => {
-    res.render("./products/detail");
-})  
+// app.get("/detail", (req,res) => {
+//     res.render("./products/detail");
+// })  
 
-app.get("/productCart", (req,res) => {
-    res.render("./products/productCart");
-})
+// app.get("/productCart", (req,res) => {
+//     res.render("./products/productCart");
+// })
