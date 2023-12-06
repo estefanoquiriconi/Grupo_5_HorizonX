@@ -28,14 +28,18 @@ textarea {
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #27374d;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    transition: all 300ms;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #45a049;
+    opacity: 0.9;
+    font-weight: 600;
 }
