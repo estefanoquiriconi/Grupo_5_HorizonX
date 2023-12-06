@@ -14,68 +14,23 @@
       </video>
     </div>
     <main class="container">
-      <article class="product">
-        <h2 class="product-title">Moto Rarz 40 Ultra</h2>
-        <p class="product-detail">
-          Diseño exclusivo con pantalla flexible de 6.9" y bisagra "gota" sin
-          espacios entre sus lados.
-        </p>
-        <p class="product-price">$749.999,00</p>
-         <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/products/moto-razr-40ultra.png"
-          alt="moto-razr-40ultra"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto E22</h2>
-        <p class="product-detail">
-          Da vida a tu contenido de entretenimiento con la pantalla fluida de
-          90Hz.
-        </p>
-        <p class="product-price">$79.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/products/moto-e22.png"
-          alt="moto-e22"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto G72</h2>
-        <p class="product-detail">
-          Sistema de cámaras con sensor principal de 108 MP.
-        </p>
-        <p class="product-price">$209.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/products/moto-g72-white.png"
-          alt="moto-g72-white"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto G72</h2>
-        <p class="product-detail">
-          Sistema de cámaras con sensor principal de 108 MP.
-        </p>
-        <p class="product-price">$209.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/products/moto-g72-white.png"
-          alt="moto-g72-white"
-        />
-      </article>
+      <% products.forEach(product => { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/productCart/" method="GET">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="moto-razr-40ultra"
+            />
+          </article>
+        </a>
+        <% }) %>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>

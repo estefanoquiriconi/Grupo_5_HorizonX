@@ -10,9 +10,9 @@
       <a href="/products/detail/<%= product.id %>">
         <article class="product">
           <h2 class="product-title"><%= product.name %></h2>
-          <p class="product-detail"><%= product.description %></p>
+          <p class="product-detail"><%= product.brand %></p>
           <p class="product-price">$<%= product.price %></p>
-          <form action="/products/detail" method="GET">
+          <form action="/products/productCart" method="GET">
             <button type="submit" class="product-buy-btn">Comprar</button>
           </form>
           <img
