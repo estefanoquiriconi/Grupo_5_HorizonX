@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Create</title>
     <link rel="stylesheet" href="/css/create.css" />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -11,7 +11,7 @@
     <%- include('../partials/header.ejs') %>
     <div class="form-container">
       <form action="#" method="post">
-        <label for="brand">Marca:</label>
+        <label for="brand">Nombre:</label>
         <input
           type="text"
           id="brand"
@@ -20,7 +20,7 @@
           required
         />
 
-        <label for="model">Modelo:</label>
+        <label for="model">Marca:</label>
         <input
           type="text"
           id="model"
@@ -35,15 +35,6 @@
           <option value="accesorio">Accesorio</option>
         </select>
 
-        <label for="brand">Código:</label>
-        <input
-          type="text"
-          id="brand"
-          name="brand"
-          class="input-field"
-          required
-        />
-
         <label for="description">Descripción:</label>
         <textarea
           id="description"
@@ -53,7 +44,7 @@
           required
         ></textarea>
 
-        <label for="image">Image:</label>
+        <label for="imagen">Image:</label>
         <input type="file" src="" alt="" accept="image/png,image/jpg" />
 
         <label for="color">Color:</label>
