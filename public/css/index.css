@@ -2,10 +2,18 @@
   width: 100%;
   padding: 15px;
   max-width: 1440;
+  margin: auto;
+}
+
+h2{
+  font-weight: 800;
+}
+
+.product-container{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: auto;
 }
 
 a{
@@ -26,7 +34,7 @@ a{
 }
 
 .product-image {
-  width: 100%; 
+  width: 100%;
 }
 
 .product-detail {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs', {title: 'HorizonX', styles: '/css/index.css'}) %>
+  <%- include('./partials/head.ejs', {title: 'HorizonX', styles:
+  '/css/index.css'}) %>
   <body>
     <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
@@ -14,7 +15,12 @@
       </video>
     </div>
     <main class="container">
-      <% products.forEach(product => { %>
+      <br />
+      <h2>Celulares</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category ==
+        'celular') { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
@@ -30,7 +36,31 @@
             />
           </article>
         </a>
-        <% }) %>
+        <% } %> <% }) %>
+      </section>
+      <br />
+      <h2>Accesorios</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category ==
+        'accesorio') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/productCart/" method="GET">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="moto-razr-40ultra"
+            />
+          </article>
+        </a>
+        <% } %> <% }) %>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>

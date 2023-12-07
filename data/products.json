@@ -16,5 +16,14 @@
   "description": "El Motorola Moto G13 es parte de la serie Moto G para el 2023. Con una pantalla de 6.5 pulgadas a resolución HD+ y tasa de refresco de 90Hz, el Moto G13 está potenciado por un procesador MediaTek Helio G85 acompañado de 4GB de RAM con opciones de 64GB o 128GB de almacenamiento interno expandible. El Moto G13 cuenta con una cámara triple liderada por un sensor de 50MP y una cámara selfie de 8MP, completando sus características con una batería de 5000 mAh con carga rápida de 20W, parlantes stereo, sonido Dolby Atmos, lector de huellas lateral y Android 13.",
   "price": "150000",
   "image": "1701898512761_img.jpg"
+ },
+ {
+  "id": "d8ce3052-ce16-4e87-b5b9-082e01ddf775",
+  "name": "Buds 250",
+  "brand": "Motorola",
+  "category": "accesorio",
+  "description": "Práctico y de bolsillo. Diseño de auriculares de ajuste ergonómico para mayor comodidad y ajuste seguro.",
+  "price": "71999",
+  "image": "1701976488897_img.png"
  }
 ]

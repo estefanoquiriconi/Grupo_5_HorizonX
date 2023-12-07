@@ -5,24 +5,26 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main class="container">
-      <a href="/products/create">+Agregar</a>
-      <% products.forEach(product => { %>
-      <a href="/products/detail/<%= product.id %>">
-        <article class="product">
-          <h2 class="product-title"><%= product.name %></h2>
-          <p class="product-detail"><%= product.brand %></p>
-          <p class="product-price">$<%= product.price %></p>
-          <form action="/products/productCart" method="GET">
-            <button type="submit" class="product-buy-btn">Comprar</button>
-          </form>
-          <img
-            class="product-image"
-            src="images/products/<%= product.image %>"
-            alt="moto-razr-40ultra"
-          />
-        </article>
-      </a>
-      <% }) %>
+      <section class="product-container">
+        <a href="/products/create">+Agregar</a>
+        <% products.forEach(product => { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/productCart" method="GET">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="moto-razr-40ultra"
+            />
+          </article>
+        </a>
+        <% }) %>
+      </section>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>
