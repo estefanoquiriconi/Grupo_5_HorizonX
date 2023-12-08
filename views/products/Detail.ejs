@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {title: 'Detalle', styles: '/css/productDetail.css'}) %>
+  <%- include('../partials/head.ejs', {title: 'Detalle', styles:
+  '/css/productDetail.css'}) %>
   <body>
     <%- include('../partials/header.ejs') %>
     <main class="container">
@@ -9,11 +10,23 @@
           <img src="/images/products/<%= product.image %>" alt="Producto 1" />
           <div class="product-details">
             <h2><%=product.brand +' '+ product.name %></h2>
-            <p>
-              <%= product.description %>
-            </p>
+            <p><%= product.description %></p>
             <p class="price">$<%= product.price %></p>
             <a href="#" class="buy-button">Comprar</a>
+            <a
+              href="/products/edit/<%= product.id %>"
+              class="buy-button"
+              >Editar</a
+            >
+            <form
+              action="/products/delete/<%=product.id%>?_method=DELETE"
+              method="POST"
+              style="display: inline-flex"
+            >
+              <button type="submit" class="buy-button">
+                Eliminar
+              </button>
+            </form>
           </div>
         </div>
       </div>

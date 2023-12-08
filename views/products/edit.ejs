@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="/css/create.css">
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
     <div class="form-container">
-        <form action="#" method="post">
+        <form action="products/edit" method="post" enctype="multipart/form-data">
+          <h2>Editar Producto</h2>
+          <hr>
           <label for="brand">Nombre:</label>
           <input
             type="text"
             id="brand"
             name="brand"
             class="input-field"
+            value="<%= product.name %>"
             required
           />
   
@@ -26,13 +29,14 @@
             id="model"
             name="model"
             class="input-field"
+            value="<%= product.brand %>"
             required
           />
   
           <label for="category">Caregoría:</label>
           <select name="category" id="category" class="input-field">
-            <option value="celular">Celular</option>
-            <option value="accesorio">Accesorio</option>
+            <option value="celular" >Celular</option>
+            <option value="accesorio" >Accesorio</option>
           </select>
   
           <label for="description">Descripción:</label>
@@ -42,7 +46,7 @@
             class="input-field"
             rows="4"
             required
-          ></textarea>
+          ><%= product.description %></textarea>
   
           <label for="imagen">Image:</label>
           <input type="file" src="" alt="" accept="image/png,image/jpg" />
@@ -53,6 +57,7 @@
             id="color"
             name="color"
             class="input-field"
+            value="<%= product.color %>"
             required
           />
   
@@ -62,10 +67,11 @@
             id="price"
             name="price"
             class="input-field"
+            value="<%= product.price %>"
             required
           />
   
-          <button type="submit">Crear</button>
+          <button type="submit">Guardar</button>
         </form>
       </div>
     </div>

@@ -14,13 +14,11 @@ const controller = {
     let id = req.params.id;
     let product = products.find((product) => product.id == id);
     if (product) {
-      res.render("products/detail", {product});
-    }else{
-        res.send("No existe el producto que buscas!!")
+      res.render("products/detail", { product });
+    } else {
+      res.send("No existe el producto que buscas!!");
     }
   },
-
-
 
   create: (req, res) => {
     res.render("products/create");
@@ -28,13 +26,14 @@ const controller = {
 
   store: (req, res) => {
     const newProduct = {
-        id: uuidv4(),
-        name: req.body.name,
-        brand: req.body.brand,
-        category: req.body.category,
-        description: req.body.description,
-        price: req.body.price,
-        image: req.file?.filename || 'default-product-image.png',
+      id: uuidv4(),
+      name: req.body.name,
+      brand: req.body.brand,
+      category: req.body.category,
+      description: req.body.description,
+      color: req.body.color,
+      price: req.body.price,
+      image: req.file?.filename || "default-product-image.png",
     };
     products.push(newProduct);
 
@@ -45,7 +44,13 @@ const controller = {
   },
 
   edit: (req, res) => {
-    res.render("products/edit");
+    let id = req.params.id;
+    let product = products.find((product) => product.id == id);
+    if (product) {
+      res.render("products/edit", { product });
+    } else {
+      res.send("<h1>NO EXISTE EL PRODUCTO!!</h1>");
+    }
   },
 
   productCart: (req, res) => {

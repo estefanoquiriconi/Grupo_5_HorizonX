@@ -5,6 +5,7 @@
   "brand": "Redmi",
   "category": "celular",
   "description": "El Xiaomi Redmi Note 8 marca la octava generación de la serie Redmi Note, esta vez con una pantalla Full HD+ de 6.3 pulgadas y potenciado por un procesador Snapdragon 665 de ocho núcleos. Con opciones de 4GB de memoria RAM y 64GB de almacenamiento, 6GB de RAM y 64GB de almacenamiento o 6GB de RAM y 128GB de almacenamiento, el Redmi Note 8 cuenta con una cámara cuádruple en su posterior de 48 MP + 8 MP + 2 MP + 2 MP, y su cámara para selfies es de 13 megapixels. El Redmi Note 8 completa sus características con una batería de 4000 mAh con soporte para carga rápida, lector de huellas montado en su parte posterior, resistencia a salpicaduras y corre MIUI 10 basado en Android 9.0 Pie.",
+  "color": "Negro",
   "price": "80000",
   "image": "1701897974058_img.png"
  },
@@ -14,6 +15,7 @@
   "brand": "Motorola",
   "category": "celular",
   "description": "El Motorola Moto G13 es parte de la serie Moto G para el 2023. Con una pantalla de 6.5 pulgadas a resolución HD+ y tasa de refresco de 90Hz, el Moto G13 está potenciado por un procesador MediaTek Helio G85 acompañado de 4GB de RAM con opciones de 64GB o 128GB de almacenamiento interno expandible. El Moto G13 cuenta con una cámara triple liderada por un sensor de 50MP y una cámara selfie de 8MP, completando sus características con una batería de 5000 mAh con carga rápida de 20W, parlantes stereo, sonido Dolby Atmos, lector de huellas lateral y Android 13.",
+  "color": "Negro",
   "price": "150000",
   "image": "1701898512761_img.jpg"
  },
@@ -23,6 +25,7 @@
   "brand": "Motorola",
   "category": "accesorio",
   "description": "Práctico y de bolsillo. Diseño de auriculares de ajuste ergonómico para mayor comodidad y ajuste seguro.",
+  "color": "Negro",
   "price": "71999",
   "image": "1701976488897_img.png"
  }
