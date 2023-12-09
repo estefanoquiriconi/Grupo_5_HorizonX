@@ -7,7 +7,7 @@
     <main class="container">
       <section class="product-container">
         <a href="/products/create">+Agregar</a>
-        <% products.forEach(product => { %>
+        <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
@@ -19,7 +19,7 @@
             <img
               class="product-image"
               src="images/products/<%= product.image %>"
-              alt="moto-razr-40ultra"
+              alt="<%=product.name %>"
             />
           </article>
         </a>

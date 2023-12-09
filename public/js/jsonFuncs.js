@@ -7,6 +7,11 @@ const jsonFuncs = {
 
         let newJSON = JSON.stringify(json, null, " ");
         fs.writeFileSync(path.resolve(jpath), newJSON);
+    },
+
+    updateData: function(json,jpath) {
+        let newJSON = JSON.stringify(json, null, " ");
+        fs.writeFileSync(path.resolve(jpath), newJSON);
     }
 }
 

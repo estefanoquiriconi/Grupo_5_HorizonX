@@ -29,7 +29,10 @@ router.post("/create", upload.single('image'), controller.store);
 router.get("/create", controller.create);
 
 router.get("/edit/:id", controller.edit);
+router.put("/edit/:id",upload.single('image'),controller.update);
 
 router.get("/productCart", controller.productCart);
+
+router.delete("/delete/:id",controller.delete);
 
 module.exports = router;

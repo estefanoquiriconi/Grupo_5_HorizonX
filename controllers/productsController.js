@@ -1,13 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const jFunc = require('../public/js/jsonFuncs');
+const jsonFuncs = require("../public/js/jsonFuncs");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
   index: (req, res) => {
-    res.render("products/products", { products });
+    res.render("products/products", { products, cat : req.query.cat });
   },
 
   detail: (req, res) => {
@@ -53,9 +55,31 @@ const controller = {
     }
   },
 
+  update: (req,res) => {
+    let save = products.find( e => e.id == req.params.id)
+    if (save) {
+      save.name = req.body.brand;
+      save.brand = req.body.model;
+      save.category = req.body.category;
+      save.description = req.body.description;
+      save.color = req.body.color;
+      save.price = req.body.price;
+    }
+
+    jsonFuncs.updateData(products,productsFilePath)
+    
+    res.redirect('/products/detail/'+req.params.id)
+
+  },
+
   productCart: (req, res) => {
     res.render("products/productCart");
   },
+
+  delete: (req,res) => {
+
+  }
+
 };
 
 module.exports = controller;
