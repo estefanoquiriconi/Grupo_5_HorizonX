@@ -17,7 +17,6 @@ const storage = multer.diskStorage({
 
 router.get('/login', controller.login)
 router.get('/register', controller.register)
-
 router.post('/register', upload.single('pfpimg'),controller.newUser);
 
 module.exports = router;
