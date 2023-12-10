@@ -18,7 +18,7 @@ const controller = {
     if (product) {
       res.render("products/detail", { product });
     } else {
-      res.send("No existe el producto que buscas!!");
+      res.send("¡No existe el producto que buscas!");
     }
   },
 
@@ -51,12 +51,16 @@ const controller = {
     if (product) {
       res.render("products/edit", { product });
     } else {
-      res.send("<h1>NO EXISTE EL PRODUCTO!!</h1>");
+      res.send("¡No existe el producto que desea modificar!");
     }
   },
 
   update: (req,res) => {
-    let save = products.find( e => e.id == req.params.id)
+    /* correcion no se puede modificar un producto que no exista
+    let id = req.params.id;
+    let product = products.find((product) => product.id == id);
+    if (product) {
+    let save = products.find( e => e.id == req.params.id)*/
     if (save) {
       save.name = req.body.brand;
       save.brand = req.body.model;
@@ -64,10 +68,13 @@ const controller = {
       save.description = req.body.description;
       save.color = req.body.color;
       save.price = req.body.price;
-    }
 
+    }
     jsonFuncs.updateData(products,productsFilePath)
-    
+  /*} else {
+    res.send("¡No existe el producto que desea modificar!");
+  }*/
+   
     res.redirect('/products/detail/'+req.params.id)
 
   },
