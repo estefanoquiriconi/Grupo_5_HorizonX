@@ -56,7 +56,7 @@ const controller = {
   },
 
   update: (req,res) => {
-    /* correcion no se puede modificar un producto que no exista*/
+    /*correcion no se puede modificar un producto que no exista*/
     let id = req.params.id;
     let product = products.find((product) => product.id == id);
     if (product) {
@@ -87,7 +87,7 @@ const controller = {
     let id = req.params.id;
     let product = products.find((product) => product.id == id);
     if (product) {
-      res.render("products/delete", { product });
+      res.render("products/delete/:id", { product });
     } else {
       res.send("El producto que deseas eliminar no existe!!");
     }
