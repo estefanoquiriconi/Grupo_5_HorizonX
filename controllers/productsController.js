@@ -56,11 +56,11 @@ const controller = {
   },
 
   update: (req,res) => {
-    /* correcion no se puede modificar un producto que no exista
+    /* correcion no se puede modificar un producto que no exista*/
     let id = req.params.id;
     let product = products.find((product) => product.id == id);
     if (product) {
-    let save = products.find( e => e.id == req.params.id)*/
+    let save = products.find( e => e.id == req.params.id)
     if (save) {
       save.name = req.body.brand;
       save.brand = req.body.model;
@@ -71,9 +71,9 @@ const controller = {
 
     }
     jsonFuncs.updateData(products,productsFilePath)
-  /*} else {
+  } else {
     res.send("¡No existe el producto que desea modificar!");
-  }*/
+  }
    
     res.redirect('/products/detail/'+req.params.id)
 
