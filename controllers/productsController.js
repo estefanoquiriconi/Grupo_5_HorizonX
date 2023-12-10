@@ -77,9 +77,14 @@ const controller = {
   },
 
   delete: (req,res) => {
-
+    let id = req.params.id;
+    let product = products.find((product) => product.id == id);
+    if (product) {
+      res.render("products/delete", { product });
+    } else {
+      res.send("El producto que deseas eliminar no existe!!");
+    }
   }
-
 };
 
 module.exports = controller;
