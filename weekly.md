@@ -6,4 +6,4 @@ Sábado en la reunión: Agregar el método PUT en el edit de productos, agregado
 Los nombres del formulario eran diferentes a los nombres mostrados en las label de su html, QUE A SU VEZ, eran diferentes a los nombres usados en el JSON
 
 ## Qué se va a hacer esta semana.
-Falta el DELETE de productos, y charlar sobre la vista de la página, la presentación del contenido y qué contenido
+Falta charlar sobre la vista de la página, la presentación del contenido y qué contenido
