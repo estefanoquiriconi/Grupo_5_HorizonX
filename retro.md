@@ -36,14 +36,19 @@ Nada
 # Retrospectiva Sprint 3!
 
 ## Start Doing:
+Organizar mejor el próximo sprint
 
 ## More Of:
+Reuniones
 
 ## Keep Doing:
+División de trabajo
 
 ## Less Off:
+Nada
 
 ## Stop Doing:
+Nada
 
 
 # Retrospectiva Sprint 4!
