@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const jFunc = require('../public/js/jsonFuncs');
 const jsonFuncs = require("../public/js/jsonFuncs");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -9,7 +8,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
   index: (req, res) => {
-    res.render("products/products", { products, cat : req.query.cat });
+    res.render("products/products", { products, cat: req.query.cat });
   },
 
   detail: (req, res) => {
@@ -55,9 +54,8 @@ const controller = {
     }
   },
 
-  update: (req,res) => {
-    
-    let save = products.find( e => e.id == req.params.id)
+  update: (req, res) => {
+    let save = products.find((e) => e.id == req.params.id);
     if (save) {
       save.name = req.body.brand;
       save.brand = req.body.model;
@@ -65,26 +63,31 @@ const controller = {
       save.description = req.body.description;
       save.color = req.body.color;
       save.price = req.body.price;
-      jsonFuncs.updateData(products,productsFilePath)
+      jsonFuncs.updateData(products, productsFilePath);
     } else {
       res.send("¡No existe el producto que desea modificar!");
     }
-    
-   
-    res.redirect('/products/detail/'+req.params.id)
 
+    res.redirect("/products/detail/" + req.params.id);
   },
 
   productCart: (req, res) => {
     res.render("products/productCart");
   },
 
-  delete: (req,res) => {
+  delete: (req, res) => {
     let id = req.params.id;
-    products = products.filter(product => product.id != id);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-        res.redirect("/products");
-
-}
+    //Eliminar la imagen del producto
+    let productDelete = products.find((product) => product.id == id);
+    if (productDelete.image != "default-product-image") {
+      fs.unlinkSync(
+        path.join(__dirname, "../public/images/products/", productDelete.image)
+      );
+    }
+    
+    products = products.filter((product) => product.id != id);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+    res.redirect("/products");
+  },
 };
-module.exports = controller
+module.exports = controller;
