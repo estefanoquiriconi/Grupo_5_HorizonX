@@ -88,7 +88,7 @@ const controller = {
     products = products.filter(product => product.id != id);
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
         res.redirect("/products");
-  
+
 }
 };
 module.exports = controller

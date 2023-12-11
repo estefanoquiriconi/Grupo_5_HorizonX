@@ -1,0 +1,1 @@
+app.use("/products", productsRoutes);
