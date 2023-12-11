@@ -34,7 +34,9 @@ a{
 }
 
 .product-image {
-  width: 100%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .product-detail {
