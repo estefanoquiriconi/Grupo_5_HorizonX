@@ -5,8 +5,8 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main class="container">
+      <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
       <section class="product-container">
-        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
         <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
