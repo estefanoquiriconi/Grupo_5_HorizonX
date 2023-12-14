@@ -10,7 +10,7 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -85,7 +85,7 @@ body{
 
 .main-header-banner{
   position: relative;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
 }
 
 .main-header-banner-video-mobile{
@@ -126,7 +126,7 @@ body{
 
 .main-header-banner-btn:hover{
   cursor: pointer;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
   color: black;
   border: 1px solid black;
   scale: 1.025;
@@ -137,7 +137,7 @@ footer{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #fff;
+  background-color: white;
   text-align: center;
   width: 100%;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
@@ -166,7 +166,7 @@ footer{
 
 .fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover {
   transform: scale(1.2);
-  color: #27374d;
+  color: var(--color1);
 }
 
 @media(min-width: 768px){

@@ -6,7 +6,9 @@
     <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
-      <button type="button" class="main-header-banner-btn">Comprar</button>
+      <form action="/products/productCart/" method="GET">
+        <button type="submit" class="main-header-banner-btn">Comprar</button>
+      </form>
       <video autoplay muted class="main-header-banner-video-mobile">
         <source src="/videos/HOME_B5_Main-KV_720x1080_mo_default.webm" />
       </video>

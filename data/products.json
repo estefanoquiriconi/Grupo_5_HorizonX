@@ -1,7 +1,7 @@
 [
  {
   "id": "ee302cc1-1ecc-4988-afde-b1c83fc8d3a3",
-  "name": "Note 9",
+  "name": "Note 8",
   "brand": "Redmi",
   "category": "celular",
   "description": "El Xiaomi Redmi Note 8 marca la octava generación de la serie Redmi Note, esta vez con una pantalla Full HD+ de 6.3 pulgadas y potenciado por un procesador Snapdragon 665 de ocho núcleos. Con opciones de 4GB de memoria RAM y 64GB de almacenamiento, 6GB de RAM y 64GB de almacenamiento o 6GB de RAM y 128GB de almacenamiento, el Redmi Note 8 cuenta con una cámara cuádruple en su posterior de 48 MP + 8 MP + 2 MP + 2 MP, y su cámara para selfies es de 13 megapixels. El Redmi Note 8 completa sus características con una batería de 4000 mAh con soporte para carga rápida, lector de huellas montado en su parte posterior, resistencia a salpicaduras y corre MIUI 10 basado en Android 9.0 Pie.",
@@ -28,5 +28,25 @@
   "color": "Negro",
   "price": "80000",
   "image": "1702522200114_img.webp"
+ },
+ {
+  "id": "628a3012-a4f5-4e47-b0c0-00fb3f2f9bcc",
+  "name": "Galaxy Z Flip 5",
+  "brand": "Samsung",
+  "category": "celular",
+  "description": "Capturá selfies asombrosas con FlexCam desde cualquier ángulo. No importa qué cámara elijas, el Galaxy Z Flip5 lo facilita. Ahora todo lo que te queda es dominar el arte de las poses. Abrí la aplicación de la cámara con el atajo de Flex Window para capturar el momento. Sacá una foto, ajustá la configuración y volvé a sacarla, todo sin tener que abrir tu smartphone. Desplegá Flex Mode e incluí a tus amigos en el marco para una selfie grupal más ancha. Utilizá Camera Controller en tu Galaxy Watch y sorprendé al mundo con tus selfies ampliadas. La flexibilidad más reciente.",
+  "color": "Grafito",
+  "price": "900000",
+  "image": "1702546563559_img.png"
+ },
+ {
+  "id": "cffab713-e816-490a-b19f-3cda69f0a92f",
+  "name": "Galaxy Buds FE",
+  "brand": "Samsung",
+  "category": "accesorio",
+  "description": "Tamaño compacto pero potente. La batería dura hasta 30 horas con una sola carga para que disfrutes a diario de tu interminable lista de reproducción de canciones, podcasts o videos de redes sociales.",
+  "color": "Negro",
+  "price": "87999",
+  "image": "1702546927693_img.png"
  }
 ]
