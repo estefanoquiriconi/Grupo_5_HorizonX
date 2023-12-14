@@ -10,16 +10,6 @@
   "image": "1701897974058_img.png"
  },
  {
-  "id": "d8ce3052-ce16-4e87-b5b9-082e01ddf775",
-  "name": "Buds 250",
-  "brand": "Motorola",
-  "category": "accesorio",
-  "description": "Práctico y de bolsillo. Diseño de auriculares de ajuste ergonómico para mayor comodidad y ajuste seguro.",
-  "color": "Negro",
-  "price": "71999",
-  "image": "1701976488897_img.png"
- },
- {
   "id": "9457b6c4-5fed-468d-8e18-3978b709cca0",
   "name": "G13",
   "brand": "Motorola",
@@ -28,5 +18,15 @@
   "color": "Negro",
   "price": "150000",
   "image": "1701898512761_img.jpg"
+ },
+ {
+  "id": "da8a287d-a9aa-4687-8a2a-9671ab4d3449",
+  "name": "Buds 250",
+  "brand": "Motorola",
+  "category": "accesorio",
+  "description": "Los nuevos Motorola Buds 250 con tecnología True Wireless cuentan con conexión Bluetooth 5.0 que les permite sincronizarse con teléfonos, ordenadores o tablets. Además, puedes conectarte a cualquier aparato independientemente de lo que estés utilizando… Puedes conectarte al teléfono móvil mientras vas en metro pero al ordenador cuando llegas a casa o a la tablet si vas a ver una película y vas a descansar de trabajar en el sofá.",
+  "color": "Negro",
+  "price": "80000",
+  "image": "1702522200114_img.webp"
  }
 ]

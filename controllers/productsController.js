@@ -57,8 +57,8 @@ const controller = {
   update: (req, res) => {
     let save = products.find((e) => e.id == req.params.id);
     if (save) {
-      save.name = req.body.brand;
-      save.brand = req.body.model;
+      save.name = req.body.name;
+      save.brand = req.body.brand;
       save.category = req.body.category;
       save.description = req.body.description;
       save.color = req.body.color;
@@ -79,7 +79,7 @@ const controller = {
     let id = req.params.id;
     //Eliminar la imagen del producto
     let productDelete = products.find((product) => product.id == id);
-    if (productDelete.image != "default-product-image") {
+    if (productDelete.image != "default-product-image.png") {
       fs.unlinkSync(
         path.join(__dirname, "../public/images/products/", productDelete.image)
       );
