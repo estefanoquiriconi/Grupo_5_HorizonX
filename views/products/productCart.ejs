@@ -1,307 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', {title: 'Carrito', styles: '/css/cart.css'}) %>
-<body>
+<%- include('../partials/head.ejs', {title: 'Carrito' , styles: '/css/cart.css' }) %>
 
-    <%- include('../partials/header.ejs') %>
+    <body>
 
-    <main class="container_cart">
+        <%- include('../partials/header.ejs') %>
 
+            <main class="container_cart">
 
+                <!-- PRIMER CARRO -->
 
+                <!-- seccion superior del carro -->
+                <% products.forEach(prod=> { %>
+                    <section class="conteiner_all_cart">
+                        <!-- seccione general del carro -->
+                        <article class="form_cart">
+                            <!-- imagen del producto -->
+                            <div class="product_img_detalle">
+                                <img class="img_product" src="/images/products/<%=prod.image  %>"
+                                    alt="<%= prod.name %>">
+                                <!-- seccion media del carro -->
 
-
-        <!-- PRIMER CARRO -->
-
-        <!-- seccion superior del carro -->
-        <section class="conteiner_all_cart">
-            <header class="form_up_cart">
-                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                <div class="ventana_cart">
-                    <button class="boton_secciones_cart_2">1</button>
-                    <button class="boton_secciones_cart">2</button>
-                    <button class="boton_secciones_cart">3</button>
-                    <button class="boton_secciones_cart">4</button>
-                </div>
-            </header>
-            <!-- seccione general del carro -->
-            <article class="form_cart">
-                <!-- imagen del producto -->
-                <div class="product_img_detalle">
-                    <img class="img_product" src="/images/celulares/moto-edge-40.png" alt="">
-                    <!-- seccion media del carro -->
-                    <div class="datos_adicionales">
-                        <p class="name_product">Moto edge 40 lite</p>
-                        <p> Lugar para cantidad</p>
-                        <p class="precio_cantidad"> $$$$$ </p>
-                    </div>
-                </div>
-                <!-- Ventana de datos de compra (hasta linea 95)-->
-                <div class="detalle_compra">
-                    <p class="texto_detalle">Entrega</p>
-                    <p>Codigo postal</p>
-                    <form action="productCart.html" method="POST">
-                        <div class="formulario_cart">
-                            <label for="Codigo postal"></label>
-                            <input class="control" type="text" name="Codigo postal" id="Codigo postal">
-                            <button class="boton_detalles">Calcular</button>
-
-                        </div>
-                        <p class="texto_detalle">Cupon</p>
-                        <div class="formulario_cart">
-                            <label for="Cupon"></label>
-                            <input class="control" type="text" name="Cupon" id="Cupon">
-                            <button class="boton_detalles">Agregar</button>
-                        </div>
-                        <p class="texto_detalle">Resumen de compra</p>
-                        <div class="div_span">
-                            <p>Subtototal</p>
-                            <p> $$$$ </p>
-                        </div>
-                        <div class="div_span">
-                            <p>Costo de envio</p>
-                            <p> $$$$ </p>
-                        </div>
-                        <div class="div_span_total">
-                            <p>Importe total</p>
-                            <p> $$$$ </p>
-                            <!-- Hasta aqui ventana de compras -->
-                        </div>
-                        <div class="botones_finales">
-                            <button class="product-buy-btn">Comprar</button>
-                            <button class="product-buy-btn">Volver</button>
-                        </div>
-                    </form>
-                </div>
-            </article>
-        </section>
-
-        <!-- SEGUNDO CARRO-->
-
-        <section class="conteiner_all_cart">
-            <header class="form_up_cart">
-                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                <div class="ventana_cart">
-                    <button class="boton_secciones_cart">1</button>
-                    <button class="boton_secciones_cart_2">2</button>
-                    <button class="boton_secciones_cart">3</button>
-                    <button class="boton_secciones_cart">4</button>
-                </div>
-            </header>
-            <!-- seccion general del carro -->
-            <article class="form_cart">
-                <!-- seccion media del carro -->
-                <div class="datos_demas_carros">
-                    <p class="name_product">Identificacion</p>
-                    <form action="productCart.html" method="POST">
-                        <label>E-mail:</label>
-                        <input class="control" type="email" name="email" required>
-                        <br>
-                        </br>
-                        <label>Nombre:</label>
-                        <input class="control" type="text" name="nombre" required>
-                        <br></br>
-                        <label>Apellido:</label>
-                        <input class="control" type="text" name="apellido" required>
-                        <br></br>
-                        <label>N° Documento:</label>
-                        <input class="control" type="number" name="D.N.I" required>
-                        <br></br>
-                        <label>Telefono:</label>
-                        <input class="control" type="tel" name="telefono" required>
-                        <br></br>
-                        <p class="negrita">Noticias y promociones</p>
-                        <label class="terminos_condiciones"><input type="radio"> Recibir emails con
-                            promociones</label>
-                        <br></br>
-                        <p class="negrita">Terminos y condiciones</p>
-                        <label class="terminos_condiciones"><input type="radio"> Acepto los <a href="">terminos y
-                                condiciones</a></label>
-                        <br></br>
-                        <div class="botones_finales">
-                            <button class="product-buy-btn">Continuar</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Ventana de datos de compra -->
-                <div class="detalle_compra">
-                    <p class="texto_detalle">Detalle de compra</p>
-                    </p>
-                    <p class="texto_detalle">Moto edge 40 lite</p>
-                    <div class="div_span">
-                        <p>Subtototal</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span">
-                        <p>Costo de envio</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span_total">
-                        <p>Importe total</p>
-                        <p> $$$$ </p>
-                        <!-- Hasta aqui ventana de compras -->
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- TERCER CARRO -->
-
-        <section class="conteiner_all_cart">
-            <header class="form_up_cart">
-                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                <div class="ventana_cart">
-                    <button class="boton_secciones_cart">1</button>
-                    <button class="boton_secciones_cart">2</button>
-                    <button class="boton_secciones_cart_2">3</button>
-                    <button class="boton_secciones_cart">4</button>
-                </div>
-            </header>
-            <!-- seccione general del carro -->
-            <article class="form_cart">
-                <div class="datos_demas_carros">
-                    <p class="precio_cantidad">Envío</p>
-                    <br></br>
-                    <p class="name_product">Método de entrega</p>
-                    <label><input type="radio" name="envio"> Retiro en sucursal</label>
-                    <label><input type="radio" name="envio"> Envio a domicilio</label>
-                    <br></br>
-
-                    <div class="datos_envio">
-                        <form action="productCart.html" method="POST">
-                            <label>Calle*</label>
-                            <input type="text" name="calle" required>
-                            <br></br>
-
-                            <label>Numeracion*</label>
-                            <input type="number" name="numero" required>
-                            <br></br>
-                            <label>Piso o Dpto</label>
-                            <input type="text" name="piso" required>
-                            <br></br>
-
-                            <label>Barrio*</label>
-                            <input type="text" name="barrio" required>
-                            <br></br>
-
-                            <label>Provincia</label>
-                            <select name="Provincia" id="">
-                                <option value="">Santiago del estero</option>
-                                <option value="">Buenos Aires</option>
-                                <option value="">Mendoza"</option>
-                                <option value="">Tucuman</option>
-                                <option value="">Misiones</option>
-                                <option value="">Santa fé</option>
-                                <option value="">Cordoba</option>
-                            </select>
-                            <label>Ciudad</label>
-                            <select name="Ciudad" id="">
-                                <option value="">Capital</option>
-                                <option value="">Monte Quemado</option>
-                                <option value="">La Banda"</option>
-                                <option value="">Bandera</option>
-                                <option value="">CABA</option>
-                                <option value="">Quimilí</option>
-                                <option value="">Pintos</option>
-                            </select>
-                            <div class="botones_finales">
-                                <button class="product-buy-btn">Continuar</button>
                             </div>
+                            <!-- Ventana de datos de compra (hasta linea 95)-->
+                            <div class="detalle_compra">
+                                <div class="datos_adicionales">
+                                    <p class="name_product">
+                                        <%= prod.name %>
+                                    </p>
+                                    <p> <span class="boldy">Color:</span>
+                                        <%= prod.color %>
+                                    </p>
+                                    <% if (prod.category == "celular") { %>
+                                        <p> <span class="boldy">Almacenamiento:</span> </p>
+                                        <p> <span class="boldy">Cámara:</span> </p>
+                                    <% } %>
+                                    
+                                </div>
+                                <div class="div_span_total">
+                                    <p>Precio</p>
+                                    <p>$<%= prod.price %>
+                                    </p>
+                                    <!-- Hasta aqui ventana de compras -->
+                                </div>
+                                <div class="botones_finales">
+                                    <form action="/products/buy?id=<%= prod.id %>&_method=DELETE" method="post"
+                                        enctype="multipart/form-data"><button type="submit">Quitar</button></form>
+                                </div>
+                                </form>
+                            </div>
+                        </article>
+                    </section>
+                    <% }) %>
 
-                        </form>
-                    </div>
-                </div>
-                <!-- Ventana de datos de compra -->
-                <div class="detalle_compra">
+                        <!-- TERCER CARRO -->
 
-                    <p class="texto_detalle">Detalle de compra</p>
-                    </p>
-                    <p class="texto_detalle">Moto edge 40 lite</p>
+                        <div class="conteiner_all_cart">
 
-                    </p>
-                    <p class="texto_detalle">Resumen de compra</p>
-                    <div class="div_span">
-                        <p>Subtototal</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span">
-                        <p>Costo de envio</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span_total">
-                        <p>Importe total</p>
-                        <p> $$$$ </p>
+                            <!-- seccione general del carro -->
+                            <article class="form_cart">
 
-                    </div>
+                                <% if (products.length>0) { %>
+                                    <div class="datos_demas_carros">
+                                        <p class="precio_cantidad">Envío</p>
+                                        <div class="entrega-div">
+                                            <p class="name_product">Método de entrega</p>
+                                            <div id="inp-radio"><label><input type="radio" name="envio"> Retiro en sucursal</label>
+                                            <label><input type="radio" name="envio"> Envio a domicilio</label></div>
+                                        </div>
+    
+    
+                                        <div class="form-div">
+                                            <form action="productCart.html" method="POST">
+    
+                                                <input type="text" class="txt-inp" name="calle" placeholder="Calle*">
+                                                <input type="number" class="txt-inp" name="numero"
+                                                    placeholder="Numeración*">
+                                                <input type="text" class="txt-inp" name="piso" placeholder="Piso o Dpto">
+                                                <input type="text" class="txt-inp" name="barrio" placeholder="Barrio"
+                                                    required>
+    
+                                                
+                                                <select name="provincia" id="">
+                                                    <option value="sgo">Santiago del estero</option>
+                                                    <option value="bsas">Buenos Aires</option>
+                                                    <option value="mnd">Mendoza</option>
+                                                    <option value="tuc">Tucuman</option>
+                                                    <option value="mis">Misiones</option>
+                                                    <option value="sfe">Santa fé</option>
+                                                    <option value="cba">Cordoba</option>
+                                                </select>
+    
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- Ventana de datos de compra -->
+                                    <div class="detalle_compra">
+                                        <p class="texto_detalle">Detalle de compra</p>
+                                        <% products.forEach(prod=> { %>
+                                            <p class="">
+                                                <%= prod.name %>
+                                            </p>
+                                            <% }) %>
+    
+                                                </p>
+                                                <p class="texto_detalle">Resumen de compra</p>
+                                                <div class="div_span">
+                                                    <p>Subtotal</p>
+                                                    <p> $<%= products.reduce( (accumulator, e)=> accumulator +
+                                                            Number(e.price),
+                                                            0,
+                                                            )%> </p>
+                                                </div>
+                                                <div class="div_span">
+                                                    <p>Costo de envio</p>
+                                                    <p> $500 </p>
+                                                </div>
+                                                <div class="div_span_total">
+                                                    <p>Importe total</p>
+                                                    <p> $ <%= 500+products.reduce( (accumulator, e)=> accumulator +
+                                                            Number(e.price),
+                                                            0,
+                                                            )%> </p>
+                                                    <!-- Hasta aqui ventana de compras -->
+                                                </div>
+                                                <div class="botones_finales">
+                                                    <button>Finalizar Compra</button>
+                                                </div>
+                                    </div>
+                                <% } else { %>
+                                    <div class="datos_demas_carros">
+                                        <br><p class="precio_cantidad">No tienes ningún producto en el carrito!</p>
+                                        </div><br>
+                                    </div>
+                                <% } %>
+ 
+                                
+                            </article>
+                        </div>
 
-                </div>
-            </article>
-        </section>
-
-        <!-- CUARTO CARRO -->
-
-        <section class="conteiner_all_cart">
-            <header class="form_up_cart">
-                <img class="logo_cart" src="/images/2logo.png" alt=Logo>
-                <div class="ventana_cart">
-                    <button class="boton_secciones_cart">1</button>
-                    <button class="boton_secciones_cart">2</button>
-                    <button class="boton_secciones_cart">3</button>
-                    <button class="boton_secciones_cart_2">4</button>
-                </div>
-            </header>
-            <!-- seccione general del carro -->
-            <article class="form_cart">
-
-                <!-- seccion media del carro -->
-                <div class="datos_demas_carros">
-                    <p class="name_product">Metodos de pago</p>
-                    <div class="detalles_carro_cuatro">
-
-
-                        <button class="boton_pagos">Debito</button>
-
-                        <button class="boton_pagos">Credito</button>
-
-                        <button class="boton_pagos">Efectivo</button>
-
-                    </div>
-
-
-                </div>
-                <!-- Ventana de datos de compra -->
-                <div class="detalle_compra">
-                    <p class="texto_detalle">Detalle de compra</p>
-                    <p class="texto_detalle">Moto edge 40 lite</p>
-
-                    </p>
-                    <p class="texto_detalle">Resumen de compra</p>
-                    <div class="div_span">
-                        <p>Subtototal</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span">
-                        <p>Costo de envio</p>
-                        <p> $$$$ </p>
-                    </div>
-                    <div class="div_span_total">
-                        <p>Importe total</p>
-                        <p> $$$$ </p>
-                        <!-- Hasta aqui ventana de compras -->
-                    </div>
-                    <div class="botones_finales">
-                        <button class="boton_pagos">Finalizar Compra</button>
-
-                    </div>
-                </div>
-            </article>
-        </section>
-
-    </main>
+            </main>
 
 
-    <%- include('../partials/footer.ejs') %>
+            <%- include('../partials/footer.ejs') %>
 
-</body>
+    </body>
 
 </html>

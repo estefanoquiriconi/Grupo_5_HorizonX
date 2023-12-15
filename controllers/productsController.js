@@ -2,9 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const jsonFuncs = require("../public/js/jsonFuncs");
+const { log } = require("console");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let cartList = JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/cart.json"),"utf-8"));
 
 const controller = {
   index: (req, res) => {
@@ -72,7 +74,7 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("products/productCart");
+    res.render("products/productCart",{products: cartList});
   },
 
   delete: (req, res) => {
@@ -89,5 +91,24 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     res.redirect("/products");
   },
+  
+  buy: (req,res) => {
+    let id = req.query.id;
+    let prod = products.find(e => e.id == id);
+
+    console.log(req.query.id);
+    console.log(prod.id);
+
+    jsonFuncs.newData(prod, cartList, path.resolve(__dirname,"../data/cart.json"))
+    res.redirect("/products/productCart")
+  },
+
+  cartRemove: (req,res) => {
+    let id = req.query.id;
+    cartList = cartList.filter(e => e.id != id)
+    jsonFuncs.updateData(cartList, path.resolve(__dirname,"../data/cart.json"))
+    res.redirect("/products/productCart")
+  }
+
 };
 module.exports = controller;

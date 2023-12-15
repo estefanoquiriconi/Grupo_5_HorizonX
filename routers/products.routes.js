@@ -32,6 +32,8 @@ router.get("/edit/:id", controller.edit);
 router.put("/edit/:id",upload.single('image'),controller.update);
 
 router.get("/productCart", controller.productCart);
+router.post("/buy", controller.buy);
+router.delete("/buy", controller.cartRemove);
 
 router.delete("/delete/:id",controller.delete);
 
