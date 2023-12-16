@@ -13,21 +13,21 @@
         <form action="/products/edit/<%=product.id %>?_method=PUT" method="post" enctype="multipart/form-data">
           <h2>Editar Producto</h2>
           <hr>
-          <label for="brand">Nombre:</label>
+          <label for="name">Nombre:</label>
           <input
             type="text"
-            id="brand"
-            name="brand"
+            id="name"
+            name="name"
             class="input-field"
             value="<%= product.name %>"
             required
           />
   
-          <label for="model">Marca:</label>
+          <label for="brand">Marca:</label>
           <input
             type="text"
-            id="model"
-            name="model"
+            id="brand"
+            name="brand"
             class="input-field"
             value="<%= product.brand %>"
             required

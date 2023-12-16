@@ -2,9 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const jsonFuncs = require("../public/js/jsonFuncs");
+const { log } = require("console");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+let cartList = JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data/cart.json"),"utf-8"));
 
 const controller = {
   index: (req, res) => {
@@ -57,8 +59,8 @@ const controller = {
   update: (req, res) => {
     let save = products.find((e) => e.id == req.params.id);
     if (save) {
-      save.name = req.body.brand;
-      save.brand = req.body.model;
+      save.name = req.body.name;
+      save.brand = req.body.brand;
       save.category = req.body.category;
       save.description = req.body.description;
       save.color = req.body.color;
@@ -72,14 +74,18 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("products/productCart");
+    if(cartList.length != 0){
+      res.render("products/productCart",{products: cartList});
+    }else{
+      res.render("products/cartEmpty");
+    }
   },
 
   delete: (req, res) => {
     let id = req.params.id;
     //Eliminar la imagen del producto
     let productDelete = products.find((product) => product.id == id);
-    if (productDelete.image != "default-product-image") {
+    if (productDelete.image != "default-product-image.png") {
       fs.unlinkSync(
         path.join(__dirname, "../public/images/products/", productDelete.image)
       );
@@ -89,5 +95,21 @@ const controller = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
     res.redirect("/products");
   },
+  
+  buy: (req,res) => {
+    let id = req.query.id;
+    let prod = products.find(e => e.id == id);
+
+    jsonFuncs.newData(prod, cartList, path.resolve(__dirname,"../data/cart.json"))
+    res.redirect("/products/productCart")
+  },
+
+  cartRemove: (req,res) => {
+    let id = req.query.id;
+    cartList = cartList.filter(e => e.id != id)
+    jsonFuncs.updateData(cartList, path.resolve(__dirname,"../data/cart.json"))
+    res.redirect("/products/productCart")
+  }
+
 };
 module.exports = controller;

@@ -10,7 +10,10 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main-header{
@@ -82,7 +85,7 @@ body{
 
 .main-header-banner{
   position: relative;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
 }
 
 .main-header-banner-video-mobile{
@@ -123,7 +126,7 @@ body{
 
 .main-header-banner-btn:hover{
   cursor: pointer;
-  background-color: #DDE6ED;
+  background-color: var(--color4);
   color: black;
   border: 1px solid black;
   scale: 1.025;
@@ -134,11 +137,11 @@ footer{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: #fff;
-  margin: auto;
+  background-color: white;
   text-align: center;
   width: 100%;
   box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
 }
 
 
@@ -163,7 +166,7 @@ footer{
 
 .fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover {
   transform: scale(1.2);
-  color: #27374d;
+  color: var(--color1);
 }
 
 @media(min-width: 768px){
@@ -216,7 +219,7 @@ footer{
   width: 55px;
   height: 55px;
   line-height: 55px;  
-  bottom: 30px;
+  bottom: 150px;
   right: 30px;
   color: var(--color3);
   background:var(--color1);
@@ -226,6 +229,7 @@ footer{
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
   z-index: 100;
 }
+
 .btn-new:hover{
   text-decoration: none;
   color: var(--color3);

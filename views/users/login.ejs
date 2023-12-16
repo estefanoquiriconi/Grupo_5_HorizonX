@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', {title: 'Login', styles: '/css/login.css'}) %>
-<body>
-  <%- include('../partials/header.ejs') %>
-  <main>
-    <div class="main-welcome">
-      <h1 class="">Bienvenido a HorizonX</h1>
-    </div>
-    <div class="main-log-conti">
-      <p>Inicie sesion para continuar</p>
-    </div>
-    <div class="main-form">
-      <form action="/" method="POST">
-        <nav>
-          <label class="main-em">E-mail:</label>
-        </nav>
-          <input class="main-em1" type="email" name="email" required>
-        <nav>
-          <label class="main-pass">Contraseña:</label>
-        </nav>
-          <input class="main-pass1" type="password" name="password" required>
-        </nav>
+  <%- include('../partials/head.ejs', {title: 'Login', styles:
+  '/css/login.css'}) %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <br>
+        <hr>
+        <form action="/" method="POST" class="login-form">
+          <label for="email"> <i class="fa-solid fa-envelope"></i> Email</label>
+          <input type="email" name="email" class="icon-input"/>
+          <label for="password"> <i class="fa-solid fa-lock"></i> Contraseña </label>
+          <input type="password" name="password"/>
+          <button class="login-btn" type="submit">Ingresar</button>
+        </form>
         <p>
-          <button class="main-bott-sub" type="submit">Iniciar Sesion</button>
+          ¿No tienes una cuenta? <a href="../users/register"> Registrate </a>
         </p>
-        </nav>
-      </form>
-      <form action="/users/register">
-      </nav>
-      <p>
-        <button class="main-bott-sub2" type="submit">Registrarse</button>
-      </p>
-      </nav>
-      </form>
-    </div>
-  </main>
-  <%- include('../partials/footer.ejs') %>
-</body>
+      </div>
+
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
 </html>

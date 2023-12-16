@@ -6,7 +6,9 @@
     <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
-      <button type="button" class="main-header-banner-btn">Comprar</button>
+      <form action="/products/buy?id=628a3012-a4f5-4e47-b0c0-00fb3f2f9bcc" method="POST">
+        <button type="submit" class="main-header-banner-btn">Comprar</button>
+      </form>
       <video autoplay muted class="main-header-banner-video-mobile">
         <source src="/videos/HOME_B5_Main-KV_720x1080_mo_default.webm" />
       </video>
@@ -26,13 +28,13 @@
             <h2 class="product-title"><%= product.name %></h2>
             <p class="product-detail"><%= product.brand %></p>
             <p class="product-price">$<%= product.price %></p>
-            <form action="/products/productCart/" method="GET">
+            <form action="/products/buy?id=<%= product.id %>" method="POST">
               <button type="submit" class="product-buy-btn">Comprar</button>
             </form>
             <img
               class="product-image"
               src="images/products/<%= product.image %>"
-              alt="moto-razr-40ultra"
+              alt="Imagen del producto: <%= product.name %>"
             />
           </article>
         </a>
@@ -49,13 +51,13 @@
             <h2 class="product-title"><%= product.name %></h2>
             <p class="product-detail"><%= product.brand %></p>
             <p class="product-price">$<%= product.price %></p>
-            <form action="/products/productCart/" method="GET">
+            <form action="/products/buy?id=<%= product.id %>" method="POST">
               <button type="submit" class="product-buy-btn">Comprar</button>
             </form>
             <img
               class="product-image"
               src="images/products/<%= product.image %>"
-              alt="moto-razr-40ultra"
+              alt="Imagen del producto: <%= product.name %>"
             />
           </article>
         </a>

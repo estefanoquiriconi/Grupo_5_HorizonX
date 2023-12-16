@@ -7,12 +7,20 @@
     <main class="container">
       <div class="product-section">
         <div class="product">
-          <img src="/images/products/<%= product.image %>" alt="Producto 1" />
+          <img src="/images/products/<%= product.image %>" alt="Imagen del producto: <%= product.name %>" />
           <div class="product-details">
             <h2><%=product.brand +' '+ product.name %></h2>
             <p><%= product.description %></p>
             <p class="price">$<%= product.price %></p>
-            <a href="#" class="buy-button">Comprar</a>
+            <form
+              action="/products/buy?id=<%= product.id %>"
+              method="POST"
+              style="display: inline-flex"
+            >
+              <button type="submit" class="buy-button">
+                Comprar
+              </button>
+            </form>
             <a
               href="/products/edit/<%= product.id %>"
               class="buy-button"

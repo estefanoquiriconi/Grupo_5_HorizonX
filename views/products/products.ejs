@@ -5,17 +5,19 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main class="container">
+      <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
       <section class="product-container">
         <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
-          <a href="/products/detail/<%= product.id %>">
-            <article class="product">
-              <h2 class="product-title"><%= product.name %></h2>
-              <p class="product-detail"><%= product.brand %></p>
-              <p class="product-price">$<%= product.price %></p>
-              <form action="/products/productCart" method="GET">
-                <button type="submit" class="product-buy-btn">Comprar</button>
-              </form>
-              <img
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/buy?id=<%= product.id %>"
+              method="POST">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
               class="product-image"
               src="images/products/<%= product.image %>"
               alt="<%=product.name %>"
