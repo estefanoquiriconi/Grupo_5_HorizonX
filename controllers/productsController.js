@@ -106,7 +106,17 @@ const controller = {
 
   cartRemove: (req,res) => {
     let id = req.query.id;
-    cartList = cartList.filter(e => e.id != id)
+    let i = 0
+    cartList = cartList.filter(e => {
+      if (i==1) {
+        return true;
+      }
+      if (e.id == id) {
+        i=1;
+        return false;
+      }
+      return true;
+    })
     jsonFuncs.updateData(cartList, path.resolve(__dirname,"../data/cart.json"))
     res.redirect("/products/productCart")
   }
