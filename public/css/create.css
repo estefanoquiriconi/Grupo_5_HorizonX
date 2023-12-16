@@ -1,5 +1,5 @@
 .form-container {
-    width: 80%;
+    width: 75%;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -56,15 +56,9 @@ textarea {
 .button-ubicacion{
     display: flex;
     justify-content: center;
-}
-
-.button-volver{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
     margin-top: 5px;
 }
+
 
 button {
     width: 95%;
