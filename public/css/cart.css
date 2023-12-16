@@ -3,22 +3,22 @@
   --color2: #526d82;
   --color3: #9db2bf;
   --color4: #dde6ed;
-  --x-plt-1:#5176ad; 
-  --x-plt-2:#a5b7d4;
-  --x-plt-3:#24344c;
-  --x-plt-4:#6c849c;
-  --x-plt-5:#9cb4c4;
+  --x-plt-1: #5176ad;
+  --x-plt-2: #a5b7d4;
+  --x-plt-3: #24344c;
+  --x-plt-4: #6c849c;
+  --x-plt-5: #9cb4c4;
 }
 
 form {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
 select {
   border: 1px solid #ccc;
-  
+
   padding: 6px 8px;
   border-radius: 4px;
 }
@@ -26,14 +26,14 @@ select {
 .txt-inp {
   margin-top: 2px;
   margin-bottom: 16px;
-  
+
   border: 1px solid #ccc;
   padding: 6px 8px;
   border-radius: 4px;
 }
 
 .entrega-div {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
@@ -54,7 +54,7 @@ select {
 }
 
 .boldy {
-  font-weight:600;
+  font-weight: 600;
 }
 
 /* CARRO 1 */
@@ -65,7 +65,7 @@ select {
   display: flex;
   flex-direction: column;
   border-radius: 3%;
-  align-items:center;
+  align-items: center;
 }
 
 .product_img_detalle {
@@ -74,14 +74,12 @@ select {
   flex-wrap: wrap;
 }
 
-
 .img_product {
   width: 70%;
   height: 250px;
 }
 
 .datos_adicionales {
-  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -115,7 +113,6 @@ select {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-
 .datos_envio {
   flex-wrap: wrap;
   display: flex;
@@ -126,28 +123,27 @@ select {
 .form-div {
   align-self: center;
   flex-wrap: wrap;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: justify;
-  
+
   background-color: #fff;
   padding: 3% 6%;
   width: 95%;
   border-radius: 2%;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #inp-radio {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
 .texto_detalle {
   font-weight: bold;
   margin: 10px;
-  font-size:1.2em;
+  font-size: 1.2em;
 }
-
 
 .div_span {
   display: flex;
@@ -198,6 +194,23 @@ button:hover {
   opacity: 0.8;
 }
 
+.cartEmpty-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.cartEmpty{
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
 @media (min-width: 768px) {
   .form_cart {
     flex-direction: row;
@@ -205,6 +218,5 @@ button:hover {
 
   #inp-radio {
     flex-direction: row;
-    
   }
 }

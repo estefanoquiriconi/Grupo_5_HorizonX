@@ -74,7 +74,11 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("products/productCart",{products: cartList});
+    if(cartList.length != 0){
+      res.render("products/productCart",{products: cartList});
+    }else{
+      res.render("products/cartEmpty");
+    }
   },
 
   delete: (req, res) => {
@@ -95,9 +99,6 @@ const controller = {
   buy: (req,res) => {
     let id = req.query.id;
     let prod = products.find(e => e.id == id);
-
-    console.log(req.query.id);
-    console.log(prod.id);
 
     jsonFuncs.newData(prod, cartList, path.resolve(__dirname,"../data/cart.json"))
     res.redirect("/products/productCart")
