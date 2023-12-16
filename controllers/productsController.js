@@ -74,7 +74,11 @@ const controller = {
   },
 
   productCart: (req, res) => {
-    res.render("products/productCart",{products: cartList});
+    if(cartList.length != 0){
+      res.render("products/productCart",{products: cartList});
+    }else{
+      res.render("products/cartEmpty");
+    }
   },
 
   delete: (req, res) => {
@@ -96,16 +100,23 @@ const controller = {
     let id = req.query.id;
     let prod = products.find(e => e.id == id);
 
-    console.log(req.query.id);
-    console.log(prod.id);
-
     jsonFuncs.newData(prod, cartList, path.resolve(__dirname,"../data/cart.json"))
     res.redirect("/products/productCart")
   },
 
   cartRemove: (req,res) => {
     let id = req.query.id;
-    cartList = cartList.filter(e => e.id != id)
+    let i = 0
+    cartList = cartList.filter(e => {
+      if (i==1) {
+        return true;
+      }
+      if (e.id == id) {
+        i=1;
+        return false;
+      }
+      return true;
+    })
     jsonFuncs.updateData(cartList, path.resolve(__dirname,"../data/cart.json"))
     res.redirect("/products/productCart")
   }

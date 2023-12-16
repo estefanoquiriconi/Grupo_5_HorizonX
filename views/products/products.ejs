@@ -13,18 +13,21 @@
             <h2 class="product-title"><%= product.name %></h2>
             <p class="product-detail"><%= product.brand %></p>
             <p class="product-price">$<%= product.price %></p>
-            <form action="/products/productCart" method="GET">
+            <form action="/products/buy?id=<%= product.id %>"
+              method="POST">
               <button type="submit" class="product-buy-btn">Comprar</button>
             </form>
             <img
               class="product-image"
               src="images/products/<%= product.image %>"
               alt="<%=product.name %>"
-            />
-          </article>
-        </a>
-        <% }) %>
-      </section>
+              />
+            </article>
+          </a>
+          <% }) %>
+        </section>
+        <!-- boton de nuevo producto -->
+        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>

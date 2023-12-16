@@ -1,149 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', {title: 'Carrito' , styles: '/css/cart.css' }) %>
+  <%- include('../partials/head.ejs', {title: 'Carrito' , styles:
+  '/css/cart.css' }) %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main class="container_cart">
+      <% products.forEach(prod=> { %>
+      <section class="conteiner_all_cart">
+        <article class="form_cart">
+          <div class="product_img_detalle">
+            <img
+              class="img_product"
+              src="/images/products/<%=prod.image  %>"
+              alt="<%= prod.name %>"
+            />
+          </div>
+          <div class="detalle_compra">
+            <div class="datos_adicionales">
+              <p class="name_product"><%= prod.name %></p>
+              <p>
+                <span class="boldy">Color:</span>
+                <%= prod.color %>
+              </p>
+            </div>
+            <div class="div_span_total">
+              <p>Precio</p>
+              <p>$<%= prod.price %></p>
+            </div>
+            <div class="botones_finales">
+              <form
+                action="/products/buy?id=<%= prod.id %>&_method=DELETE"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <button type="submit">Quitar</button>
+              </form>
+            </div>
+          </div>
+        </article>
+      </section>
+      <% }) %>
+      <div class="conteiner_all_cart">
+        <article class="form_cart">
+          <% if (products.length>0) { %>
+          <div class="datos_demas_carros">
+            <p class="precio_cantidad">Envío</p>
+            <div class="entrega-div">
+              <p class="name_product">Método de entrega</p>
+              <div id="inp-radio">
+                <label
+                  ><input type="radio" name="envio" /> Retiro en sucursal</label
+                >
+                <label
+                  ><input type="radio" name="envio" /> Envio a domicilio</label
+                >
+              </div>
+            </div>
 
-    <body>
-
-        <%- include('../partials/header.ejs') %>
-
-            <main class="container_cart">
-
-                <!-- PRIMER CARRO -->
-
-                <!-- seccion superior del carro -->
-                <% products.forEach(prod=> { %>
-                    <section class="conteiner_all_cart">
-                        <!-- seccione general del carro -->
-                        <article class="form_cart">
-                            <!-- imagen del producto -->
-                            <div class="product_img_detalle">
-                                <img class="img_product" src="/images/products/<%=prod.image  %>"
-                                    alt="<%= prod.name %>">
-                                <!-- seccion media del carro -->
-
-                            </div>
-                            <!-- Ventana de datos de compra (hasta linea 95)-->
-                            <div class="detalle_compra">
-                                <div class="datos_adicionales">
-                                    <p class="name_product">
-                                        <%= prod.name %>
-                                    </p>
-                                    <p> <span class="boldy">Color:</span>
-                                        <%= prod.color %>
-                                    </p>
-                                    <% if (prod.category == "celular") { %>
-                                        <p> <span class="boldy">Almacenamiento:</span> </p>
-                                        <p> <span class="boldy">Cámara:</span> </p>
-                                    <% } %>
-                                    
-                                </div>
-                                <div class="div_span_total">
-                                    <p>Precio</p>
-                                    <p>$<%= prod.price %>
-                                    </p>
-                                    <!-- Hasta aqui ventana de compras -->
-                                </div>
-                                <div class="botones_finales">
-                                    <form action="/products/buy?id=<%= prod.id %>&_method=DELETE" method="post"
-                                        enctype="multipart/form-data"><button type="submit">Quitar</button></form>
-                                </div>
-                                </form>
-                            </div>
-                        </article>
-                    </section>
-                    <% }) %>
-
-                        <!-- TERCER CARRO -->
-
-                        <div class="conteiner_all_cart">
-
-                            <!-- seccione general del carro -->
-                            <article class="form_cart">
-
-                                <% if (products.length>0) { %>
-                                    <div class="datos_demas_carros">
-                                        <p class="precio_cantidad">Envío</p>
-                                        <div class="entrega-div">
-                                            <p class="name_product">Método de entrega</p>
-                                            <div id="inp-radio"><label><input type="radio" name="envio"> Retiro en sucursal</label>
-                                            <label><input type="radio" name="envio"> Envio a domicilio</label></div>
-                                        </div>
-    
-    
-                                        <div class="form-div">
-                                            <form action="productCart.html" method="POST">
-    
-                                                <input type="text" class="txt-inp" name="calle" placeholder="Calle*">
-                                                <input type="number" class="txt-inp" name="numero"
-                                                    placeholder="Numeración*">
-                                                <input type="text" class="txt-inp" name="piso" placeholder="Piso o Dpto">
-                                                <input type="text" class="txt-inp" name="barrio" placeholder="Barrio"
-                                                    required>
-    
-                                                
-                                                <select name="provincia" id="">
-                                                    <option value="sgo">Santiago del estero</option>
-                                                    <option value="bsas">Buenos Aires</option>
-                                                    <option value="mnd">Mendoza</option>
-                                                    <option value="tuc">Tucuman</option>
-                                                    <option value="mis">Misiones</option>
-                                                    <option value="sfe">Santa fé</option>
-                                                    <option value="cba">Cordoba</option>
-                                                </select>
-    
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- Ventana de datos de compra -->
-                                    <div class="detalle_compra">
-                                        <p class="texto_detalle">Detalle de compra</p>
-                                        <% products.forEach(prod=> { %>
-                                            <p class="">
-                                                <%= prod.name %>
-                                            </p>
-                                            <% }) %>
-    
-                                                </p>
-                                                <p class="texto_detalle">Resumen de compra</p>
-                                                <div class="div_span">
-                                                    <p>Subtotal</p>
-                                                    <p> $<%= products.reduce( (accumulator, e)=> accumulator +
-                                                            Number(e.price),
-                                                            0,
-                                                            )%> </p>
-                                                </div>
-                                                <div class="div_span">
-                                                    <p>Costo de envio</p>
-                                                    <p> $500 </p>
-                                                </div>
-                                                <div class="div_span_total">
-                                                    <p>Importe total</p>
-                                                    <p> $ <%= 500+products.reduce( (accumulator, e)=> accumulator +
-                                                            Number(e.price),
-                                                            0,
-                                                            )%> </p>
-                                                    <!-- Hasta aqui ventana de compras -->
-                                                </div>
-                                                <div class="botones_finales">
-                                                    <button>Finalizar Compra</button>
-                                                </div>
-                                    </div>
-                                <% } else { %>
-                                    <div class="datos_demas_carros">
-                                        <br><p class="precio_cantidad">No tienes ningún producto en el carrito!</p>
-                                        </div><br>
-                                    </div>
-                                <% } %>
- 
-                                
-                            </article>
-                        </div>
-
-            </main>
-
-
-            <%- include('../partials/footer.ejs') %>
-
-    </body>
-
+            <div class="form-div">
+              <form action="productCart.html" method="POST">
+                <input
+                  type="text"
+                  class="txt-inp"
+                  name="calle"
+                  placeholder="Calle*"
+                />
+                <input
+                  type="number"
+                  class="txt-inp"
+                  name="numero"
+                  placeholder="Numeración*"
+                />
+                <input
+                  type="text"
+                  class="txt-inp"
+                  name="piso"
+                  placeholder="Piso o Dpto"
+                />
+                <input
+                  type="text"
+                  class="txt-inp"
+                  name="barrio"
+                  placeholder="Barrio"
+                  required
+                />
+                <select name="provincia" id="">
+                  <option value="sgo">Santiago del estero</option>
+                  <option value="bsas">Buenos Aires</option>
+                  <option value="mnd">Mendoza</option>
+                  <option value="tuc">Tucuman</option>
+                  <option value="mis">Misiones</option>
+                  <option value="sfe">Santa fé</option>
+                  <option value="cba">Cordoba</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <div class="detalle_compra">
+            <p class="texto_detalle">Detalle de compra</p>
+            <% products.forEach(prod=> { %>
+            <p class=""><%= prod.name %></p>
+            <% }) %>
+            <p class="texto_detalle">Resumen de compra</p>
+            <div class="div_span">
+              <p>Subtotal</p>
+              <p>
+                $<%= products.reduce( (accumulator, e)=> accumulator +
+                Number(e.price), 0, )%>
+              </p>
+            </div>
+            <div class="div_span">
+              <p>Costo de envio</p>
+              <p>$500</p>
+            </div>
+            <div class="div_span_total">
+              <p>Importe total</p>
+              <p>
+                $ <%= 500+products.reduce( (accumulator, e)=> accumulator +
+                Number(e.price), 0, )%>
+              </p>
+            </div>
+            <div class="botones_finales">
+              <button>Finalizar Compra</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <% } %>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
 </html>
