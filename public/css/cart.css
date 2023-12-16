@@ -47,7 +47,7 @@ select {
 }
 
 .conteiner_all_cart {
-  border: solid 3px var(--color1);
+  border: dotted 3px var(--color1);
   width: 80%;
   border-radius: 2.5%;
   margin: 10px 10%;
@@ -72,10 +72,10 @@ select {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .img_product {
-  width: 70%;
   height: 250px;
 }
 
