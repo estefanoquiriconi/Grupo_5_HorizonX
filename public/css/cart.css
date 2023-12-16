@@ -41,7 +41,6 @@ select {
 
 .container_cart {
   width: 100%;
-  /*background-color: var(--color3);*/
   display: flex;
   flex-direction: column;
 }
@@ -56,8 +55,6 @@ select {
 .boldy {
   font-weight: 600;
 }
-
-/* CARRO 1 */
 
 .form_cart {
   width: 100%;
@@ -165,8 +162,6 @@ select {
   display: flex;
   flex-direction: column;
 }
-
-/* CAMBIOS CARRO 2 */
 
 .datos_demas_carros {
   width: 100%;
