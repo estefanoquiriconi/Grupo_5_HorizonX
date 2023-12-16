@@ -6,25 +6,26 @@
     <%- include('../partials/header.ejs') %>
     <main class="container">
       <section class="product-container">
-        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
         <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
-        <a href="/products/detail/<%= product.id %>">
-          <article class="product">
-            <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand %></p>
-            <p class="product-price">$<%= product.price %></p>
-            <form action="/products/productCart" method="GET">
-              <button type="submit" class="product-buy-btn">Comprar</button>
-            </form>
-            <img
+          <a href="/products/detail/<%= product.id %>">
+            <article class="product">
+              <h2 class="product-title"><%= product.name %></h2>
+              <p class="product-detail"><%= product.brand %></p>
+              <p class="product-price">$<%= product.price %></p>
+              <form action="/products/productCart" method="GET">
+                <button type="submit" class="product-buy-btn">Comprar</button>
+              </form>
+              <img
               class="product-image"
               src="images/products/<%= product.image %>"
               alt="<%=product.name %>"
-            />
-          </article>
-        </a>
-        <% }) %>
-      </section>
+              />
+            </article>
+          </a>
+          <% }) %>
+        </section>
+        <!-- boton de nuevo producto -->
+        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>

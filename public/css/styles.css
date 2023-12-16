@@ -212,7 +212,7 @@ footer{
 }
 
 .btn-new{
-  position: fixed;
+  position: fixed ;
   width: 55px;
   height: 55px;
   line-height: 55px;  
