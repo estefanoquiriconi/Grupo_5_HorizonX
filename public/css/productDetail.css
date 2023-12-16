@@ -44,6 +44,7 @@ body {
 .product {
   display: flex;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .product img {
@@ -51,13 +52,16 @@ body {
   height: auto;
   height: 300px;
   width: 300px;
+  background-color: #ffffff;
 }
 
 .product-details {
   flex: 1;
   padding: 20px;
-  background-color: rgb(221, 230, 237);
+  background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 h2, p {
@@ -69,7 +73,9 @@ h2 {
 }
 
 p {
-  color: #777;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .product-section {
@@ -77,16 +83,119 @@ p {
 }
 .buy-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: rgb(39, 55, 77);
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 30px;
+  margin-top: 22px;
 }
 
 .price {
-  font-size: 18px;
-  color: #333;
+  font-weight:bold;
+  font-size: 25px;
+  color: #000;
   margin-top: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.price-pay{
+  margin-bottom: 22px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 1px solid #ebebeb;
+  padding: 16px;
+     
+  .price-pay2{
+    width: 60%;
+    }
+
+  .form-pay{
+    font-size: 1rem;
+    margin: 0 0 0.55rem;
+    }
+}
+
+
+.product-cart{
+  position: relative;
+  scroll-snap-align: center;
+  padding: 0 15px;
+  max-width: 1366px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+}
+/*
+.productscart{
+  display: flex;
+  height: 316px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}*/
+
+h3{
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.option{
+  display:flex;
+  margin-top: 8px;
+  justify-content: center;
+  display: inline-flex;
+}
+
+.options1{
+  font-weight: 700;
+  border: solid 1.5px #000;
+
+}
+
+.gb-cap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 5px;
+  height: 24px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 32px;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+}
+
+.selection{
+  display: flex;
+  margin-top: 8px;
+}
+
+.selection1{display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background-color: blue;
+  cursor: pointer;
+}
+
+
+@media (min-width: 480px) {
+  .product-details{
+    flex-direction: row;
+  }
 }

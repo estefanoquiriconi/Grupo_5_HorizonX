@@ -7,11 +7,31 @@
     <main class="container">
       <div class="product-section">
         <div class="product">
-          <img src="/images/products/<%= product.image %>" alt="Producto 1" />
           <div class="product-details">
-            <h2><%=product.brand +' '+ product.name %></h2>
+            <div><img src="/images/products/<%= product.image %>" alt="Producto 1" /></div>
+            <div><h2><%=product.brand +' '+ product.name %></h2>
             <p><%= product.description %></p>
-            <p class="price">$<%= product.price %></p>
+            <div class="price-pay">
+              <div class="price-pay2">
+                <div class="form-pay">
+                  <h4>Todas las formas de pago</h4>
+                </div>
+             <p class="price">$<%= product.price %></p>
+              </div>
+            </div>
+            <div>
+            <div class="options-color">
+              <label for="Selección">Seleccione un color:</label>
+              <div class="selection">
+                <div class="selection1"></div>
+              </div>
+            </div>
+            <div class="options">
+              <label for="Capacidad">Capacidad:</label>
+              <div class="options1 gb-cap"> X GB</div>
+              <div class="options1 gb-cap"> X GB</div>
+            </div>
+          </div>
             <form
               action="/products/buy?id=<%= product.id %>"
               method="POST"
@@ -36,9 +56,115 @@
                 Eliminar
               </button>
             </form>
+            <form
+              action=""
+              method="POST"
+              style="display: inline-flex"
+            >
+              <button type="submit" class="buy-button">
+                Agregar al carrito
+              </button>
+            </form>
+            </div>
           </div>
         </div>
       </div>
+
+      <secction class="product-cart">
+        <div class="productscart">
+         <div>
+          <h3>Especificaciones</h3>
+         </div>
+          <div>
+            <div>
+            <h4>Rendimiento</h4>
+            <div>
+              <h5>Sistema Operativo</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Almacenamiento</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Procesador</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Memoria RAM</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Sensores</h5>
+              <p></p>
+            </div>
+           </div>
+          </div>
+          <div>
+            <h4>Cámara</h4>
+            <div>
+              <h5>Trasera</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Frontal</h5>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <h4>Conectividad</h4>
+            <div>
+              <h5>Bluetooth</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>WiFi</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>NFC</h5>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <h4>Batería</h4>
+            <div>
+              <h5>Capacidad (mAh)</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Carga</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Tipo de Entrada/Cargador</h5>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <h4>Diseño</h4>
+            <div>
+              <h5>Dimensiones</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Peso</h5>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <h4>Audio</h4>
+            <div>
+              <h5>Sistema de Audio</h5>
+              <p></p>
+            </div>
+            <div>
+              <h5>Entrada para Auriculares</h5>
+              <p></p>
+            </div>
+          </div>
+        </div>
+       </secction>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>
