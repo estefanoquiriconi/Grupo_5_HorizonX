@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const jsonFuncs = require("../public/js/jsonFuncs");
-const { log } = require("console");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -122,4 +121,5 @@ const controller = {
   }
 
 };
+
 module.exports = controller;

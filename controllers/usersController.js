@@ -4,7 +4,6 @@ const { v4: uuidv4 } = require("uuid");
 const usersPath = path.resolve(__dirname, '../data/users.json');
 const userList = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const jFunc = require('../public/js/jsonFuncs');
-const { log } = require('console');
 
 
 const controller = {
