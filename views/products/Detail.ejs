@@ -41,7 +41,6 @@
                 </div>
               </div>
             </div>
-            <p class="price">$<%= product.price %></p>
             <div>
             <div class="options-color">
               <p class="p-div">Seleccione un color:</p>
@@ -54,9 +53,9 @@
             <div class="option">
               <p class="p-div">Capacidad:</p> 
               <span class="options1 gb-cap"> X GB</span>
-              <span class="options1 gb-cap"> X GB</span>
             </div>
           </div>
+          <p class="price">$<%= product.price %></p>
             <form
               action="/products/buy?id=<%= product.id %>"
               method="POST"
