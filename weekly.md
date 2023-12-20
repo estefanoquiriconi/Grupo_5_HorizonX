@@ -4,11 +4,10 @@ Trabajamos en mejorar las vistas y el user experience.
 2. Vista de Registro.
 3. Vista de Carrito.
 4. Formularios de creación y edición de productos.
+5. Mejorar la vista de detalle de un producto.
 
 ## Se encontró con algún impedimento?
 Ninguno.
 
 ## Qué se va a hacer esta semana.
-Mejorar la vista de detalle de un producto.
-Reunion con los profes para mostrar las mejoras.
-Esperar el sprint 5...
+Actualizar el tablero, organizar el sprint 5.
