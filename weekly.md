@@ -11,3 +11,4 @@ Ninguno.
 
 ## Qué se va a hacer esta semana.
 Actualizar el tablero, organizar el sprint 5.
+Corregir vista detalle de un producto.
