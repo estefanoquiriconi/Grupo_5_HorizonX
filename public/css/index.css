@@ -1,11 +1,26 @@
+@import url(colores.css);
+
 .container {
   width: 100%;
   padding: 15px;
   max-width: 1440;
+  margin: auto;
+}
+
+h2{
+  font-weight: 800;
+}
+
+.product-container{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: auto;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .product {
@@ -21,13 +36,15 @@
 }
 
 .product-image {
-  width: 100%; 
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .product-detail {
   text-align: center;
   margin: 20px;
-  color: #27374d;
+  color: var(--color1);
 }
 
 .product-price {
@@ -37,7 +54,7 @@
 }
 
 .product-buy-btn {
-  background-color: #27374d;
+  background-color: var(--color1);
   color: white;
   padding: 0.75em 1.5em;
   border-radius: 20px;

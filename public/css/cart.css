@@ -3,80 +3,80 @@
   --color2: #526d82;
   --color3: #9db2bf;
   --color4: #dde6ed;
+  --x-plt-1: #5176ad;
+  --x-plt-2: #a5b7d4;
+  --x-plt-3: #24344c;
+  --x-plt-4: #6c849c;
+  --x-plt-5: #9cb4c4;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+select {
+  border: 1px solid #ccc;
+
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.txt-inp {
+  margin-top: 2px;
+  margin-bottom: 16px;
+
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.entrega-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
 }
 
 .container_cart {
   width: 100%;
-  background-color: var(--color3);
   display: flex;
   flex-direction: column;
 }
 
 .conteiner_all_cart {
-  border: solid 3px var(--color1);
+  border: dotted 3px var(--color1);
   width: 80%;
+  border-radius: 2.5%;
   margin: 10px 10%;
 }
 
-/* CARRO 1 */
-
-.form_up_cart {
-  width: 100%;
-  height: 20%;
-  background-color: var(--color4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.boldy {
+  font-weight: 600;
 }
 
 .form_cart {
   width: 100%;
-  background-color: var(--color4);
+  background-color: #eaf0f5;
   display: flex;
   flex-direction: column;
+  border-radius: 3%;
+  align-items: center;
 }
 
 .product_img_detalle {
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-}
-
-.logo_cart {
-  width: 45px;
-}
-
-.ventana_cart {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.boton_secciones_cart,
-.boton_secciones_cart_2 {
-  width: 10px;
-  height: 6px;
-  background-color: var(--color2);
-  color: white;
-  padding: 0.75em 1.5em;
-  margin: 10px;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 20px;
-  border: 1px solid black;
-}
-
-.boton_secciones_cart_2 {
-  background-color: var(--color3);
 }
 
 .img_product {
-  width: 70%;
+  height: 250px;
 }
 
 .datos_adicionales {
-  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -85,6 +85,7 @@
 .name_product {
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 }
 
 .precio_cantidad {
@@ -93,50 +94,52 @@
 }
 
 .detalle_compra {
-  background-color: #f1eaff;
+  align-self: center;
+  text-align: justify;
+  padding: 3% 6%;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 95%;
   height: 90%;
   padding: 10px;
-  border-radius: 5%;
+  border-radius: 2%;
   margin: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.form_buy {
-  width: 100%;
+.datos_envio {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.boton_detalles {
-  background-color: var(--color3);
-  color: white;
-  height: 10px;
-  padding: 0.75em 1.5em;
-  margin: 10px;
-  justify-content: center;
+.form-div {
+  align-self: center;
+  flex-wrap: wrap;
+  display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  border: 1px solid black;
+  text-align: justify;
+
+  background-color: #fff;
+  padding: 3% 6%;
+  width: 95%;
+  border-radius: 2%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#inp-radio {
+  display: flex;
+  flex-direction: column;
 }
 
 .texto_detalle {
   font-weight: bold;
   margin: 10px;
-}
-
-.formulario_cart {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  height: 15px;
-  align-items: center;
-}
-
-.control {
-  width: 50%;
+  font-size: 1.2em;
 }
 
 .div_span {
@@ -160,66 +163,55 @@
   flex-direction: column;
 }
 
-.product-buy-btn {
-  background-color: #27374d;
-  width: 80%;
-  height: 35px;
-  color: white;
-  padding: 0.75em 1.5em;
-  border-radius: 20px;
-  border: 1px solid black;
-  margin: auto;
-  margin-bottom: 3px;
-}
-
-/* CAMBIOS CARRO 2 */
-
 .datos_demas_carros {
   width: 100%;
-  margin: 5%;
+  margin: 0 0 10px 1%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
-.negrita {
-  font-weight: bold;
+button {
+  background-color: var(--color1);
+  width: 95%;
+  align-self: center;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  margin-top: 10px;
 }
 
-.terminos_condiciones {
-  font-size: 12px;
+button:hover {
+  opacity: 0.8;
 }
 
-/* CAMBIOS CARRO 3 */
-
-.datos_envio {
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.cartEmpty-container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
-/* CAMBIOS CARRO 4 */
-
-.boton_pagos {
-  background-color: #27374d;
-  height: 40px;
-  color: white;
-  padding: 0.75em 1.5em;
-  border-radius: 20px;
-  border: 1px solid black;
-  margin: 3px;
-}
-
-.detalles_carro_cuatro {
+.cartEmpty{
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
   width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  max-width: 600px;
 }
 
 @media (min-width: 768px) {
   .form_cart {
+    flex-direction: row;
+  }
+
+  #inp-radio {
     flex-direction: row;
   }
 }

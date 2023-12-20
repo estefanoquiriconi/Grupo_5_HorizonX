@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs', {title: 'HorizonX', styles: '/css/index.css'}) %>
+  <%- include('./partials/head.ejs', {title: 'HorizonX', styles:
+  '/css/index.css'}) %>
   <body>
     <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
-      <button type="button" class="main-header-banner-btn">Comprar</button>
+      <form action="/products/buy?id=628a3012-a4f5-4e47-b0c0-00fb3f2f9bcc" method="POST">
+        <button type="submit" class="main-header-banner-btn">Comprar</button>
+      </form>
       <video autoplay muted class="main-header-banner-video-mobile">
         <source src="/videos/HOME_B5_Main-KV_720x1080_mo_default.webm" />
       </video>
@@ -14,68 +17,52 @@
       </video>
     </div>
     <main class="container">
-      <article class="product">
-        <h2 class="product-title">Moto Rarz 40 Ultra</h2>
-        <p class="product-detail">
-          Diseño exclusivo con pantalla flexible de 6.9" y bisagra "gota" sin
-          espacios entre sus lados.
-        </p>
-        <p class="product-price">$749.999,00</p>
-         <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/celulares/moto-razr-40ultra.png"
-          alt="moto-razr-40ultra"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto E22</h2>
-        <p class="product-detail">
-          Da vida a tu contenido de entretenimiento con la pantalla fluida de
-          90Hz.
-        </p>
-        <p class="product-price">$79.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/celulares/moto-e22.png"
-          alt="moto-e22"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto G72</h2>
-        <p class="product-detail">
-          Sistema de cámaras con sensor principal de 108 MP.
-        </p>
-        <p class="product-price">$209.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/celulares/moto-g72-white.png"
-          alt="moto-g72-white"
-        />
-      </article>
-      <article class="product">
-        <h2 class="product-title">Moto G72</h2>
-        <p class="product-detail">
-          Sistema de cámaras con sensor principal de 108 MP.
-        </p>
-        <p class="product-price">$209.999,00</p>
-        <form action="/products/detail" method="GET">
-          <button type="submit" class="product-buy-btn">Comprar</button>
-        </form>
-        <img
-          class="product-image"
-          src="images/celulares/moto-g72-white.png"
-          alt="moto-g72-white"
-        />
-      </article>
+      <br />
+      <h2>Celulares</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category ==
+        'celular') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/buy?id=<%= product.id %>" method="POST">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="Imagen del producto: <%= product.name %>"
+            />
+          </article>
+        </a>
+        <% } %> <% }) %>
+      </section>
+      <br />
+      <h2>Accesorios</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category ==
+        'accesorio') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/buy?id=<%= product.id %>" method="POST">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="Imagen del producto: <%= product.name %>"
+            />
+          </article>
+        </a>
+        <% } %> <% }) %>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>

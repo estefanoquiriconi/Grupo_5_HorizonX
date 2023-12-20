@@ -5,19 +5,21 @@
     <%- include('../partials/header.ejs') %>
     <main class="main-reg">
         <div class="form-div">
-            <h3>Registrate</h3>
+            <h3>Crear una cuenta</h3>
+            <hr>
             <h4>Información personal</h4>
-            <form action="" method="post">
-                <input type="text" name="nombre" placeholder="Nombre" class="txt-inp">
-                <input type="text" name="apellido" placeholder="Apellido" class="txt-inp">
-                <input type="email" name="mail" placeholder="Tu email" class="txt-inp">
-                <input type="password" name="pass" placeholder="Contraseña" class="txt-inp">
-                <input type="password" name="repass" placeholder="Repite la contraseña" class="txt-inp">
-                <div class="check-div"><input type="checkbox" name="check" id=""><label for="check">Acepto <u>términos y
-                            condiciones</u></label></div>
-                <button type="submit" id="reg-pr-btn">REGISTRARSE</button>
-                <button type="submit" id="goog-btn">Registrarme con Google</button>
-                <button type="submit" id="face-btn">Registrarme con Facebook</button>
+            <form action="/users/register" method="post" enctype="multipart/form-data">
+                <input type="text" name="nombre" placeholder="Nombre" class="txt-inp" required>
+                <input type="text" name="apellido" placeholder="Apellido" class="txt-inp" required>
+                <input type="email" name="mail" placeholder="Tu email" class="txt-inp" required>
+                <input type="password" name="pass" placeholder="Contraseña" class="txt-inp" required>
+                <input type="password" name="repass" placeholder="Repite la contraseña" class="txt-inp" required>
+                <input type="file" name="pfpimg" accept="image/png, image/jpeg">
+                <div class="padding"><div class="check-div"><input type="checkbox" name="check" id=""><label for="check"> Acepto <u>términos y
+                            condiciones</u></label></div></div>
+                <div class="Registrarse"><button type="submit" id="reg-pr-btn">Registrarse</button></div>
+                <!-- <button type="submit" id="goog-btn">Registrarme con Google</button> 
+                <button type="submit" id="face-btn">Registrarme con Facebook</button> -->
             </form>
         </div>
     </main>

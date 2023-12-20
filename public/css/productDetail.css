@@ -36,6 +36,7 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 20px auto;
   overflow: hidden;
@@ -44,6 +45,7 @@ body {
 .product {
   display: flex;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .product img {
@@ -51,13 +53,17 @@ body {
   height: auto;
   height: 300px;
   width: 300px;
+  background-color: #ffffff;
 }
 
 .product-details {
   flex: 1;
   padding: 20px;
-  background-color: rgb(221, 230, 237);
+  background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
 }
 
 h2, p {
@@ -69,24 +75,251 @@ h2 {
 }
 
 p {
-  color: #777;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p.p-div{
+  font-weight: bold;
 }
 
 .product-section {
-  margin-bottom: 40px;
+  margin-bottom: -20px;
 }
 .buy-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: rgb(39, 55, 77);
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 30px;
+  margin-top: 22px;
 }
 
 .price {
-  font-size: 18px;
-  color: #333;
-  margin-top: 10px;
+  font-weight:bold;
+  font-size: 25px;
+  color: #000;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0;
 }
+
+.price-pay{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-pay2{
+  width: 60%;
+}
+
+.form-pay{
+  margin: 0 0 0.30rem;
+  display: flex; 
+  flex-wrap: wrap;
+  
+  .form-pay2{
+    display: flex;
+    align-items: normal;
+    margin-top: 0.9rem;
+  }
+  
+  .target{
+    align-items: center;
+    margin-right: 5px;
+  }
+  
+  .target-form{
+    width: 100%;
+    height: 100%;
+  }
+
+  .target-form1{
+    height: 24px;
+    width: 40px;
+  }
+
+  .target-form2{
+    height: 23px;
+    width: 38px;
+  }
+  
+}
+
+h3{
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.option{
+  display:flex;
+  margin-top: 8px;
+  flex-direction: column;
+}
+
+.options1{
+  font-weight: 700;
+  border: solid 1.5px #000;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.gb-cap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 5px;
+  height: 24px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 32px;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 8px ;
+}
+
+.selection{
+  display: flex;
+  margin-top: 8px;
+}
+
+.selection1, .selection2, .selection3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.selection1{
+  background-color: magenta;
+}
+
+.selection2{
+  background-color: blueviolet ;
+}
+
+.selection3{
+  background-color: blue;
+}
+
+/******** Sección de especificaciones ********/
+
+.product-cart{
+  z-index: auto;
+  display: block;
+  margin: 0px;
+  inset: auto;
+  position: relative;
+  scroll-snap-align: center;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.productscart{
+  margin: 0px;
+  max-width: 1200px;
+  max-height: 900px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 6px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+.scroll-sect{
+  display: flex;
+}
+
+.scroll-item{
+  display: flex;
+  
+  height: 35vh;
+  width: auto;
+}
+
+.scroll-items{
+  display: flex;
+  flex-direction: column;
+  padding-left: 6px;
+  min-width: 70vw;
+  height: 100%;
+  place-content: center;
+  z-index: 1;
+  justify-content: center;
+  color: #000;
+}
+
+.scroll-items1{
+  width: 70%;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.scroll-items1 h4{
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.scroll-items1 p{
+  font-size: 16px;
+}
+
+.item-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 790px) {
+  .scroll-items{
+    min-width: 45vw;
+  }
+}
+
+@media (min-width: 480px) {
+  .product-details{
+    flex-direction: row;
+  }
+  .product-cart{
+    width: auto;
+  }
+  .productscart{
+    width: auto;
+  }
+  .scroll-items{
+    min-width: 30vw;
+  }
+}
+
+@media (min-width: 320px) {
+.product-cart{
+  width: auto;
+}
+.productscart{
+  width: auto;
+}
+.scroll-item{
+  height: 55vh;
+}
+.scroll-items{
+  min-width: 30vw;
+}
+}
+

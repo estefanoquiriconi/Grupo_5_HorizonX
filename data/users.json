@@ -1,0 +1,18 @@
+[
+ {
+  "id": 0,
+  "nombre": "Me llamo",
+  "apellido": "lechuga",
+  "mail": "tripleWarroba@atHere.com",
+  "pass": "no sé como guardar esto",
+  "pfp_img": "images/default-user-img.jpg"
+ },
+ {
+  "id": 0,
+  "nombre": "Yo también",
+  "apellido": "soy lechuga",
+  "mail": "wwwlll@atHere.com",
+  "pass": "no sé como guardar esto2",
+  "pfp_img": "images/default-user-img.jpg"
+ }
+]

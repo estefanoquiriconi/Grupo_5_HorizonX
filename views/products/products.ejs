@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs', {title: 'Todos los productos', styles:
+  '/css/index.css'}) %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main class="container">
+      <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+      <section class="product-container">
+        <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
+        <a href="/products/detail/<%= product.id %>">
+          <article class="product">
+            <h2 class="product-title"><%= product.name %></h2>
+            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-price">$<%= product.price %></p>
+            <form action="/products/buy?id=<%= product.id %>"
+              method="POST">
+              <button type="submit" class="product-buy-btn">Comprar</button>
+            </form>
+            <img
+              class="product-image"
+              src="images/products/<%= product.image %>"
+              alt="<%=product.name %>"
+              />
+            </article>
+          </a>
+          <% }) %>
+        </section>
+        <!-- boton de nuevo producto -->
+        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

@@ -1,5 +1,4 @@
 # Retrospectiva Sprint 1!
-Principales conclusiones de la retro del primer sprint.
 
 ## Start Doing:
 Trabajar en el sprint 2
@@ -17,7 +16,6 @@ Nada
 Nada
 
 # Retrospectiva Sprint 2!
-Principales conclusiones de la retro del segundo sprint.
 
 ## Start Doing:
 Weekly
@@ -36,26 +34,39 @@ Nada
 
 
 # Retrospectiva Sprint 3!
+
 ## Start Doing:
+Organizar mejor el próximo sprint
+
 ## More Of:
+Reuniones
 
 ## Keep Doing:
+División de trabajo.
 
 ## Less Off:
+Nada
 
 ## Stop Doing:
+Nada
 
 
 # Retrospectiva Sprint 4!
 ## Start Doing:
+Actualizar el tablero.
+Mejorar el código (CRUD).
 
 ## More Of:
+Organizar 2 o más reuniones semanales.
 
 ## Keep Doing:
+División de trabajo.
 
 ## Less Off:
+Nada
 
 ## Stop Doing:
+Nada
 
 # Retrospectiva Sprint 5!
 ## Start Doing:
