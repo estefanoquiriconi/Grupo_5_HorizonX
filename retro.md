@@ -42,7 +42,7 @@ Organizar mejor el próximo sprint
 Reuniones
 
 ## Keep Doing:
-División de trabajo
+División de trabajo.
 
 ## Less Off:
 Nada
@@ -53,14 +53,20 @@ Nada
 
 # Retrospectiva Sprint 4!
 ## Start Doing:
+Actualizar el tablero.
+Mejorar el código (CRUD).
 
 ## More Of:
+Organizar 2 o más reuniones semanales.
 
 ## Keep Doing:
+División de trabajo.
 
 ## Less Off:
+Nada
 
 ## Stop Doing:
+Nada
 
 # Retrospectiva Sprint 5!
 ## Start Doing:
