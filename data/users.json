@@ -1,18 +1,47 @@
 [
  {
-  "id": 0,
-  "nombre": "Me llamo",
-  "apellido": "lechuga",
-  "mail": "tripleWarroba@atHere.com",
-  "pass": "no sé como guardar esto",
-  "pfp_img": "images/default-user-img.jpg"
+  "id": "aef80a17-7759-4e0b-b2b1-f2da2c170a94",
+  "firstName": "Luis",
+  "lastName": "Pérez",
+  "email": "luis.perez@gmail.com",
+  "password": "123",
+  "avatar": "default-avatar-image.png",
+  "role": "cliente"
  },
  {
-  "id": 0,
-  "nombre": "Yo también",
-  "apellido": "soy lechuga",
-  "mail": "wwwlll@atHere.com",
-  "pass": "no sé como guardar esto2",
-  "pfp_img": "images/default-user-img.jpg"
+  "id": "64e5cfd2-18e9-41a3-9e9f-43bcbabbe9b7",
+  "firstName": "María",
+  "lastName": "González",
+  "email": "maria.gonzalez@gmail.com",
+  "password": "123",
+  "avatar": "default-avatar-image.png",
+  "role": "administrador"
+ },
+ {
+  "id": "7d8d3a84-f997-4c85-8e1d-671b623f43b5",
+  "firstName": "Carlos",
+  "lastName": "Martínez",
+  "email": "carlos.martinez@gmail.com",
+  "password": "123",
+  "avatar": "default-avatar-image.png",
+  "role": "administrador"
+ },
+ {
+  "id": "b2a7fd1b-17cf-40ed-a6b1-cf89f9c0ffbb",
+  "firstName": "Ana",
+  "lastName": "Hernández",
+  "email": "ana.hernandez@gmail.com",
+  "password": "123",
+  "avatar": "default-avatar-image.png",
+  "role": "cliente"
+ },
+ {
+  "id": "fc48b8e8-5119-4c23-987a-1d377417091e",
+  "firstName": "Elena",
+  "lastName": "Sánchez",
+  "email": "elena.sanchez@gmail.com",
+  "password": "123",
+  "avatar": "default-avatar-image.png",
+  "role": "cliente"
  }
 ]
