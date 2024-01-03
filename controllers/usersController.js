@@ -1,5 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const User = require("../models/User");
+const fs = require('fs');
+const path = require('path');
 
 const controller = {
   login: (req, res) => {
@@ -14,6 +16,11 @@ const controller = {
     let userInDB = User.getByEmail(req.body.email);
 
     if (userInDB) {
+      if (req.file) {
+        fs.unlinkSync(
+          path.join(__dirname, "../public/images/users/", req.file.filename)
+        );
+      }
       return res.render("users/register", {
         errors: {
           email: {
