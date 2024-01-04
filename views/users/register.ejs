@@ -20,38 +20,48 @@
             placeholder="Nombre"
             class="txt-inp"
             value="<%= locals.oldData && oldData.firstName ? oldData.firstName : null %>"
-            required
           />
+          <% if (locals.errors && errors.firstName) { %>
+            <p class="error"><%= errors.firstName.msg %></p>
+          <% } %>
           <input
             type="text"
             name="lastName"
             placeholder="Apellido"
             class="txt-inp"
             value="<%= locals.oldData && oldData.lastName ? oldData.lastName : null %>"
-            required
           />
+          <% if (locals.errors && errors.lastName) { %>
+            <p class="error"><%= errors.lastName.msg %></p>
+          <% } %>
           <input
             type="email"
             name="email"
             placeholder="Email"
             class="txt-inp"
             value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
-            required
           />
+          <% if (locals.errors && errors.email) { %>
+            <p class="error"><%= errors.email.msg %></p>
+          <% } %>
           <input
             type="password"
             name="password"
             placeholder="Contraseña"
             class="txt-inp"
-            required
           />
+          <% if (locals.errors && errors.password) { %>
+            <p class="error"><%= errors.password.msg %></p>
+          <% } %>
+          <br>
           <label for="image">Imagen de perfil: </label>
           <br>
           <input type="file" name="avatar" accept="image/png, image/jpeg" id="image"/>
           <br>
-          <% if (locals.errors && errors.email) { %>
-            <p class="error"><%= errors.email.msg %></p>
+          <% if (locals.errors && errors.image) { %>
+            <p class="error"><%= errors.image.msg %></p>
           <% } %>
+          <br>
           <div class="Registrarse">
             <button type="submit" id="reg-pr-btn">Registrarse</button>
           </div>

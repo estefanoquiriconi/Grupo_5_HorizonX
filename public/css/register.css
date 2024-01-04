@@ -52,7 +52,7 @@
 
 .txt-inp {
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     width: 90%;
     border: 1px solid #ccc;
     padding: 6px 8px;
@@ -86,9 +86,8 @@ label {
 }
 
 .error{
-    font-weight: 500;
     color: red;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .Registrarse{
