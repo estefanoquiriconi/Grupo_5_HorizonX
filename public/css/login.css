@@ -35,7 +35,7 @@ label {
 input {
   width: 100%;
   padding: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -58,7 +58,18 @@ button:hover {
   opacity: 0.8;
 }
 
-p {
+.div-rec {
+  display:flex;
+}
+
+#check {
+  width: auto;
+  margin:2px;
+  margin-right: 6px;
+  accent-color: var(--color1)
+}
+
+.bot-txt {
   margin-top: 20px;
   color: var(--color1);
 }

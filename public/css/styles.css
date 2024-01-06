@@ -169,6 +169,11 @@ footer{
   color: var(--color1);
 }
 
+.error{
+  color: red;
+  font-size: 14px;
+}
+
 @media(min-width: 768px){
 
   .main-header-banner-video-mobile{
