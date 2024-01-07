@@ -3,8 +3,6 @@ const User = require("../models/User");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
-const productsFilePath = path.join(__dirname, "../data/products.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
   login: (req, res) => {

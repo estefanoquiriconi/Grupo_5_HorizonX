@@ -1,16 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-
-const productsFilePath = path.join(__dirname, "../data/products.json");
-let products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
+const Products = require("../models/Products");
 
 const controller = {
-
-    index: (req, res)=>{
-        res.render("index", {products});
-    }
-
-}
+  index: (req, res) => {
+    res.render("index", { products: Products.findAll() });
+  },
+};
 
 module.exports = controller;

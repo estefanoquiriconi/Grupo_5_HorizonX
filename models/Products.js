@@ -30,6 +30,12 @@ const Products = {
   },
 
   detele: function (id) {
+    const productDelete = this.getById(id);
+    if (productDelete.image != "default-product-image.png") {
+      fs.unlinkSync(
+        path.join(__dirname, "../public/images/products/", productDelete.image)
+      );
+    }
     let finalProducts = this.findAll().filter((product) => product.id !== id);
     fs.writeFileSync(fileName, JSON.stringify(finalProducts, null, " "));
     return true;
