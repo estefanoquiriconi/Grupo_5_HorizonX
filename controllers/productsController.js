@@ -1,12 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const Products = require("../models/Products");
+const { validationResult } = require("express-validator");
 
 const jsonFuncs = require("../public/js/jsonFuncs");
 let cartList = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../data/cart.json"), "utf-8")
 );
-
-const Products = require("../models/Products");
 
 const controller = {
   index: (req, res) => {
@@ -31,6 +31,20 @@ const controller = {
   },
 
   store: (req, res) => {
+    const validations = validationResult(req);
+
+    if (validations.errors.length > 0) {
+      if (req.file) {
+        fs.unlinkSync(
+          path.join(__dirname, "../public/images/products/", req.file.filename)
+        );
+      }
+      return res.render("products/create", {
+        errors: validations.mapped(),
+        oldData: req.body,
+      });
+    }
+
     const productData = {
       name: req.body.name,
       brand: req.body.brand,
@@ -57,7 +71,22 @@ const controller = {
   },
 
   update: (req, res) => {
+    const validations = validationResult(req);
+
+    if (validations.errors.length > 0) {
+      if (req.file) {
+        fs.unlinkSync(
+          path.join(__dirname, "../public/images/products/", req.file.filename)
+        );
+      }
+      return res.render("products/edit", {
+        errors: validations.mapped(),
+        product: req.body,
+      });
+    }
+
     const id = req.params.id;
+    const product = Products.getById(id);
     const updateProductData = {
       name: req.body.name,
       brand: req.body.brand,
@@ -65,6 +94,7 @@ const controller = {
       description: req.body.description,
       color: req.body.color,
       price: req.body.price,
+      image: req.file?.filename || product.image
     };
 
     if (Products.update(id, updateProductData)) {
@@ -91,7 +121,6 @@ const controller = {
   buy: (req, res) => {
     const id = req.query.id;
     const product = Products.getById(id);
-
     jsonFuncs.newData(
       product,
       cartList,

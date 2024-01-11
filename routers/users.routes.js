@@ -2,8 +2,8 @@ const express = require("express");
 const controller = require("../controllers/usersController");
 
 const uploadAvatarMiddleware = require("../middlewares/uploadAvatarMiddleware");
-const validateRegister = require('../middlewares/validateRegisterUserMiddleware');
-const validateLogin = require('../middlewares/validateLoginUserMiddleware');
+const validateRegister = require('../middlewares/userRegisterValidationMiddleware');
+const validateLogin = require('../middlewares/userLoginValidationMiddleware');
 
 const router = express.Router();
 
