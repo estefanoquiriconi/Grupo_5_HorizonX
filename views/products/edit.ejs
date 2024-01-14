@@ -22,8 +22,10 @@
               name="name"
               class="input-field"
               value="<%= product.name %>"
-              required
               />
+              <% if (locals.errors && errors.name) { %>
+                <p class="error"><%= errors.name.msg %></p>
+                <% } %>
             </div>
             <div class="primer-div">
               <label for="brand">Marca:</label>
@@ -33,8 +35,10 @@
               name="brand"
               class="input-field"
               value="<%= product.brand %>"
-              required
               />
+              <% if (locals.errors && errors.brand) { %>
+                <p class="error"><%= errors.brand.msg %></p>
+                <% } %>
             </div>
             </div>
             <div class="primera-linea">
@@ -46,27 +50,35 @@
                 name="color"
                 class="input-field"
                 value="<%= product.color %>"
-                required
                 />
+                <% if (locals.errors && errors.color) { %>
+                  <p class="error"><%= errors.color.msg %></p>
+                  <% } %>
               </div>
               <div class="primer-div">
                 <label for="price">Precio:</label>
                 <input
-                type="text"
+                type="number"
                 id="price"
                 name="price"
                 class="input-field"
                 value="<%= product.price %>"
-                required
                 />
+                <% if (locals.errors && errors.price) { %>
+                  <p class="error"><%= errors.price.msg %></p>
+                  <% } %>
               </div>
             </div>
               
           <label for="category">Categoría:</label>
           <select name="category" id="category" class="input-field">
-            <option value="celular" >Celular</option>
-            <option value="accesorio" >Accesorio</option>
+            <option value="" selected disabled>Selecciona una categoría</option>          
+            <option value="celular" <%= locals.product && product.category == 'celular' ? 'selected' : null %> >Celular</option>
+            <option value="accesorio" <%= locals.product && product.category == 'accesorio' ? 'selected' : null %> >Accesorio</option>
           </select>
+          <% if (locals.errors && errors.category) { %>
+            <p class="error"><%= errors.category.msg %></p>
+            <% } %>
   
           <label for="description">Descripción:</label>
           <textarea
@@ -74,11 +86,16 @@
             name="description"
             class="input-field"
             rows="4"
-            required
           ><%= product.description %></textarea>
+          <% if (locals.errors && errors.description) { %>
+            <p class="error"><%= errors.description.msg %></p>
+            <% } %>
+
   
           <label for="imagen">Image:</label>
-          <input type="file" src="" alt="" accept="image/png,image/jpg" />
+          <input type="file" name="image" />
+
+          <input type="text" name="id" hidden value="<%= product.id %>">
   
           <div class="button-ubicacion">
             <button type="submit">Guardar</button>

@@ -44,6 +44,14 @@ const Products = {
   update: function (id, updateProductData) {
     let allProducts = this.findAll();
     let updateProductIndex = allProducts.findIndex((user) => user.id === id);
+
+    //Eliminar la imagen anterior si se envió una nueva imagen y la imagen anterior no es la por default.
+    if(allProducts[updateProductIndex].image != "default-product-image.png" && allProducts[updateProductIndex].image != updateProductData.image){
+      fs.unlinkSync(
+        path.join(__dirname, "../public/images/products/", allProducts[updateProductIndex].image)
+      );
+    }
+
     if (updateProductIndex !== -1) {
       allProducts[updateProductIndex] = {
         ...allProducts[updateProductIndex],
