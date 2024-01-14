@@ -9,6 +9,7 @@ const router = express.Router();
 
 router.get("/login", controller.login);
 router.get("/register", controller.register);
+router.get("/profile", controller.profile);
 router.post(
   "/register",
   uploadAvatarMiddleware.single("avatar"),

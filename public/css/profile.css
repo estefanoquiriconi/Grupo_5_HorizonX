@@ -1,0 +1,23 @@
+@import url(colores.css);
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+
+
+a {
+  color: var(--color2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+i {
+  color: var(--color1);
+}

@@ -43,5 +43,14 @@
   "password": "123",
   "avatar": "default-avatar-image.png",
   "role": "cliente"
+ },
+ {
+  "id": "3f0d8067-28f1-4129-ad03-7c65ff85e562",
+  "firstName": "Cosme",
+  "lastName": "Fulanito",
+  "email": "editorensimio@gmail.com",
+  "password": "$2a$10$EokUnJZzzW1iIMmNdOgamedajbmA8y15TjeieOMUpCwoB5ZiA2Td.",
+  "avatar": "1704741523836.png",
+  "role": "cliente"
  }
 ]

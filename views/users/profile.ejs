@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs', {title: 'Profile', styles:
+  '/css/profile.css'}) %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <% if (session.userLogged) { %>
+        <div class="prof-div">Bienvenido <%= session.userLogged.firstName %> <%= session.userLogged.lastName %>, tu email es <%= session.userLogged.email %></div>
+        
+      <% } else { %> 'Nadie está logeado' <% } %>
+       
+      
+
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

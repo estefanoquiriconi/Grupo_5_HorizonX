@@ -11,19 +11,48 @@ const controller = {
 
   processLogin: (req, res) => {
     const validations = validationResult(req);
+    let userToLogin = User.getByEmail(req.body.email);
+    
 
     if (validations.errors.length > 0) {
       return res.render("users/login", {
         errors: validations.mapped(),
         oldData: req.body,
       });
-    } else {
-      //return res.redirect("..index");
     }
+    if (!userToLogin) {
+      return res.render("users/login", {
+        errors: {
+          email: {
+            msg: 'Ese email no existe'
+          }
+        },
+        oldData: req.body
+      })
+    }
+    let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+    if (passwordOk) {
+      req.session.userLogged = userToLogin
+      return res.redirect("./profile")
+    }
+
+    return res.render("users/login", {
+      errors: {
+        email: {
+          msg: 'Información de logeo incorrecta'
+        },
+        oldData: req.body
+      }
+    })
+
   },
 
   register: (req, res) => {
     res.render("users/register");
+  },
+
+  profile: (req,res) => {
+    res.render("users/profile", {session: req.session})
   },
 
   processRegister: (req, res) => {
