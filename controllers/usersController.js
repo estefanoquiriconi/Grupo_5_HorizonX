@@ -39,10 +39,10 @@ const controller = {
     return res.render("users/login", {
       errors: {
         email: {
-          msg: 'Información de logeo incorrecta'
+          msg: 'Credenciales inválidas'
         },
-        oldData: req.body
-      }
+      },
+      oldData: req.body
     })
 
   },

@@ -52,5 +52,14 @@
   "password": "$2a$10$EokUnJZzzW1iIMmNdOgamedajbmA8y15TjeieOMUpCwoB5ZiA2Td.",
   "avatar": "1704741523836.png",
   "role": "cliente"
+ },
+ {
+  "id": "1aa84c96-4563-4677-873a-25c4d65a4538",
+  "firstName": "Estéfano",
+  "lastName": "Quiriconi",
+  "email": "estefanoquiriconi@gmail.com",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
+  "avatar": "1705327241394.jpg",
+  "role": "cliente"
  }
 ]
