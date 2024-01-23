@@ -9,10 +9,15 @@ const controller = {
     res.render("users/login");
   },
 
+  logout : (req, res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
+  },
+
   processLogin: (req, res) => {
     const validations = validationResult(req);
     let userToLogin = User.getByEmail(req.body.email);
-    
 
     if (validations.errors.length > 0) {
       return res.render("users/login", {
@@ -24,35 +29,43 @@ const controller = {
       return res.render("users/login", {
         errors: {
           email: {
-            msg: 'Ese email no existe'
-          }
+            msg: "Credenciales inválidas",
+          },
         },
-        oldData: req.body
-      })
+        oldData: req.body,
+      });
     }
-    let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+    let passwordOk = bcryptjs.compareSync(
+      req.body.password,
+      userToLogin.password
+    );
     if (passwordOk) {
-      req.session.userLogged = userToLogin
-      return res.redirect("./profile")
+      delete userToLogin.password;
+      req.session.userLogged = userToLogin;
+
+      if (req.body.rememberUser) {
+        res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 });
+      }
+
+      return res.redirect("./profile");
     }
 
     return res.render("users/login", {
       errors: {
         email: {
-          msg: 'Credenciales inválidas'
+          msg: "Credenciales inválidas",
         },
       },
-      oldData: req.body
-    })
+      oldData: req.body,
+    });
+  },
 
+  profile: (req, res) => {
+    res.render("users/profile", { user: req.session.userLogged });
   },
 
   register: (req, res) => {
     res.render("users/register");
-  },
-
-  profile: (req,res) => {
-    res.render("users/profile", {session: req.session})
   },
 
   processRegister: (req, res) => {

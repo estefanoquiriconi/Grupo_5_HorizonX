@@ -5,13 +5,15 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main>
-      <% if (session.userLogged) { %>
-        <div class="prof-div">Bienvenido <%= session.userLogged.firstName %> <%= session.userLogged.lastName %>, tu email es <%= session.userLogged.email %></div>
-        
-      <% } else { %> 'Nadie está logeado' <% } %>
-       
-      
-
+      <div class="profile-container">
+        <img src="/images/users/<%= user.avatar %>" alt="Avatar" class="avatar">
+        <div class="user-info">
+          <h1 class="user-name"><%= user.firstName %> <%= user.lastName %></h1>
+          <p class="user-detail"><strong>Email:</strong> <%= user.email %></p>
+          <p class="user-detail"><strong>Rol:</strong> <%= user.role %></p>
+          <a href="/users/logout" class="logout-button">Cerrar Sesión</a>
+        </div>
+      </div>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>

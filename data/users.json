@@ -4,7 +4,7 @@
   "firstName": "Luis",
   "lastName": "Pérez",
   "email": "luis.perez@gmail.com",
-  "password": "123",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "default-avatar-image.png",
   "role": "cliente"
  },
@@ -13,7 +13,7 @@
   "firstName": "María",
   "lastName": "González",
   "email": "maria.gonzalez@gmail.com",
-  "password": "123",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "default-avatar-image.png",
   "role": "administrador"
  },
@@ -22,7 +22,7 @@
   "firstName": "Carlos",
   "lastName": "Martínez",
   "email": "carlos.martinez@gmail.com",
-  "password": "123",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "default-avatar-image.png",
   "role": "administrador"
  },
@@ -31,7 +31,7 @@
   "firstName": "Ana",
   "lastName": "Hernández",
   "email": "ana.hernandez@gmail.com",
-  "password": "123",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "default-avatar-image.png",
   "role": "cliente"
  },
@@ -40,7 +40,7 @@
   "firstName": "Elena",
   "lastName": "Sánchez",
   "email": "elena.sanchez@gmail.com",
-  "password": "123",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "default-avatar-image.png",
   "role": "cliente"
  },
@@ -49,7 +49,7 @@
   "firstName": "Cosme",
   "lastName": "Fulanito",
   "email": "editorensimio@gmail.com",
-  "password": "$2a$10$EokUnJZzzW1iIMmNdOgamedajbmA8y15TjeieOMUpCwoB5ZiA2Td.",
+  "password": "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
   "avatar": "1704741523836.png",
   "role": "cliente"
  },
