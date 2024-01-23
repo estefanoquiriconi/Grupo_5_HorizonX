@@ -65,7 +65,8 @@
               Agregar al carrito
               </button>
             </form>
-            <a
+            <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+              <a
               href="/products/edit/<%= product.id %>"
               class="buy-button"
               >Editar</a
@@ -80,6 +81,7 @@
                 Eliminar
               </button>
             </form>
+            <% } %>
             </div>
           </div>
         </div>

@@ -6,11 +6,15 @@
       /></a>
       <input class="input-search" type="text" placeholder="Buscar..." />
       <ul class="navbar-top">
-        <li><a href="/products">Productos</a></li>
+        <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+          <li><a href="/products">Administrar</a></li>
+        <% } %>
         <li><a href="/products?cat=celular">Smartphones</a></li>
         <li><a href="/products?cat=accesorio">Accesorios</a></li>
         <li><a href="/users/login"><i class="fa-solid fa-user"></i> Cuenta</a></li>
-        <li><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <% if (locals.isLogged) { %>
+          <li><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+        <% } %>
       </ul>
       <ul class="navbar-bottom">
         <li>
