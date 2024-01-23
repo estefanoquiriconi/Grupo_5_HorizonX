@@ -1,4 +1,4 @@
-function adminMidleware(req, res, next) {
+function adminMiddleware(req, res, next) {
     if (req.session.userLogged.role != "administrador") {
       return res.redirect("/");
     }
@@ -6,4 +6,4 @@ function adminMidleware(req, res, next) {
     next();
   }
   
-  module.exports = adminMidleware;
+  module.exports = adminMiddleware;
