@@ -1,0 +1,70 @@
+@import url(colores.css);
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+
+
+a {
+  color: var(--color2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+i {
+  color: var(--color1);
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  text-align: left;
+}
+
+.user-name {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-detail {
+  margin: 5px 0;
+  color: #666;
+}
+
+.logout-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+}

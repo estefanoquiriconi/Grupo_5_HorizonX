@@ -9,14 +9,21 @@
         <h2>Iniciar sesión</h2>
         <br>
         <hr>
-        <form action="/" method="POST" class="login-form">
+        <form action="/users/login" method="POST" class="login-form">
           <label for="email"> <i class="fa-solid fa-envelope"></i> Email</label>
-          <input type="email" name="email" class="icon-input"/>
+          <input type="email" name="email" class="icon-input" value="<%= locals.oldData && oldData.email ? oldData.email : null %>"/>
+          <% if (locals.errors && errors.email) { %>
+            <p class="error"><%= errors.email.msg %></p>
+          <% } %>
           <label for="password"> <i class="fa-solid fa-lock"></i> Contraseña </label>
           <input type="password" name="password"/>
+          <% if (locals.errors && errors.password) { %>
+            <p class="error"><%= errors.password.msg %></p>
+          <% } %>
+          <div class="div-rec"><input type="checkbox" name="rememberUser" id="check">Recuerdame</div>
           <button class="login-btn" type="submit">Ingresar</button>
         </form>
-        <p>
+        <p class="bot-txt">
           ¿No tienes una cuenta? <a href="../users/register"> Registrate </a>
         </p>
       </div>

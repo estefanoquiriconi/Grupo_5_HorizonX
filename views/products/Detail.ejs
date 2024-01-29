@@ -8,7 +8,7 @@
       <section class="product-section">
         <div class="product">
           <div class="product-details">
-            <div><img src="/images/products/<%= product.image %>" alt="Imagen del producto: <%= product.name %>" /></div>
+            <img class="product-image" src="/images/products/<%= product.image %>" alt="Imagen del producto: <%= product.name %>" />
             <div><h2><%=product.brand +' '+ product.name %></h2>
             <p><%= product.description %></p>
             <div class="price-pay">
@@ -41,7 +41,6 @@
                 </div>
               </div>
             </div>
-            <p class="price">$<%= product.price %></p>
             <div>
             <div class="options-color">
               <p class="p-div">Seleccione un color:</p>
@@ -54,9 +53,9 @@
             <div class="option">
               <p class="p-div">Capacidad:</p> 
               <span class="options1 gb-cap"> X GB</span>
-              <span class="options1 gb-cap"> X GB</span>
             </div>
           </div>
+          <p class="price">$<%= product.price %></p>
             <form
               action="/products/buy?id=<%= product.id %>"
               method="POST"
@@ -66,7 +65,8 @@
               Agregar al carrito
               </button>
             </form>
-            <a
+            <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+              <a
               href="/products/edit/<%= product.id %>"
               class="buy-button"
               >Editar</a
@@ -81,6 +81,7 @@
                 Eliminar
               </button>
             </form>
+            <% } %>
             </div>
           </div>
         </div>

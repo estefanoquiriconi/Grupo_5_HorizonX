@@ -5,7 +5,6 @@
   <body>
     <%- include('../partials/header.ejs') %>
     <main class="container">
-      <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
       <section class="product-container">
         <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
@@ -27,7 +26,9 @@
           <% }) %>
         </section>
         <!-- boton de nuevo producto -->
-        <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+        <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+          <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+        <% } %>
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>
