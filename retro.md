@@ -70,14 +70,21 @@ Nada
 
 # Retrospectiva Sprint 5!
 ## Start Doing:
+Actualizar el tablero.
+Diseñar la base de datos.
 
 ## More Of:
+Organizar más reuniones por discord.
 
 ## Keep Doing:
+División de trabajo.
 
 ## Less Off:
+Nada
 
 ## Stop Doing:
+Nada
+
 
 # Retrospectiva Sprint 6!
 ## Start Doing:
