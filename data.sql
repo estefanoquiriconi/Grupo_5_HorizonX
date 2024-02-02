@@ -1,6 +1,8 @@
+USE horizonx_db;
+
 INSERT INTO roles (name) VALUES
 ('cliente'),
-('admin');
+('administrador');
 
 INSERT INTO `colors` (`name`, `cod_hex`) VALUES
   ('Negro', '#000000'),
