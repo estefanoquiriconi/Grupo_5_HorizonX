@@ -4,6 +4,7 @@ const cookies = require("cookie-parser");
 const methodOverride = require("method-override");
 const path = require("path");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
+const db = require('./database/models')
 
 const port = 8080;
 const app = express();
@@ -38,3 +39,6 @@ express.Router().use(function (req, res, next) {
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productsRoutes);
+
+db.Role.findAll().then((r) => console.log(r))
+.catch(e=>console.log(e.message))
