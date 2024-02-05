@@ -6,7 +6,7 @@
     <%- include('../partials/header.ejs') %>
     <main class="container">
       <section class="product-container">
-        <% products.filter(e => cat ? e.category == cat : true).forEach(product => { %>
+        <% products.filter(e => cat ? e.category.name == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
@@ -18,7 +18,7 @@
             </form>
             <img
               class="product-image"
-              src="images/products/<%= product.image %>"
+              src="images/products/<%= product.images[0].image_filename %>"
               alt="<%=product.name %>"
               />
             </article>

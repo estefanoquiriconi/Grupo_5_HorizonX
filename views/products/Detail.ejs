@@ -8,8 +8,8 @@
       <section class="product-section">
         <div class="product">
           <div class="product-details">
-            <img class="product-image" src="/images/products/<%= product.image %>" alt="Imagen del producto: <%= product.name %>" />
-            <div><h2><%=product.brand +' '+ product.name %></h2>
+            <img class="product-image" src="/images/products/<%= product.images[0].image_filename %>" alt="Imagen del producto: <%= product.name %>" />
+            <div><h2><%=product.brand.name +' '+ product.name %></h2>
             <p><%= product.description %></p>
             <div class="price-pay">
               <div class="price-pay2">

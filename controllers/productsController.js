@@ -8,17 +8,22 @@ let cartList = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../data/cart.json"), "utf-8")
 );
 
+const db = require("../database/models");
+
 const controller = {
-  index: (req, res) => {
+  index: async (req, res) => {
     res.render("products/products", {
-      products: Products.findAll(),
+      products: await db.Product.findAll({
+        include: ["category", "images"],
+      }),
       cat: req.query.cat,
     });
   },
 
-  detail: (req, res) => {
-    const id = req.params.id;
-    const product = Products.getById(id);
+  detail: async (req, res) => {
+    const product = await db.Product.findByPk(req.params.id, {
+      include : ["images", "brand"]
+    });
     if (product) {
       res.render("products/detail", { product });
     } else {
@@ -94,7 +99,7 @@ const controller = {
       description: req.body.description,
       color: req.body.color,
       price: req.body.price,
-      image: req.file?.filename || product.image
+      image: req.file?.filename || product.image,
     };
 
     if (Products.update(id, updateProductData)) {

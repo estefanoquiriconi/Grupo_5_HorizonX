@@ -40,5 +40,5 @@ app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productsRoutes);
 
-db.Role.findAll().then((r) => console.log(r))
-.catch(e=>console.log(e.message))
+// db.Role.findAll().then((r) => console.log(r))
+// .catch(e=>console.log(e.message))

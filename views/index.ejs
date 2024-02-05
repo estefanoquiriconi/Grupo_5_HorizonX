@@ -21,8 +21,8 @@
       <h2>Celulares</h2>
       <br />
       <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category ==
-        'celular') { %>
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Celular') { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
@@ -33,7 +33,7 @@
             </form>
             <img
               class="product-image"
-              src="images/products/<%= product.image %>"
+              src="images/products/<%= product.images[0].image_filename %>"
               alt="Imagen del producto: <%= product.name %>"
             />
           </article>
@@ -44,8 +44,8 @@
       <h2>Accesorios</h2>
       <br />
       <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category ==
-        'accesorio') { %>
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Accesorio') { %>
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
@@ -56,7 +56,7 @@
             </form>
             <img
               class="product-image"
-              src="images/products/<%= product.image %>"
+              src="images/products/<%= product.images[0].image_filename %>"
               alt="Imagen del producto: <%= product.name %>"
             />
           </article>
