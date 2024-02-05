@@ -22,7 +22,7 @@ const controller = {
 
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id, {
-      include : ["images", "brand"]
+      include: ["images", "brand"],
     });
     if (product) {
       res.render("products/detail", { product });
@@ -31,38 +31,66 @@ const controller = {
     }
   },
 
-  create: (req, res) => {
-    res.render("products/create");
+  create: async (req, res) => {
+    res.render("products/create", {
+      brands: await db.Brand.findAll(),
+      colors: await db.Color.findAll(),
+      categories: await db.Category.findAll(),
+    });
   },
 
-  store: (req, res) => {
+  store: async (req, res) => {
     const validations = validationResult(req);
 
     if (validations.errors.length > 0) {
-      if (req.file) {
-        fs.unlinkSync(
-          path.join(__dirname, "../public/images/products/", req.file.filename)
-        );
+      if (req.files) {
+        req.files.forEach((file) => {
+          fs.unlinkSync(
+            path.join(__dirname, "../public/images/products/", file.filename)
+          );
+        });
       }
+
       return res.render("products/create", {
         errors: validations.mapped(),
         oldData: req.body,
+        brands: await db.Brand.findAll(),
+        colors: await db.Color.findAll(),
+        categories: await db.Category.findAll(),
       });
     }
 
     const productData = {
       name: req.body.name,
-      brand: req.body.brand,
-      category: req.body.category,
+      brand_id: req.body.brand,
+      color_id: req.body.color,
+      category_id: req.body.category,
       description: req.body.description,
-      color: req.body.color,
+      stock_quantity: req.body.stock_quantity,
       price: req.body.price,
-      image: req.file?.filename || "default-product-image.png",
     };
 
-    Products.create(productData);
+    try {
+      const createdProduct = await db.Product.create(productData);
 
-    res.redirect("/products");
+      if (req.files.length > 0) {
+        for (const file of req.files) {
+          await db.ProductImage.create({
+            product_id: createdProduct.id,
+            image_filename: file.filename,
+          });
+        }
+      } else {
+        await db.ProductImage.create({
+          product_id: createdProduct.id,
+          image_filename: "default-product-image.png",
+        });
+      }
+
+      res.redirect("/products");
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   edit: (req, res) => {

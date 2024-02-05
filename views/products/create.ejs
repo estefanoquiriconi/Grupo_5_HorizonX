@@ -29,7 +29,12 @@
           </div>
           <div class="primer-div">
             <label for="brand">Marca:</label>
-            <input type="text" id="brand" name="brand" class="input-field" value="<%= locals.oldData && oldData.brand ? oldData.brand : null %>" />
+            <select name="brand" id="brand" class="input-field">
+              <option value="" selected disabled>Selecciona una marca</option>
+              <% brands.forEach(brand => { %>
+                <option value="<%= brand.id %>" <%= locals.oldData && oldData.brand == brand.id ? 'selected' : null %>> <%= brand.name %></option>
+              <% }) %>
+            </select>
             <% if (locals.errors && errors.brand) { %>
               <p class="error"><%= errors.brand.msg %></p>
               <% } %>
@@ -39,7 +44,12 @@
         <div class="primera-linea">
           <div class="primer-div">
             <label for="color">Color:</label>
-            <input type="text" id="color" name="color" class="input-field" value="<%= locals.oldData && oldData.color ? oldData.color : null %>" />
+            <select name="color" id="color" class="input-field">
+              <option value="" selected disabled>Selecciona un color</option>
+              <% colors.forEach(color => { %>
+                <option value="<%= color.id %>" <%= locals.oldData && oldData.color == color.id ? 'selected' : null %>> <%= color.name %></option>
+              <% }) %>
+            </select>
             <% if (locals.errors && errors.color) { %>
               <p class="error"><%= errors.color.msg %></p>
               <% } %>
@@ -53,16 +63,30 @@
               <% } %>
           </div>
         </div>
+        <div class="primera-linea">
+          <div class="primer-div">
+            <label for="category">Caregoría:</label>
+            <select name="category" id="category" class="input-field">
+              <option value="" selected disabled>Selecciona una categoría</option>
+              <% categories.forEach(category => { %>
+                <option value="<%= category.id %>" <%= locals.oldData && oldData.category == category.id ? 'selected' : null %>> <%= category.name %></option>
+              <% }) %>
+            </select>
+            <% if (locals.errors && errors.category) { %>
+              <p class="error"><%= errors.category.msg %></p>
+              <% } %>
+          </div>
 
-        <label for="category">Caregoría:</label>
-        <select name="category" id="category" class="input-field">
-          <option value="" selected disabled>Selecciona una categoría</option>
-          <option value="celular" <%= locals.oldData && oldData.category == 'celular' ? 'selected' : null %> >Celular</option>
-          <option value="accesorio" <%= locals.oldData && oldData.category == 'accesorio' ? 'selected' : null %> >Accesorio</option>
-        </select>
-        <% if (locals.errors && errors.category) { %>
-          <p class="error"><%= errors.category.msg %></p>
-          <% } %>
+          <div class="primer-div">
+
+            <label for="stock_quantity">Cantidad de stock:</label>
+            <input type="number" id="stock_quantity" name="stock_quantity" class="input-field" value="<%= locals.oldData && oldData.stock_quantity ? oldData.stock_quantity : null %>"  />
+            <% if (locals.errors && errors.stock_quantity) { %>
+              <p class="error"><%= errors.stock_quantity.msg %></p>
+              <% } %>
+          </div>
+        </div>
+  
 
         <label for="description">Descripción:</label>
         <textarea
@@ -80,8 +104,9 @@
           class="insert-img"
           type="file"
           id="image"
-          name="image"
+          name="images"
           alt="Imagen del producto"
+          multiple
         />
         <div class="button-ubicacion">
           <button type="submit">Crear</button>

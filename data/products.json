@@ -1,12 +1,12 @@
 [
  {
-  "id": "ee302cc1-1ecc-4988-afde-b1c83fc8d3a3",
+  "id": "1",
   "name": "Note 8",
   "brand": "Redmi",
   "category": "celular",
   "description": "El Xiaomi Redmi Note 8 marca la octava generación de la serie Redmi Note, esta vez con una pantalla Full HD+ de 6.3 pulgadas y potenciado por un procesador Snapdragon 665 de ocho núcleos. Con opciones de 4GB de memoria RAM y 64GB de almacenamiento, 6GB de RAM y 64GB de almacenamiento o 6GB de RAM y 128GB de almacenamiento, el Redmi Note 8 cuenta con una cámara cuádruple en su posterior de 48 MP + 8 MP + 2 MP + 2 MP, y su cámara para selfies es de 13 megapixels. El Redmi Note 8 completa sus características con una batería de 4000 mAh con soporte para carga rápida, lector de huellas montado en su parte posterior, resistencia a salpicaduras y corre MIUI 10 basado en Android 9.0 Pie.",
   "color": "Gris",
-  "price": "80000",
+  "price": "99999.99",
   "image": "1701897974058_img.png"
  },
  {
@@ -20,13 +20,13 @@
   "image": "1701898512761_img.jpg"
  },
  {
-  "id": "da8a287d-a9aa-4687-8a2a-9671ab4d3449",
+  "id": "2",
   "name": "Buds 250",
   "brand": "Motorola",
   "category": "accesorio",
   "description": "Los nuevos Motorola Buds 250 con tecnología True Wireless cuentan con conexión Bluetooth 5.0 que les permite sincronizarse con teléfonos, ordenadores o tablets. Además, puedes conectarte a cualquier aparato independientemente de lo que estés utilizando… Puedes conectarte al teléfono móvil mientras vas en metro pero al ordenador cuando llegas a casa o a la tablet si vas a ver una película y vas a descansar de trabajar en el sofá.",
   "color": "Negro",
-  "price": "80000",
+  "price": "86999.99",
   "image": "1702522200114_img.png"
  },
  {
