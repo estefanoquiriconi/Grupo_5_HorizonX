@@ -7,6 +7,12 @@
   margin: auto;
 }
 
+.main-products {
+  width: 100%;
+  margin: auto;
+  margin-top: 120px;
+}
+
 h2{
   font-weight: 800;
 }
@@ -16,6 +22,8 @@ h2{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  max-width: 1440px;
+  margin: auto;
 }
 
 a{
@@ -33,6 +41,7 @@ a{
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 15px;
+  max-width: 300px;
 }
 
 .product-image {
@@ -75,8 +84,7 @@ a{
 @media (min-width: 768px) {
 
     .product {
-        max-width: 320px;
-        margin: 5px;
+        margin: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
 

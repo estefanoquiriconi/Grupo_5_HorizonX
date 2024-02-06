@@ -4,7 +4,7 @@
   '/css/index.css'}) %>
   <body>
     <%- include('../partials/header.ejs') %>
-    <main class="container">
+    <main class="main-products">
       <section class="product-container">
         <% products.filter(e => cat ? e.category.name == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">

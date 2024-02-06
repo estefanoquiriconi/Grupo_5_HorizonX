@@ -36,6 +36,7 @@ body {
   max-width: 1200px;
   margin: 20px auto;
   overflow: hidden;
+  margin-top: 120px;
 }
 
 .product {
