@@ -6,6 +6,7 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    margin-top: 120px;
 } 
 
 .primera-linea{
@@ -17,7 +18,6 @@
     width: 48%;
     display: flex;
     flex-direction: column;
-    
 }
 
 .imput-primer-div{
@@ -57,12 +57,12 @@ textarea {
 .button-ubicacion{
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 
 button {
-    width: 95%;
+    width: 100%;
     align-items: center;
     background-color: var(--color1);
     color: #fff;
@@ -82,4 +82,14 @@ button:hover {
 
 .error {
     color: red;
+}
+
+.image-small{
+    width: 70px;
+    height: 70px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
 }

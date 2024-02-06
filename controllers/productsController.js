@@ -12,65 +12,77 @@ const db = require("../database/models");
 
 const controller = {
   index: async (req, res) => {
-    res.render("products/products", {
-      products: await db.Product.findAll({
+    try {
+      const products = await db.Product.findAll({
         include: ["category", "images"],
-      }),
-      cat: req.query.cat,
-    });
+      });
+      res.render("products/products", {
+        products,
+        cat: req.query.cat,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   },
 
   detail: async (req, res) => {
-    const product = await db.Product.findByPk(req.params.id, {
-      include: ["images", "brand"],
-    });
-    if (product) {
+    const { id } = req.params;
+    try {
+      const product = await db.Product.findByPk(id, {
+        include: ["images", "brand"],
+      });
+      if (!product) return res.redirect("/"); //product not found, redirect to home
       res.render("products/detail", { product });
-    } else {
-      res.send("¡No existe el producto que buscas!");
+    } catch (error) {
+      console.error(error);
     }
   },
 
   create: async (req, res) => {
-    res.render("products/create", {
-      brands: await db.Brand.findAll(),
-      colors: await db.Color.findAll(),
-      categories: await db.Category.findAll(),
-    });
-  },
-
-  store: async (req, res) => {
-    const validations = validationResult(req);
-
-    if (validations.errors.length > 0) {
-      if (req.files) {
-        req.files.forEach((file) => {
-          fs.unlinkSync(
-            path.join(__dirname, "../public/images/products/", file.filename)
-          );
-        });
-      }
-
-      return res.render("products/create", {
-        errors: validations.mapped(),
-        oldData: req.body,
+    try {
+      res.render("products/create", {
         brands: await db.Brand.findAll(),
         colors: await db.Color.findAll(),
         categories: await db.Category.findAll(),
       });
+    } catch (error) {
+      console.error(error);
     }
+  },
 
-    const productData = {
-      name: req.body.name,
-      brand_id: req.body.brand,
-      color_id: req.body.color,
-      category_id: req.body.category,
-      description: req.body.description,
-      stock_quantity: req.body.stock_quantity,
-      price: req.body.price,
-    };
-
+  store: async (req, res) => {
+    const validations = validationResult(req);
+    const { name, brand, color, category, description, stock_quantity, price } =
+      req.body;
     try {
+      if (!validations.isEmpty()) {
+        if (req.files) {
+          req.files.forEach((file) => {
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/products/", file.filename)
+            );
+          });
+        }
+
+        return res.render("products/create", {
+          errors: validations.mapped(),
+          oldData: req.body,
+          brands: await db.Brand.findAll(),
+          colors: await db.Color.findAll(),
+          categories: await db.Category.findAll(),
+        });
+      }
+
+      const productData = {
+        name,
+        brand_id: brand,
+        color_id: color,
+        category_id: category,
+        description,
+        stock_quantity,
+        price,
+      };
+
       const createdProduct = await db.Product.create(productData);
 
       if (req.files.length > 0) {
@@ -93,47 +105,77 @@ const controller = {
     }
   },
 
-  edit: (req, res) => {
-    const id = req.params.id;
-    const product = Products.getById(id);
-    if (product) {
-      res.render("products/edit", { product });
-    } else {
-      res.send("¡No existe el producto que desea modificar!");
+  edit: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const product = await db.Product.findByPk(id);
+      if (!product) return res.redirect("/");
+      res.render("products/edit", {
+        product,
+        brands: await db.Brand.findAll(),
+        categories: await db.Category.findAll(),
+        colors: await db.Color.findAll(),
+      });
+    } catch (error) {
+      console.error(error);
     }
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const validations = validationResult(req);
+    const { id } = req.params;
+    const { name, brand, color, category, description, stock_quantity, price } =
+      req.body;
+    try {
+      if (!validations.isEmpty()) {
+        if (req.files) {
+          req.files.forEach((file) => {
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/products/", file.filename)
+            );
+          });
+        }
 
-    if (validations.errors.length > 0) {
-      if (req.file) {
-        fs.unlinkSync(
-          path.join(__dirname, "../public/images/products/", req.file.filename)
-        );
+        return res.render("products/edit", {
+          errors: validations.mapped(),
+          product: {
+            ...req.body,
+            brand_id: brand,
+            color_id: color,
+            category_id: category,
+          },
+          brands: await db.Brand.findAll(),
+          categories: await db.Category.findAll(),
+          colors: await db.Color.findAll(),
+        });
       }
-      return res.render("products/edit", {
-        errors: validations.mapped(),
-        product: req.body,
+
+      const newProductData = {
+        name,
+        brand_id: brand,
+        color_id: color,
+        category_id: category,
+        description,
+        stock_quantity,
+        price,
+      };
+
+      await db.Product.update(newProductData, {
+        where: {
+          id: id,
+        },
       });
-    }
-
-    const id = req.params.id;
-    const product = Products.getById(id);
-    const updateProductData = {
-      name: req.body.name,
-      brand: req.body.brand,
-      category: req.body.category,
-      description: req.body.description,
-      color: req.body.color,
-      price: req.body.price,
-      image: req.file?.filename || product.image,
-    };
-
-    if (Products.update(id, updateProductData)) {
-      res.redirect("/products/detail/" + req.params.id);
-    } else {
-      res.send("¡No existe el producto que desea modificar!");
+      if (req.files.length > 0) {
+        for (const file of req.files) {
+          await db.ProductImage.create({
+            product_id: id,
+            image_filename: file.filename,
+          });
+        }
+      }
+      res.redirect("/products/detail/" + id);
+    } catch (error) {
+      console.error(error);
     }
   },
 

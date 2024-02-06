@@ -15,7 +15,7 @@ router.get("/create",  authMiddleware, adminMiddleware, controller.create);
 router.post("/create", uploadProduct.array('images'), validateProduct, controller.store);
 
 router.get("/edit/:id", authMiddleware, adminMiddleware, controller.edit);
-router.put("/edit/:id", uploadProduct.single('image'), validateProduct, controller.update);
+router.put("/edit/:id", uploadProduct.array('images'), validateProduct, controller.update);
 
 router.get("/productCart", authMiddleware, controller.productCart);
 router.post("/buy", controller.buy);
