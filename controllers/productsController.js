@@ -179,18 +179,47 @@ const controller = {
     }
   },
 
+  delete: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const images = await db.ProductImage.findAll({
+        where: {
+          product_id: id,
+        },
+      });
+      images.forEach((image) => {
+        if (image.image_filename != "default-product-image.png") {
+          fs.unlinkSync(
+            path.join(
+              __dirname,
+              "../public/images/products/",
+              image.image_filename
+            )
+          );
+        }
+      });
+      await db.ProductImage.destroy({
+        where: {
+          product_id: id,
+        },
+      });
+      await db.Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+      res.redirect("/products");
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
   productCart: (req, res) => {
     if (cartList.length != 0) {
       res.render("products/productCart", { products: cartList });
     } else {
       res.render("products/cartEmpty");
     }
-  },
-
-  delete: (req, res) => {
-    const id = req.params.id;
-    Products.detele(id);
-    res.redirect("/products");
   },
 
   buy: (req, res) => {
