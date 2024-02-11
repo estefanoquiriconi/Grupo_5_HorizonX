@@ -26,7 +26,7 @@
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-detail"><%= product.brand.name %></p>
             <p class="product-price">$<%= product.price %></p>
             <form action="/products/buy?id=<%= product.id %>" method="POST">
               <button type="submit" class="product-buy-btn">Comprar</button>
@@ -49,7 +49,7 @@
         <a href="/products/detail/<%= product.id %>">
           <article class="product">
             <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand %></p>
+            <p class="product-detail"><%= product.brand.name %></p>
             <p class="product-price">$<%= product.price %></p>
             <form action="/products/buy?id=<%= product.id %>" method="POST">
               <button type="submit" class="product-buy-btn">Comprar</button>

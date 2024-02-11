@@ -14,7 +14,7 @@ const controller = {
   index: async (req, res) => {
     try {
       const products = await db.Product.findAll({
-        include: ["category", "images"],
+        include: ["category", "images", "brand"],
       });
       res.render("products/products", {
         products,
