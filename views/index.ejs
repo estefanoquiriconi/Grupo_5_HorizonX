@@ -24,19 +24,7 @@
         <% products.forEach(product => { %> <% if (product.category.name ==
         'Celular') { %>
         <a href="/products/detail/<%= product.id %>">
-          <article class="product">
-            <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand.name %></p>
-            <p class="product-price">$<%= product.price %></p>
-            <form action="/products/buy?id=<%= product.id %>" method="POST">
-              <button type="submit" class="product-buy-btn">Comprar</button>
-            </form>
-            <img
-              class="product-image"
-              src="images/products/<%= product.images[0].image_filename %>"
-              alt="Imagen del producto: <%= product.name %>"
-            />
-          </article>
+          <%- include('./products/partials/card.ejs', {product}) %>
         </a>
         <% } %> <% }) %>
       </section>
@@ -47,19 +35,7 @@
         <% products.forEach(product => { %> <% if (product.category.name ==
         'Accesorio') { %>
         <a href="/products/detail/<%= product.id %>">
-          <article class="product">
-            <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand.name %></p>
-            <p class="product-price">$<%= product.price %></p>
-            <form action="/products/buy?id=<%= product.id %>" method="POST">
-              <button type="submit" class="product-buy-btn">Comprar</button>
-            </form>
-            <img
-              class="product-image"
-              src="images/products/<%= product.images[0].image_filename %>"
-              alt="Imagen del producto: <%= product.name %>"
-            />
-          </article>
+          <%- include('./products/partials/card.ejs', {product}) %>
         </a>
         <% } %> <% }) %>
       </section>
