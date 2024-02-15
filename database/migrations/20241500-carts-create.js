@@ -15,14 +15,6 @@ module.exports = {
           type: Sequelize.DECIMAL(10,2),
           allowNull: false,
         },
-        createdAt: {
-          type: Sequelize.DATE,
-          allowNull: false,
-        },
-        updatedAt: {
-          type: Sequelize.DATE,
-          allowNull: false,
-        },
       });
     },
   
