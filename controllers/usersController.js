@@ -119,6 +119,13 @@ const controller = {
 
     //User.create(userToCreate);
     const createdUser = await db.User.create(userToCreate);
+
+    //Carrito para el nuevo usuario
+    await db.Cart.create({
+      user_id : createdUser.id,
+      total_price : 0.00
+    })
+    
     return res.redirect("/users/login");
   },
 };
