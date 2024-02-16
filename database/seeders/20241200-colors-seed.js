@@ -10,7 +10,6 @@ module.exports = {
         { name: "Azul", cod_hex: "#0000FF" },
         { name: "Amarillo", cod_hex: "#FFFF00" },
       ],
-      {}
     );
   },
 
