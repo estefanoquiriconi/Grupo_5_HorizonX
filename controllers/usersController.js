@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 
+const db = require("../database/models");
 const controller = {
   login: (req, res) => {
     res.render("users/login");
@@ -15,9 +16,10 @@ const controller = {
     return res.redirect('/');
   },
 
-  processLogin: (req, res) => {
+  processLogin: async (req, res) => {
     const validations = validationResult(req);
-    let userToLogin = User.getByEmail(req.body.email);
+    //const userToLogin = User.getByEmail(req.body.email);
+    const userToLogin = await db.User.findOne({where:{email:req.body.email}});
 
     if (validations.errors.length > 0) {
       return res.render("users/login", {
@@ -42,6 +44,8 @@ const controller = {
     if (passwordOk) {
       delete userToLogin.password;
       req.session.userLogged = userToLogin;
+      const rol = await db.Role.findByPk(userToLogin.role_id)
+      req.session.userLogged.dataValues.role = rol.name
 
       if (req.body.rememberUser) {
         res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
@@ -68,7 +72,7 @@ const controller = {
     res.render("users/register");
   },
 
-  processRegister: (req, res) => {
+  processRegister: async (req, res) => {
     const validations = validationResult(req);
 
     if (validations.errors.length > 0) {
@@ -83,7 +87,8 @@ const controller = {
       });
     }
 
-    let userInDB = User.getByEmail(req.body.email);
+    //let userInDB = User.getByEmail(req.body.email);
+    let userInDB = await db.User.findOne({where:{email:req.body.email}});
 
     if (userInDB) {
       if (req.file) {
@@ -100,16 +105,20 @@ const controller = {
         oldData: req.body,
       });
     }
-
+    let { firstName, lastName,email, password } = req.body
     let userToCreate = {
-      ...req.body,
-      password: bcryptjs.hashSync(req.body.password, 10),
+      first_name:firstName,
+      last_name:lastName,
+      email:email,
+      //...req.body,
+      password: bcryptjs.hashSync(password, 10),
       avatar: req.file?.filename || "default-avatar-image.png",
-      role: "cliente",
+      role_id: 2,
+      //role:'cliente'
     };
 
-    User.create(userToCreate);
-
+    //User.create(userToCreate);
+    const createdUser = await db.User.create(userToCreate);
     return res.redirect("/users/login");
   },
 };
