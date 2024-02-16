@@ -3,8 +3,8 @@ module.exports = {
     await queryInterface.bulkInsert(
       "product_images",
       [
-        { product_id: 1, image_filename: "1701897974058_img.png" },
-        { product_id: 2, image_filename: "1702522200114_img.png" },
+        { id: 1, product_id: 1, image_filename: "1701897974058_img.png" },
+        { id: 2, product_id: 2, image_filename: "1702522200114_img.png" },
       ],
       {}
     );

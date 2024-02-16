@@ -3,11 +3,11 @@ module.exports = {
     await queryInterface.bulkInsert(
       "brands",
       [
-        { name: "Samsung" },
-        { name: "Motorola" },
-        { name: "Apple" },
-        { name: "Xiaomi" },
-        { name: "Huawei" },
+        { id : 1, name: "Samsung" },
+        { id : 2, name: "Motorola" },
+        { id : 3, name: "Apple" },
+        { id : 4, name: "Xiaomi" },
+        { id : 5, name: "Huawei" },
       ],
       {}
     );

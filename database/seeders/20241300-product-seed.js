@@ -4,6 +4,7 @@ module.exports = {
       "products",
       [
         {
+          id: 1,
           name: "Redmi Note 8",
           description:
             "Pantalla: 6.3', 1080 x 2340 pixels · Procesador: Snapdragon 665 2GHz · RAM: 4GB/6GB · Almacenamiento: 64GB/128GB",
@@ -14,6 +15,7 @@ module.exports = {
           color_id: 1,
         },
         {
+          id: 2,
           name: "Buds 250",
           description:
             "True wireless headphones con estuche de carga inalámbrica · Bluetooth® 5.0 technology · Resistente al agua · Botón tactil inteligente",
