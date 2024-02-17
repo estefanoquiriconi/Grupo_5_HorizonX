@@ -108,7 +108,7 @@ const controller = {
   edit: async (req, res) => {
     const { id } = req.params;
     try {
-      const product = await db.Product.findByPk(id);
+      const product = await db.Product.findByPk(id, {include: ["images"]});
       if (!product) return res.redirect("/");
       res.render("products/edit", {
         product,
@@ -116,7 +116,9 @@ const controller = {
         categories: await db.Category.findAll(),
         colors: await db.Color.findAll(),
       });
-    } catch (error) {
+
+    }
+    catch (error) {
       console.error(error);
     }
   },

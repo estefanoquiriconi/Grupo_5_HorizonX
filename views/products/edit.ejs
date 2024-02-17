@@ -111,7 +111,18 @@
               multiple
             />
           <input type="text" name="id" hidden value="<%= product.id %>">
-  
+
+          <section class="galery-container">
+            <% product.images.forEach(image => { %>
+
+            <article class="image-container" id="<%= image.id %>">
+              <img class= "image-small" src="/images/products/<%= image.image_filename %>" alt="<%= product.name %>">
+              <% if (product.images.length > 1) { %>
+                <button class="delete-icon" data-id="<%= image.id %>" id="<%=image.id %>"><i class="fa-regular fa-trash-can"></i></button>
+            <% } %>
+            </article>
+            <% }) %>
+          </section>
           <div class="button-ubicacion">
             <button type="submit">Guardar</button>
           </div>
