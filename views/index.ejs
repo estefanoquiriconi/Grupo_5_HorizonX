@@ -39,6 +39,28 @@
         </a>
         <% } %> <% }) %>
       </section>
+      <br />
+      <h2>Tablets</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Tablets') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <%- include('./products/partials/card.ejs', {product}) %>
+        </a>
+        <% } %> <% }) %>
+      </section>
+      <br />
+      <h2>Computadoras</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Computadoras') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <%- include('./products/partials/card.ejs', {product}) %>
+        </a>
+        <% } %> <% }) %>
+      </section>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>
