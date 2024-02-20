@@ -5,6 +5,8 @@ module.exports = {
       [
         { id: 1, name: "Celular" },
         { id: 2, name: "Accesorio" },
+        { id: 3, name: "Tablets" },
+        { id: 4, name: "Computadoras" },
       ],
       {}
     );
