@@ -8,7 +8,7 @@ module.exports = {
           name: "Redmi Note 8",
           description:
             "Pantalla: 6.3', 1080 x 2340 pixels · Procesador: Snapdragon 665 2GHz · RAM: 4GB/6GB · Almacenamiento: 64GB/128GB",
-          price: 99999.99,
+          price: 54999.99,
           stock_quantity: 10,
           brand_id: 4,
           category_id: 1,
@@ -19,7 +19,7 @@ module.exports = {
           name: "Buds 250",
           description:
             "True wireless headphones con estuche de carga inalámbrica · Bluetooth® 5.0 technology · Resistente al agua · Botón tactil inteligente",
-          price: 86999.99,
+          price: 82999.99,
           stock_quantity: 10,
           brand_id: 2,
           category_id: 2,
@@ -107,7 +107,7 @@ module.exports = {
           name: "HUAWEI WATCH FIT Special Edition",
           description:
             "Pantalla AMOLED HD de 1.64 pulgadas · GPS integrado · Gestión profesional de la salud · Compatible con Android e iOS9 · Detección automática de entrenamiento",
-          price: 75999.99,
+          price: 75985.00,
           stock_quantity: 10,
           brand_id: 5,
           category_id: 2,
@@ -118,8 +118,8 @@ module.exports = {
           name: "Redmi Smart Band 2 GL Watch",
           description: 
             "Pantalla TFT dinámica de 1,47 pulgadas · Compatible con más de 30 modos de entrenamiento · Resistencia al agua de 5 ATM · Carga magnética en menos de 120 minutos",
-          price: 57999.00,
-          stock_quantity: 8,
+          price: 57499.00,
+          stock_quantity: 9,
           brand_id: 4,
           category_id: 2,
           color_id: 1, 
@@ -129,8 +129,8 @@ module.exports = {
           name: "Galaxy Buds FE Graphite",
           description: 
             "Desconéctate del mundo con la potente función ANC · Comodidad ergonómica · Batería de 30 horas de duración · Bluetooth v5.2 ",
-          price: 51999.00,
-          stock_quantity: 8,
+          price: 88900.00,
+          stock_quantity: 10,
           brand_id: 1,
           category_id: 2,
           color_id: 9, 
@@ -141,7 +141,7 @@ module.exports = {
           description: 
             "Un rendimiento extremo con pantalla avanzada · Neutral Engine de 16 nucleos · Pantalla Liquid Retina CDR de 12.9 pulgadas · Compatible con teclados bluetooth y Apple Pencil",
           price: 133999.00,
-          stock_quantity: 8,
+          stock_quantity: 18,
           brand_id: 3,
           category_id: 3,
           color_id: 9, 
@@ -151,8 +151,8 @@ module.exports = {
           name: "MatePad T10s",
           description: 
             "Diseño con una Pantalla táctil  10.1 pulgadas Full HD con protección ocular · RAM de GB y ROM 64/128 GB · Bateria de 5.100 mAh · Bluetooth 4.2 ",
-          price: 999.00,
-          stock_quantity: 8,
+          price: 98724.00,
+          stock_quantity: 10,
           brand_id: 5,
           category_id: 3,
           color_id: 9, 
@@ -163,7 +163,7 @@ module.exports = {
           description: 
             "Vistas amplias y luminosas incluso al aire libre con Vision Booster · Equipado con chipset Exynos 1380 de alto rendimiento · Resistencia al agua y al polvo · Conectividad con Physical SIM y un eSIM adicional",
           price: 110000.00,
-          stock_quantity: 20,
+          stock_quantity: 15,
           brand_id: 1,
           category_id: 3,
           color_id: 9, 
@@ -174,7 +174,7 @@ module.exports = {
           description: 
             "Con Book cover Keyboard y S Pen · Bateria de 11200 mAh · Dynamic AMOLED 2X con Brillo uniforme · Tres tamaños a elección y dos colores inspirados en la naturaleza",
           price: 129999.00,
-          stock_quantity: 18,
+          stock_quantity: 20,
           brand_id: 1,
           category_id: 3,
           color_id: 2, 
@@ -195,7 +195,7 @@ module.exports = {
           name: "MateBook D14 2024",
           description: 
             "Pantalla HUAWEI FullView con confort ocular · Procesador Intel Core de 12Gen · Resolución 1920 x 1200 · Bluetooth 5.1",
-          price: 68999.00,
+          price: 68799.00,
           stock_quantity: 11,
           brand_id: 5,
           category_id: 4,
@@ -206,18 +206,18 @@ module.exports = {
           name: "Galaxy Book3 Pro 360",
           description: 
             "Diseño ligero y fino con Bateria duradera · Rendimiento de siguiente nivel con 13th Gen Intel Core · Procesador Intel Core i7-1360P · Sistema Operativo Windows 11 Home",
-          price: 11999.00,
+          price: 119999.00,
           stock_quantity: 16,
           brand_id: 1,
           category_id: 4,
-          color_id: 1, 
+          color_id: 9, 
         },
         {
           id: 20,
           name: "Galaxy Book3",
           description: 
             "Pantalla TFT dinámica de 1,47 pulgadas · Compatible con más de 30 modos de entrenamiento · Procesador Intel Core i7-1355U · Sistema Operativo Windows 11 Home",
-          price: 29999.00,
+          price: 110864.00,
           stock_quantity: 8,
           brand_id: 1,
           category_id: 4,

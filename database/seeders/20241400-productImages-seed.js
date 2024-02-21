@@ -7,9 +7,6 @@ module.exports = {
           id: 1, 
           product_id: 1, 
           image_filename: "1701897974058_img.png",
-          // image_filename: "", 
-          // image_filename: "", 
-          // image_filename: "" 
         },
         { 
           id: 2,
@@ -24,7 +21,7 @@ module.exports = {
         { 
           id: 4,
           product_id: 4,
-          image_filename: "1702546563559_img.png",
+          image_filename: "17025465635590_img.png",
         },
         { 
           id: 5,
@@ -59,7 +56,7 @@ module.exports = {
         { 
           id: 11, 
           product_id: 11,
-          image_filename: "12315494856_img.png",
+          image_filename: "12315494856_img.jpg",
         },
         { 
           id: 12, 
@@ -79,7 +76,7 @@ module.exports = {
         { 
           id: 15, 
           product_id: 15, 
-          image_filename: "13215465489512_img.png",
+          image_filename: "189199-800_img.png",
         },
         { 
           id: 16, 
@@ -99,12 +96,12 @@ module.exports = {
         { 
           id: 19, 
           product_id: 19, 
-          image_filename: "165947800645_img.png",
+          image_filename: "165947800640_img.webp",
         },
         { 
           id: 20,
           product_id: 20,
-          image_filename: "12341536358831_img.png",
+          image_filename: "12341536358832_img.webp",
         },
       ],
       {}

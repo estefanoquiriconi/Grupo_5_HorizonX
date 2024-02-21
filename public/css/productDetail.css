@@ -121,6 +121,7 @@ p.p-div {
   display: flex;
   overflow-x: auto;
   border: 2px solid #bcbcbc;
+  border-radius: 6px;
 }
 
 #image-carousel img {
