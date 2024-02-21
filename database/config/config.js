@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "Alvarosc35..",
+    "password": null,
     "database": "horizonx_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
