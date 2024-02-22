@@ -6,6 +6,7 @@
   max-width: 1440;
   margin: auto;
   text-align: center;
+  background-color: white;
 }
 
 .main-products {
@@ -22,7 +23,24 @@ h2{
 
 }
 
-.product-container{
+.Subtitles{
+  font-size: 25px;
+}
+
+.product-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1440px;
+  margin: auto;
+ background-color:#DDE6ED;
+ border-radius: 10px; 
+}
+
+.product-container1{
+  border-radius: 10px; 
+  background-color: #526D82;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

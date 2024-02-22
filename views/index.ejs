@@ -18,7 +18,7 @@
     </div>
     <main class="container">
       <br />
-      <h2>Celulares</h2>
+      <h2 class="Subtitles">Celulares</h2>
       <br />
       <section class="product-container">
         <% products.forEach(product => { %> <% if (product.category.name ==
@@ -29,9 +29,9 @@
         <% } %> <% }) %>
       </section>
       <br />
-      <h2>Accesorios</h2>
+      <h2 class="Subtitles">Accesorios</h2>
       <br />
-      <section class="product-container">
+      <section class="product-container1">
         <% products.forEach(product => { %> <% if (product.category.name ==
         'Accesorio') { %>
         <a href="/products/detail/<%= product.id %>">
@@ -40,7 +40,7 @@
         <% } %> <% }) %>
       </section>
       <br />
-      <h2>Tablets</h2>
+      <h2 class="Subtitles">Tablets</h2>
       <br />
       <section class="product-container">
         <% products.forEach(product => { %> <% if (product.category.name ==
@@ -51,9 +51,9 @@
         <% } %> <% }) %>
       </section>
       <br />
-      <h2>Computadoras</h2>
+      <h2 class="Subtitles">Computadoras</h2>
       <br />
-      <section class="product-container">
+      <section class="product-container1">
         <% products.forEach(product => { %> <% if (product.category.name ==
         'Computadoras') { %>
         <a href="/products/detail/<%= product.id %>">
