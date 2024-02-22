@@ -85,7 +85,7 @@ a{
 
 .product-detail {
   text-align: center;
-  margin: 20px;
+  /* margin: 20px; */
   color: var(--color1);
 }
 

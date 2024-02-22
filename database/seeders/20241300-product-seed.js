@@ -5,14 +5,14 @@ module.exports = {
       [
         {
           id: 1,
-          name: "Redmi Note 8",
+          name: "Razr 40 Ultra",
           description:
-            "Pantalla: 6.3', 1080 x 2340 pixels · Procesador: Snapdragon 665 2GHz · RAM: 4GB/6GB · Almacenamiento: 64GB/128GB",
-          price: 54999.99,
-          stock_quantity: 10,
-          brand_id: 4,
+            "Diseño exclusivo con pantalla flexible de 6.9” y bisagra “gota” sin espacios entre sus lados",
+          price: 120000.00,
+          stock_quantity: 2,
+          brand_id: 2,
           category_id: 1,
-          color_id: 1,
+          color_id: 10,
         },
         {
           id: 2,

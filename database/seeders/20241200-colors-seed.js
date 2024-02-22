@@ -10,6 +10,7 @@ module.exports = {
       { id: 7, name: "Platinado", cod_hex: "#e5e4e2" },
       { id: 8, name: "Rosado", cod_hex: "#fae1e5" },
       { id: 9, name: "Grafito", cod_hex: "#242323" },
+      { id: 10, name: "Durazno", cod_hex: "#FBCAA9" },
     ]);
   },
 

@@ -6,7 +6,7 @@ module.exports = {
         { 
           id: 1, 
           product_id: 1, 
-          image_filename: "1701897974058_img.png",
+          image_filename: "razr-165520-800-auto.png",
         },
         { 
           id: 2,
@@ -102,6 +102,26 @@ module.exports = {
           id: 20,
           product_id: 20,
           image_filename: "12341536358832_img.webp",
+        },
+        { 
+          id: 21, 
+          product_id: 1, 
+          image_filename: "razr-165521-800-auto.png",
+        },
+        { 
+          id: 22, 
+          product_id: 1, 
+          image_filename: "razr-165522-800-auto.png",
+        },
+        { 
+          id: 23, 
+          product_id: 1, 
+          image_filename: "razr-165523-800-auto.png",
+        },
+        { 
+          id: 24, 
+          product_id: 1, 
+          image_filename: "razr-165524-800-auto.png",
         },
       ],
       {}

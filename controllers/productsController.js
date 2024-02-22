@@ -29,7 +29,7 @@ const controller = {
     const { id } = req.params;
     try {
       const product = await db.Product.findByPk(id, {
-        include: ["images", "brand"],
+        include: ["images", "brand", "color"],
       });
       if (!product) return res.redirect("/"); //product not found, redirect to home
       res.render("products/detail", { product });

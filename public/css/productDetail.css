@@ -215,14 +215,7 @@ h3 {
   margin-bottom: 8px;
 }
 
-.selection {
-  display: flex;
-  margin-top: 8px;
-}
-
-.selection1,
-.selection2,
-.selection3 {
+.product-color{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,17 +227,6 @@ h3 {
   cursor: pointer;
   margin-left: 10px;
   margin-right: 10px;
-}
-.selection1 {
-  background-color: magenta;
-}
-
-.selection2 {
-  background-color: blueviolet;
-}
-
-.selection3 {
-  background-color: blue;
 }
 
 /******** Sección de especificaciones ********/
@@ -315,6 +297,26 @@ h3 {
 .item-flex {
   display: flex;
   flex-direction: column;
+}
+
+.swiper {
+  width: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 790px) {
