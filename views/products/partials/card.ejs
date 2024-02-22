@@ -1,7 +1,7 @@
 <article class="product">
   <h2 class="product-title"><%= product.name %></h2>
   <p class="product-detail"><%= product.brand.name %></p>
-  <p class="product-price">$<%= product.price %></p>
+  <p class="product-price">$<%= Number(product.price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
   <form action="/cart/add/<%= product.id %>" method="POST">
     <button type="submit" class="product-buy-btn">Comprar</button>
   </form>

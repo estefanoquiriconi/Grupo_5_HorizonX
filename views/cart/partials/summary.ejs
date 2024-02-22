@@ -2,7 +2,7 @@
   <h2 class="summary-title">Resumen de compra</h2>
   <div class="summary-row">
     <p>Productos</p>
-    <p>$<%= cart.total_price %></p>
+    <p>$<%= Number(cart.total_price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
   </div>
   <div class="summary-row">
     <p>Envío</p>
@@ -10,7 +10,7 @@
   </div>
   <div class="total summary-row">
     <p class="total">Total</p>
-    <p>$<%= (Number(cart.total_price) + 3500).toFixed(2) %></p>
+    <p>$<%= (Number(cart.total_price) + 3500).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
   </div>
   <div class="checkout-button">
     <button class="btn">Finalizar Compra</button>

@@ -99,7 +99,7 @@
                   <span class="product-color"></span>
                 </div>
               </div>
-              <p class="price">$<%= product.price %></p>
+              <p class="price">$<%= Number(product.price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
               <form
                 action="/cart/add/<%= product.id %>"
                 method="POST"
