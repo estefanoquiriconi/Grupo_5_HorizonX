@@ -19,7 +19,7 @@ module.exports = {
           name: "Buds 250",
           description:
             "True wireless headphones con estuche de carga inalámbrica · Bluetooth® 5.0 technology · Resistente al agua · Botón tactil inteligente",
-          price: 82999.99,
+          price: "82.999,99",
           stock_quantity: 10,
           brand_id: 2,
           category_id: 2,
@@ -30,7 +30,7 @@ module.exports = {
           name: "iPhone 14",
           description:
             "Frente de Ceramic Shield · Diseño de aluminio con parte posterior de vidrio · Chip A15 Bionic · Reconocimiento facial por medio de la cámara TrueDepth · Resistente al agua y salpicaduras",
-          price: 95000.00,
+          price: "98.099,99",
           stock_quantity: 10,
           brand_id: 3,
           category_id: 1,
@@ -41,7 +41,7 @@ module.exports = {
           name: "Galaxy Z Flip5",
           description:
             "Flex Window de 3,4 pulgadas que admite una mejor experiencia · Panel Flex Mode · Camara frontal de 14MP y camara trasera de 50MP",
-          price: 88999.99,
+          price: "108.999,99",
           stock_quantity: 10,
           brand_id: 1,
           category_id: 1,
@@ -52,7 +52,7 @@ module.exports = {
           name: "Honor 90",
           description: 
             "Una nueva experiencia bajo una coraza de cristal y metal · Resolución 2664 x 1200 con esquinas redondeadas · Bateria 4900mAh · Tarjeta SIM, Nano-SIM / eSIM · Bluetooth 5.2",
-          price: 57999.00,
+          price: "82.999,00",
           stock_quantity: 10,
           brand_id: 5,
           category_id: 1,
@@ -63,7 +63,7 @@ module.exports = {
           name: "Razr 40 Ultra",
           description: 
             "Diseño exclusivo con pantalla flexible de 6.9 pulgadas · Bateria carga rapida de 3800mAh  · Bluetooth 5.3 · Memoria RAM de 12GB",
-          price: 110956.00,
+          price: "110.956,00",
           stock_quantity: 10,
           brand_id: 2,
           category_id: 1,
@@ -74,7 +74,7 @@ module.exports = {
           name: "iPhone 15",
           description:
             "La Dynamic Island te muestra alertas y actividades en vivo · Nueva cámara de 48MP · Ceramic Shield frontal más resistente · Resistente a salpicadura, agua y polvo",
-          price: 130000.00,
+          price: "110.990,00",
           stock_quantity: 10,
           brand_id: 3,
           category_id: 1,
@@ -85,7 +85,7 @@ module.exports = {
           name: "Apple Watch Series 9",
           description:
             "Una forma nueva y mágica de interactuar con tu Apple Watch sin siquiera tocarlo · Una pantalla con el doble de brillo · Combinaciones de cajas y correas neutras en carbono · esistente al agua hasta 50 metros",
-          price: 88999.99,
+          price: "98.999,99",
           stock_quantity: 10,
           brand_id: 3,
           category_id: 2,
@@ -96,7 +96,7 @@ module.exports = {
           name: "Airpods Pro (2.ª generación)",
           description:
             "El Audio Espacial lleva la experiencia del sonido inmersivo a un nivel mucho más personal · Hasta 6 horas de audio con una sola carga · Resistente al agua y al sudor · Cancelación Activa de Ruido y modo Ambiente",
-          price: 84560.00,
+          price: "84.560,00",
           stock_quantity: 10,
           brand_id: 3,
           category_id: 2,
@@ -107,7 +107,7 @@ module.exports = {
           name: "HUAWEI WATCH FIT Special Edition",
           description:
             "Pantalla AMOLED HD de 1.64 pulgadas · GPS integrado · Gestión profesional de la salud · Compatible con Android e iOS9 · Detección automática de entrenamiento",
-          price: 75985.00,
+          price: "75.985,00",
           stock_quantity: 10,
           brand_id: 5,
           category_id: 2,
@@ -118,7 +118,7 @@ module.exports = {
           name: "Redmi Smart Band 2 GL Watch",
           description: 
             "Pantalla TFT dinámica de 1,47 pulgadas · Compatible con más de 30 modos de entrenamiento · Resistencia al agua de 5 ATM · Carga magnética en menos de 120 minutos",
-          price: 57499.00,
+          price: "76.499,90",
           stock_quantity: 9,
           brand_id: 4,
           category_id: 2,
@@ -129,7 +129,7 @@ module.exports = {
           name: "Galaxy Buds FE Graphite",
           description: 
             "Desconéctate del mundo con la potente función ANC · Comodidad ergonómica · Batería de 30 horas de duración · Bluetooth v5.2 ",
-          price: 88900.00,
+          price: "88.900,00",
           stock_quantity: 10,
           brand_id: 1,
           category_id: 2,
@@ -140,7 +140,7 @@ module.exports = {
           name: "iPad Pro",
           description: 
             "Un rendimiento extremo con pantalla avanzada · Neutral Engine de 16 nucleos · Pantalla Liquid Retina CDR de 12.9 pulgadas · Compatible con teclados bluetooth y Apple Pencil",
-          price: 133999.00,
+          price: "108.999,99",
           stock_quantity: 18,
           brand_id: 3,
           category_id: 3,
@@ -151,7 +151,7 @@ module.exports = {
           name: "MatePad T10s",
           description: 
             "Diseño con una Pantalla táctil  10.1 pulgadas Full HD con protección ocular · RAM de GB y ROM 64/128 GB · Bateria de 5.100 mAh · Bluetooth 4.2 ",
-          price: 98724.00,
+          price: "98.724,00",
           stock_quantity: 10,
           brand_id: 5,
           category_id: 3,
@@ -162,7 +162,7 @@ module.exports = {
           name: "Galaxy Tab S9",
           description: 
             "Vistas amplias y luminosas incluso al aire libre con Vision Booster · Equipado con chipset Exynos 1380 de alto rendimiento · Resistencia al agua y al polvo · Conectividad con Physical SIM y un eSIM adicional",
-          price: 110000.00,
+          price: "99.230,00",
           stock_quantity: 15,
           brand_id: 1,
           category_id: 3,
@@ -173,7 +173,7 @@ module.exports = {
           name: "Galaxy Tab S9 Ultra",
           description: 
             "Con Book cover Keyboard y S Pen · Bateria de 11200 mAh · Dynamic AMOLED 2X con Brillo uniforme · Tres tamaños a elección y dos colores inspirados en la naturaleza",
-          price: 129999.00,
+          price: "110.546,00",
           stock_quantity: 20,
           brand_id: 1,
           category_id: 3,
@@ -184,7 +184,7 @@ module.exports = {
           name: "MacBook Pro",
           description: 
             "Los chips mas avanzados y hasta 22 horas de batería · Tecnología de 3 naómetros y nueva arquitectura GPU · Magic Keyboard con Touch ID integrado · Pantalla Liquid Retina XDR de 14.9 pulgadas",
-          price: 116000.00,
+          price: "116.000,00",
           stock_quantity: 16,
           brand_id: 3,
           category_id: 4,
@@ -195,7 +195,7 @@ module.exports = {
           name: "MateBook D14 2024",
           description: 
             "Pantalla HUAWEI FullView con confort ocular · Procesador Intel Core de 12Gen · Resolución 1920 x 1200 · Bluetooth 5.1",
-          price: 68799.00,
+          price: "109.799,00",
           stock_quantity: 11,
           brand_id: 5,
           category_id: 4,
@@ -206,7 +206,7 @@ module.exports = {
           name: "Galaxy Book3 Pro 360",
           description: 
             "Diseño ligero y fino con Bateria duradera · Rendimiento de siguiente nivel con 13th Gen Intel Core · Procesador Intel Core i7-1360P · Sistema Operativo Windows 11 Home",
-          price: 119999.00,
+          price: "119.999,00",
           stock_quantity: 16,
           brand_id: 1,
           category_id: 4,
@@ -217,7 +217,7 @@ module.exports = {
           name: "Galaxy Book3",
           description: 
             "Pantalla TFT dinámica de 1,47 pulgadas · Compatible con más de 30 modos de entrenamiento · Procesador Intel Core i7-1355U · Sistema Operativo Windows 11 Home",
-          price: 110864.00,
+          price: "110.864,00",
           stock_quantity: 8,
           brand_id: 1,
           category_id: 4,
