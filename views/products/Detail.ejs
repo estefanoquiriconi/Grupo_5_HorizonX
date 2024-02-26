@@ -10,8 +10,11 @@
     />
     <main class="container">
       <section class="product-section">
-        <div class="product">
-          <div class="product-details">
+        <div class="product-details">
+          <div class="product-card">
+            <h2 class="product-title">
+              <%=product.brand.name +' '+ product.name %>
+            </h2>
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <% product.images.forEach(image => { %>
@@ -25,102 +28,98 @@
               </div>
               <div class="swiper-pagination"></div>
             </div>
-            <div>
-              <h2><%=product.brand.name +' '+ product.name %></h2>
-              <p><%= product.description %></p>
-              <div class="price-pay">
-                <div class="price-pay2">
-                  <div class="form-pay">
-                    <h3>Todas las formas de pago</h3>
-                    <div class="form-pay2">
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/cabal26.png"
-                          alt="Cabal"
-                          class="target-form2"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/visa26.png"
-                          alt="Visa"
-                          class="target-form1"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/mastercard26.png"
-                          alt="MasterCard"
-                          class="target-form1"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/american-express26.png"
-                          alt="Cabal"
-                          class="target-form2"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/cash-icon-checkout.svg"
-                          alt="Cabal"
-                          class="target-form1"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/ico-mercadopago.png"
-                          alt="Cabal"
-                          class="target-form1"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                      <div class="target">
-                        <img
-                          src="https://armoto.vtexassets.com/arquivos/modo.png"
-                          alt="Cabal"
-                          class="target-form1"
-                          crossorigin="anonymous"
-                        />
-                      </div>
-                    </div>
+          </div>
+          <div class="product-info">
+            <p class="product-description"><%= product.description %></p>
+            <div class="product-color-container">
+              <p>Color: <%= product.color.name %></p>
+              <span class="product-color"></span>
+            </div>
+            <div class="price-pay">
+              <div class="form-pay">
+                <p>Todas las formas de pago</p>
+                <div class="form-pay2">
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/cabal26.png"
+                      alt="Cabal"
+                      class="target-form2"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/visa26.png"
+                      alt="Visa"
+                      class="target-form1"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/mastercard26.png"
+                      alt="MasterCard"
+                      class="target-form1"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/american-express26.png"
+                      alt="Cabal"
+                      class="target-form2"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/cash-icon-checkout.svg"
+                      alt="Cabal"
+                      class="target-form1"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/ico-mercadopago.png"
+                      alt="Cabal"
+                      class="target-form1"
+                      crossorigin="anonymous"
+                    />
+                  </div>
+                  <div class="target">
+                    <img
+                      src="https://armoto.vtexassets.com/arquivos/modo.png"
+                      alt="Cabal"
+                      class="target-form1"
+                      crossorigin="anonymous"
+                    />
                   </div>
                 </div>
               </div>
-              <div>
-                <div class="options-color">
-                  <p class="p-div">Color: <%= product.color.name %></p>
-                  <span class="product-color"></span>
-                </div>
-              </div>
-              <p class="price">$<%= Number(product.price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+            </div>
+            <p class="price">
+              $<%= Number(product.price).toLocaleString('es-AR', {
+              minimumFractionDigits: 2 }) %>
+            </p>
+            <div class="buttons">
               <form
                 action="/cart/add/<%= product.id %>"
                 method="POST"
                 style="display: inline-flex"
               >
-                <button type="submit" class="buy-button">
-                  Agregar al carrito
-                </button>
+                <button type="submit" class="btn">Agregar al carrito</button>
               </form>
               <% if (locals.isLogged && locals.userLogged.role ==
               'administrador') { %>
-              <a href="/products/edit/<%= product.id %>" class="buy-button"
-                >Editar</a
-              >
+              <a href="/products/edit/<%= product.id %>" class="btn">Editar</a>
               <form
                 action="/products/delete/<%= product.id %>?_method=DELETE"
                 method="POST"
                 style="display: inline-flex"
                 enctype="multipart/form-data"
               >
-                <button type="submit" class="buy-button">Eliminar</button>
+                <button type="submit" class="btn">Eliminar</button>
               </form>
               <% } %>
             </div>

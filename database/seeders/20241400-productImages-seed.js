@@ -26,7 +26,7 @@ module.exports = {
         { 
           id: 5,
           product_id: 5,
-          image_filename: "honor90_img.png",
+          image_filename: "razr-164579-700-auto.png",
         },
         { 
           id: 6,
@@ -122,6 +122,26 @@ module.exports = {
           id: 24, 
           product_id: 1, 
           image_filename: "razr-165524-800-auto.png",
+        },
+        { 
+          id: 26, 
+          product_id: 5, 
+          image_filename: "razr-164580-700-auto.png",
+        },
+        { 
+          id: 27, 
+          product_id: 5, 
+          image_filename: "razr-164581-700-auto.png",
+        },
+        { 
+          id: 28, 
+          product_id: 5, 
+          image_filename: "razr-164582-700-auto.png",
+        },
+        { 
+          id: 29, 
+          product_id: 5, 
+          image_filename: "razr-164583-700-auto.png",
         },
       ],
       {}
