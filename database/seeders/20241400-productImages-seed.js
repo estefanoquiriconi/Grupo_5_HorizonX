@@ -31,7 +31,7 @@ module.exports = {
         { 
           id: 6,
           product_id: 6,
-          image_filename: "164681800_img.png",
+          image_filename: "mg54-165263-800-auto.png",
         },
         { 
           id: 7,
@@ -142,6 +142,26 @@ module.exports = {
           id: 29, 
           product_id: 5, 
           image_filename: "razr-164583-700-auto.png",
+        },
+        { 
+          id: 30,
+          product_id: 6,
+          image_filename: "mg54-165265-800-auto.png",
+        },
+        { 
+          id: 31,
+          product_id: 6,
+          image_filename: "mg54-165266-800-auto.png",
+        },
+        { 
+          id: 32,
+          product_id: 6,
+          image_filename: "mg54-165272-800-auto.png",
+        },
+        { 
+          id: 33,
+          product_id: 6,
+          image_filename: "mg54-165273-800-auto.png",
         },
       ],
       {}

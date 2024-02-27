@@ -23,5 +23,6 @@ router.delete("/buy", controller.cartRemove);
 
 router.delete("/delete/:id", authMiddleware, adminMiddleware, controller.delete);
 
+router.delete("/delete/image/:id", authMiddleware, adminMiddleware, controller.deleteImage);
 
 module.exports = router;
