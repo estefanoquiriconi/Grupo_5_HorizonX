@@ -123,6 +123,196 @@ module.exports = {
           product_id: 1, 
           image_filename: "razr-165524-800-auto.png",
         },
+        { 
+          id: 25, 
+          product_id: 21, 
+          image_filename: "Samsung_Galaxy_Z_Fold5_512_GB_Phantom_Black_1.webp",
+        },
+        { 
+          id: 26, 
+          product_id: 21, 
+          image_filename: "Samsung_Galaxy_Z_Fold5_512_GB_Phantom_Black_2.webp",
+        },
+        { 
+          id: 27, 
+          product_id: 21, 
+          image_filename: "Samsung_Galaxy_Z_Fold5_512_GB_Phantom_Black_3.webp",
+        },
+        { 
+          id: 28, 
+          product_id: 22, 
+          image_filename: "Moto_E_22_1.webp",
+        },
+        { 
+          id: 29, 
+          product_id:22 , 
+          image_filename: "Moto_E_22_2.webp",
+        },
+        { 
+          id: 30, 
+          product_id: 22, 
+          image_filename: "Moto_E_22_3.webp",
+        },
+        { 
+          id: 31, 
+          product_id: 23, 
+          image_filename: "Moto_G32_Gris_1.webp",
+        },
+        { 
+          id: 32, 
+          product_id: 23, 
+          image_filename: "Moto_G32_Gris_2.webp",
+        },
+        { 
+          id: 33, 
+          product_id: 23, 
+          image_filename: "Motorola_Moto_G32_3.webp",
+        },
+        { 
+          id: 34, 
+          product_id: 24, 
+          image_filename: "Moto_G84_Ballad_Blue_1.jpg",
+        },
+        { 
+          id: 35, 
+          product_id: 24, 
+          image_filename: "Moto_G84_Ballad_Blue_2.jpg",
+        },
+        { 
+          id: 36, 
+          product_id: 24, 
+          image_filename: "Moto_G84_Ballad_Blue_3.jpg",
+        },
+        { 
+          id: 37, 
+          product_id: 25, 
+          image_filename: "Redmi_Note_11_1.png",
+        },
+        { 
+          id: 38, 
+          product_id: 25, 
+          image_filename: "Redmi_Note_11_2.jpg",
+        },
+        { 
+          id: 39, 
+          product_id: 25, 
+          image_filename: "Redmi_Note_11_3.jpg",
+        },
+        { 
+          id: 40, 
+          product_id: 26, 
+          image_filename: "Samsung_Galaxy_A24_1.png",
+        },
+        { 
+          id: 41, 
+          product_id: 26, 
+          image_filename: "Samsung_Galaxy_A24_2.webp",
+        },
+        { 
+          id: 42, 
+          product_id: 26, 
+          image_filename: "Samsung_Galaxy_A24_3.png",
+        },
+        { 
+          id: 43, 
+          product_id: 27, 
+          image_filename: "Adaptador_Samsung_Carga_Rapida_1.jpg",
+        },
+        { 
+          id: 44, 
+          product_id: 27, 
+          image_filename: "Adaptador_Samsung_Carga_Rapida_2.jpg",
+        },
+        { 
+          id: 45, 
+          product_id: 27, 
+          image_filename: "Adaptador_Samsung_Carga_Rapida_3.jpg",
+        },
+        { 
+          id: 46, 
+          product_id: 28, 
+          image_filename: "Carg_Portatil_1.webp",
+        },
+        { 
+          id: 47, 
+          product_id: 28, 
+          image_filename: "Carg_Portatil_2.webp",
+        },
+        { 
+          id: 48, 
+          product_id: 29, 
+          image_filename: "Cable_USB_Apple.webp",
+        },
+        { 
+          id: 49, 
+          product_id: 30, 
+          image_filename: "Tripode_1.jpg",
+        },
+        { 
+          id: 50, 
+          product_id: 30, 
+          image_filename: "Tripode_2.jpg",
+        },
+        { 
+          id: 51, 
+          product_id: 31, 
+          image_filename: "Midnight-1.jpg",
+        },
+        { 
+          id: 52, 
+          product_id: 31, 
+          image_filename: "Midnight-2.jpg",
+        },
+        { 
+          id: 53, 
+          product_id: 31, 
+          image_filename: "Midnight-3.jpg",
+        },
+        { 
+          id: 54, 
+          product_id: 32, 
+          image_filename: "Samsung_Galaxy_A34_1.webp",
+        },
+        { 
+          id: 55, 
+          product_id: 32, 
+          image_filename: "Samsung_Galaxy_A34_2.webp",
+        },
+        { 
+          id: 56, 
+          product_id: 33, 
+          image_filename: "Motorola_Edge_40_Eclipse_1.webp",
+        },
+        { 
+          id: 57, 
+          product_id: 33, 
+          image_filename: "Motorola_Edge_40_Eclipse_2.webp",
+        },
+        { 
+          id: 58, 
+          product_id: 34, 
+          image_filename: "Samsung_Galaxy_S21_1.webp",
+        },
+        { 
+          id: 59, 
+          product_id: 34, 
+          image_filename: "Samsung_Galaxy_S21_2.webp",
+        },
+        { 
+          id: 60, 
+          product_id: 35, 
+          image_filename: "Xiaomi_Redmi_Note_10S_1.jpg",
+        },
+        { 
+          id: 61, 
+          product_id: 35, 
+          image_filename: "Xiaomi_Redmi_Note_10S_2.jpg",
+        },
+        { 
+          id: 62, 
+          product_id: 35, 
+          image_filename: "Xiaomi_Redmi_Note_10S_3.jpg",
+        },
       ],
       {}
     );
