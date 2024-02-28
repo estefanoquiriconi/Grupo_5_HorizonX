@@ -49,25 +49,25 @@ module.exports = {
         },
         {
           id: 5,
-          name: "Honor 90",
+          name: "Razr 40",
           description:
-            "Una nueva experiencia bajo una coraza de cristal y metal · Resolución 2664 x 1200 con esquinas redondeadas · Bateria 4900mAh · Tarjeta SIM, Nano-SIM / eSIM · Bluetooth 5.2",
-          price: 216200.0,
+            "Te presentamos el motorola razr 40, un teléfono sofisticado con un diseño plegable y compacto. Rediseñado para brindarte una experiencia superior, presenta un acabado de cuero vegano con colores originales y atractivos. Descubrí nuevas posibilidades con el motorola razr 40.",
+          price: 236200.0,
           stock_quantity: 10,
-          brand_id: 5,
+          brand_id: 2,
           category_id: 1,
           color_id: 2,
         },
         {
           id: 6,
-          name: "Razr 40 Ultra",
+          name: "Moto G54",
           description:
-            "Diseño exclusivo con pantalla flexible de 6.9 pulgadas · Bateria carga rapida de 3800mAh  · Bluetooth 5.3 · Memoria RAM de 12GB",
-          price: 268000.0,
-          stock_quantity: 10,
+            "Te presentamos el Motorola Moto G54 5G con un procesador Octa-Core 2.8GHz para que estés al día con todas las aplicaciones y juegos de última generación. Descubrí todas las posibilidades para tus fotos, tanto de día como de noche, con la cámara de 50+2 MP. Memoria interna de 128 GB",
+          price: 253000.00,
+          stock_quantity: 3,
           brand_id: 2,
           category_id: 1,
-          color_id: 1,
+          color_id: 5,
         },
         {
           id: 7,
@@ -140,7 +140,7 @@ module.exports = {
           name: "iPad Pro",
           description:
             "Un rendimiento extremo con pantalla avanzada · Neutral Engine de 16 nucleos · Pantalla Liquid Retina CDR de 12.9 pulgadas · Compatible con teclados bluetooth y Apple Pencil",
-          price:4152600.0,
+          price:452600.0,
           stock_quantity: 18,
           brand_id: 3,
           category_id: 3,

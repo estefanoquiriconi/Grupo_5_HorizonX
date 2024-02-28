@@ -175,6 +175,20 @@ const controller = {
           });
         }
       }
+
+      //Si el producto tiene más de una imagen, eliminar la por defecto
+      const product = await db.Product.findByPk(id, {
+        include: ["images"],
+      });
+      if (product.images.length > 1) {
+        await db.ProductImage.destroy({
+          where: {
+            product_id: id,
+            image_filename: "default-product-image.png",
+          },
+        });
+      }
+
       res.redirect("/products/detail/" + id);
     } catch (error) {
       console.error(error);
@@ -216,6 +230,35 @@ const controller = {
     }
   },
 
+  deleteImage: async (req, res) => {
+    const { id } = req.params;
+    const image = await db.ProductImage.findByPk(id);
+    const idProduct = image.product_id;
+    const products = await db.Product.findByPk(idProduct, {
+      include: ["images"],
+    });
+    if (!image) return res.redirect("/products");
+    try {
+      if (products.images.length > 1) {
+        isDeleted = await db.ProductImage.destroy({
+          where: {
+            id: id,
+          },
+        });
+        fs.unlinkSync(
+          path.join(
+            __dirname,
+            "../public/images/products/",
+            image.image_filename
+          )
+        );
+      }
+      res.status(200);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  
   productCart: (req, res) => {
     if (cartList.length != 0) {
       res.render("products/productCart", { products: cartList });

@@ -72,15 +72,15 @@ a{
 }
 
 .product-image {
-  width: 50%; /* Ancho fijo */
-  height: 50%; /* Alto fijo */
+  width: 100%;
+  height: 100%;
  transition: transform 0.3s;
   text-align: justify;
   object-fit: contain;
 }
 
 .product-image:hover {
-  transform: scale(1.1); /* Amplía la imagen al 110% del tamaño original al pasar el ratón sobre ella */
+  transform: scale(1.1);
 }
 
 .product-detail {
