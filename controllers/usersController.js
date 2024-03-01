@@ -4,7 +4,9 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 
+
 const db = require("../database/models");
+const Op = db.Sequelize.Op
 const controller = {
   login: (req, res) => {
     res.render("users/login");
@@ -128,6 +130,53 @@ const controller = {
     
     return res.redirect("/users/login");
   },
+  
+  edit: async (req,res) => {
+  
+    const validations = validationResult(req);
+    const userEdit = await db.User.findOne({where:{id:req.session.userLogged.id}});
+    
+    if (validations.errors.length > 0) {
+      console.log(validations.mapped())
+      if (req.file) {
+        fs.unlinkSync(
+          path.join(__dirname, "../public/images/users/", req.file.filename)
+        );
+      }
+      return res.render("users/profile", {
+        user: req.session.userLogged,
+        errors: validations.mapped(),
+      });
+    }
+    try {
+      const checkMail = await db.User.count({where:{email:req.body.email,[Op.not]:{id:userEdit.id}}})
+
+      if (checkMail < 1) {
+        let avatarPath = req.file ? req.file.filename : req.session.userLogged.avatar
+        req.session.userLogged.first_name = req.body.firstName
+        req.session.userLogged.email = req.body.email
+        req.session.userLogged.last_name = req.body.lastName
+        req.session.userLogged.avatar = avatarPath
+
+        await userEdit.update({
+          first_name: req.body.firstName,
+          email: req.body.email,
+          last_name: req.body.lastName,
+          avatar: avatarPath
+        });
+      } else {
+        return res.render("users/profile", {
+          user:req.session.userLogged,
+          errors: {email: {msg:'Ese email ya está en uso'}}
+        })
+      }
+      res.redirect("./profile")
+    } catch(e) {
+      console.log(e.message)
+      res.redirect("./profile")
+    }
+  
+  }
 };
 
 module.exports = controller;
