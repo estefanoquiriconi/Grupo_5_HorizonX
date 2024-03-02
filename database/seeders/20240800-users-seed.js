@@ -29,7 +29,7 @@ module.exports = {
         avatar: "default-avatar-image.png",
         password:
           "$2a$10$1t.uCqcLX0xBPWsioSP6b.hwOz.2RNjaS9.fRTD0sNZ7OeNq0gTba",
-        role_id: 2, //cliente
+        role_id: 1, //cliente
       },
     ]);
   },

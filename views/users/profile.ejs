@@ -10,7 +10,7 @@
         <div class="user-info">
           <h1 class="user-name"><%= user.first_name %> <%= user.last_name %></h1>
           <p class="user-detail"><strong>Email:</strong> <%= user.email %></p>
-          <p class="user-detail"><strong>Rol:</strong> <%= user.role %></p>
+          <p class="user-detail"><strong>Rol:</strong> <%= user.role.name %></p>
           <a href="/users/logout" class="logout-button">Cerrar Sesión</a>
         </div>
       </div>

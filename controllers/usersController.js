@@ -21,7 +21,7 @@ const controller = {
   processLogin: async (req, res) => {
     const validations = validationResult(req);
     //const userToLogin = User.getByEmail(req.body.email);
-    const userToLogin = await db.User.findOne({where:{email:req.body.email}});
+    const userToLogin = await db.User.findOne({where:{email:req.body.email}, include : ['role']});
 
     if (validations.errors.length > 0) {
       return res.render("users/login", {
@@ -46,8 +46,6 @@ const controller = {
     if (passwordOk) {
       delete userToLogin.password;
       req.session.userLogged = userToLogin;
-      const rol = await db.Role.findByPk(userToLogin.role_id)
-      req.session.userLogged.dataValues.role = rol.name
 
       if (req.body.rememberUser) {
         res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
@@ -152,6 +150,11 @@ const controller = {
       const checkMail = await db.User.count({where:{email:req.body.email,[Op.not]:{id:userEdit.id}}})
 
       if (checkMail < 1) {
+        if(req.file){
+          fs.unlinkSync(
+            path.join(__dirname, "../public/images/users/", req.session.userLogged.avatar)
+          );
+        }
         let avatarPath = req.file ? req.file.filename : req.session.userLogged.avatar
         req.session.userLogged.first_name = req.body.firstName
         req.session.userLogged.email = req.body.email
