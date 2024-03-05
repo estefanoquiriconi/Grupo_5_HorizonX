@@ -6,9 +6,7 @@
       />
     </div>
     <div class="product-details">
-      <h2 class="product-name"><%= item.product.name %></h2>
-      <p class="product-brand">Marca: <%= item.product.brand.name %></p>
-      <p class="product-color">Color: <%= item.product.color.name %></p>
+      <h2 class="product-name"><%= item.product.brand.name %> <%= item.product.name %></h2>
       <p class="product-price">Precio: $<%= Number(item.product.price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
       <p class="product-price">Cantidad: <%= item.quantity %></p>
     </div>
@@ -17,7 +15,7 @@
       method="POST"
       enctype="multipart/form-data"
     >
-      <button class="btn" type="submit">Quitar</button>
+      <button class="btn" type="submit"><i class="fa-solid fa-xmark"></i></button>
     </form>
   </article>
   
