@@ -1,8 +1,11 @@
-const Products = require("../models/Products");
+const db = require("../database/models");
 
 const controller = {
-  index: (req, res) => {
-    res.render("index", { products: Products.findAll() });
+  index: async (req, res) => {
+    const products = await db.Product.findAll({
+      include : ["category", "images", "brand"]
+    });
+    res.render("index", { products });
   },
 };
 

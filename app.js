@@ -3,7 +3,9 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override");
 const path = require("path");
+
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
+const authMiddleware = require("./middlewares/authMiddleware");
 
 const port = 8080;
 const app = express();
@@ -25,10 +27,12 @@ app.use(cookies());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(userLoggedMiddleware);
+app.use(express.json());
 
 const mainRoutes = require("./routers/main.routes");
 const usersRoutes = require("./routers/users.routes");
 const productsRoutes = require("./routers/products.routes");
+const cartRoutes = require('./routers/cart.routes.js');
 
 express.Router().use(function (req, res, next) {
   res.locals.session = req.session;
@@ -38,3 +42,4 @@ express.Router().use(function (req, res, next) {
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productsRoutes);
+app.use("/cart", authMiddleware, cartRoutes);

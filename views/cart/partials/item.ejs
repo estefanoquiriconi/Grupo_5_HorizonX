@@ -1,0 +1,21 @@
+<article class="cart-item">
+    <div class="product-img">
+      <img
+        src="/images/products/<%= item.product.images[0].image_filename %>"
+        alt="<%= item.product.name %>"
+      />
+    </div>
+    <div class="product-details">
+      <h2 class="product-name"><%= item.product.brand.name %> <%= item.product.name %></h2>
+      <p class="product-price">Precio: $<%= Number(item.product.price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+      <p class="product-price">Cantidad: <%= item.quantity %></p>
+    </div>
+    <form
+      action="/cart/delete/<%= item.id %>?_method=DELETE"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <button class="btn" type="submit"><i class="fa-solid fa-xmark"></i></button>
+    </form>
+  </article>
+  

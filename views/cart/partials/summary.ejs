@@ -1,0 +1,19 @@
+<div class="container-summary">
+  <h2 class="summary-title">Resumen de compra</h2>
+  <div class="summary-row">
+    <p>Productos</p>
+    <p>$<%= Number(cart.total_price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+  </div>
+  <div class="summary-row">
+    <p>Envío</p>
+    <p>$3500</p>
+  </div>
+  <div class="total summary-row">
+    <p class="total">Total</p>
+    <p>$<%= (Number(cart.total_price) + 3500).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+  </div>
+  <div class="checkout-button">
+    <a href="/products" >Elegir más productos</a>
+    <button class="btn">Finalizar Compra</button>
+  </div>
+</div>

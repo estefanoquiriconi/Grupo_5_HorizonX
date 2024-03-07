@@ -6,9 +6,6 @@
     <%- include('./partials/header.ejs') %>
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
-      <form action="/products/buy?id=628a3012-a4f5-4e47-b0c0-00fb3f2f9bcc" method="POST">
-        <button type="submit" class="main-header-banner-btn">Comprar</button>
-      </form>
       <video autoplay muted class="main-header-banner-video-mobile">
         <source src="/videos/HOME_B5_Main-KV_720x1080_mo_default.webm" />
       </video>
@@ -18,48 +15,46 @@
     </div>
     <main class="container">
       <br />
-      <h2>Celulares</h2>
+      <h2 class="subtitle">Celulares</h2>
       <br />
       <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category ==
-        'celular') { %>
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Celular') { %>
         <a href="/products/detail/<%= product.id %>">
-          <article class="product">
-            <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand %></p>
-            <p class="product-price">$<%= product.price %></p>
-            <form action="/products/buy?id=<%= product.id %>" method="POST">
-              <button type="submit" class="product-buy-btn">Comprar</button>
-            </form>
-            <img
-              class="product-image"
-              src="images/products/<%= product.image %>"
-              alt="Imagen del producto: <%= product.name %>"
-            />
-          </article>
+          <%- include('./products/partials/card.ejs', {product}) %>
         </a>
         <% } %> <% }) %>
       </section>
       <br />
-      <h2>Accesorios</h2>
+      <h2 class="subtitle">Accesorios</h2>
       <br />
       <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category ==
-        'accesorio') { %>
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Accesorio') { %>
         <a href="/products/detail/<%= product.id %>">
-          <article class="product">
-            <h2 class="product-title"><%= product.name %></h2>
-            <p class="product-detail"><%= product.brand %></p>
-            <p class="product-price">$<%= product.price %></p>
-            <form action="/products/buy?id=<%= product.id %>" method="POST">
-              <button type="submit" class="product-buy-btn">Comprar</button>
-            </form>
-            <img
-              class="product-image"
-              src="images/products/<%= product.image %>"
-              alt="Imagen del producto: <%= product.name %>"
-            />
-          </article>
+          <%- include('./products/partials/card.ejs', {product}) %>
+        </a>
+        <% } %> <% }) %>
+      </section>
+      <br />
+      <h2 class="subtitle">Tablets</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Tablets') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <%- include('./products/partials/card.ejs', {product}) %>
+        </a>
+        <% } %> <% }) %>
+      </section>
+      <br />
+      <h2 class="subtitle">Computadoras</h2>
+      <br />
+      <section class="product-container">
+        <% products.forEach(product => { %> <% if (product.category.name ==
+        'Computadoras') { %>
+        <a href="/products/detail/<%= product.id %>">
+          <%- include('./products/partials/card.ejs', {product}) %>
         </a>
         <% } %> <% }) %>
       </section>

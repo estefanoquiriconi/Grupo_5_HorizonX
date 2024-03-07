@@ -43,6 +43,7 @@ select {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 150px;
 }
 
 .conteiner_all_cart {
@@ -194,6 +195,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 70vh;
+  margin-top: 80px;
 }
 
 .cartEmpty{

@@ -8,114 +8,263 @@ let cartList = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../data/cart.json"), "utf-8")
 );
 
+const db = require("../database/models");
+
 const controller = {
-  index: (req, res) => {
-    res.render("products/products", {
-      products: Products.findAll(),
-      cat: req.query.cat,
-    });
+  index: async (req, res) => {
+    try {
+      const products = await db.Product.findAll({
+        include: ["category", "images", "brand"],
+      });
+      res.render("products/products", {
+        products,
+        cat: req.query.cat,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   },
 
-  detail: (req, res) => {
-    const id = req.params.id;
-    const product = Products.getById(id);
-    if (product) {
+  detail: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const product = await db.Product.findByPk(id, {
+        include: ["images", "brand", "color"],
+      });
+      if (!product) return res.redirect("/"); //product not found, redirect to home
       res.render("products/detail", { product });
-    } else {
-      res.send("¡No existe el producto que buscas!");
+    } catch (error) {
+      console.error(error);
     }
   },
 
-  create: (req, res) => {
-    res.render("products/create");
+  create: async (req, res) => {
+    try {
+      res.render("products/create", {
+        brands: await db.Brand.findAll(),
+        colors: await db.Color.findAll(),
+        categories: await db.Category.findAll(),
+      });
+    } catch (error) {
+      console.error(error);
+    }
   },
 
-  store: (req, res) => {
+  store: async (req, res) => {
     const validations = validationResult(req);
+    const { name, brand, color, category, description, stock_quantity, price } =
+      req.body;
+    try {
+      if (!validations.isEmpty()) {
+        if (req.files) {
+          req.files.forEach((file) => {
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/products/", file.filename)
+            );
+          });
+        }
 
-    if (validations.errors.length > 0) {
-      if (req.file) {
+        return res.render("products/create", {
+          errors: validations.mapped(),
+          oldData: req.body,
+          brands: await db.Brand.findAll(),
+          colors: await db.Color.findAll(),
+          categories: await db.Category.findAll(),
+        });
+      }
+
+      const productData = {
+        name,
+        brand_id: brand,
+        color_id: color,
+        category_id: category,
+        description,
+        stock_quantity,
+        price,
+      };
+
+      const createdProduct = await db.Product.create(productData);
+
+      if (req.files.length > 0) {
+        for (const file of req.files) {
+          await db.ProductImage.create({
+            product_id: createdProduct.id,
+            image_filename: file.filename,
+          });
+        }
+      } else {
+        await db.ProductImage.create({
+          product_id: createdProduct.id,
+          image_filename: "default-product-image.png",
+        });
+      }
+
+      res.redirect("/products");
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  edit: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const product = await db.Product.findByPk(id, {include: ["images"]});
+      if (!product) return res.redirect("/");
+      res.render("products/edit", {
+        product,
+        brands: await db.Brand.findAll(),
+        categories: await db.Category.findAll(),
+        colors: await db.Color.findAll(),
+      });
+
+    }
+    catch (error) {
+      console.error(error);
+    }
+  },
+
+  update: async (req, res) => {
+    const validations = validationResult(req);
+    const { id } = req.params;
+    const { name, brand, color, category, description, stock_quantity, price } =
+      req.body;
+    try {
+      if (!validations.isEmpty()) {
+        if (req.files) {
+          req.files.forEach((file) => {
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/products/", file.filename)
+            );
+          });
+        }
+
+        return res.render("products/edit", {
+          errors: validations.mapped(),
+          product: {
+            ...req.body,
+            brand_id: brand,
+            color_id: color,
+            category_id: category,
+          },
+          brands: await db.Brand.findAll(),
+          categories: await db.Category.findAll(),
+          colors: await db.Color.findAll(),
+        });
+      }
+
+      const newProductData = {
+        name,
+        brand_id: brand,
+        color_id: color,
+        category_id: category,
+        description,
+        stock_quantity,
+        price,
+      };
+
+      await db.Product.update(newProductData, {
+        where: {
+          id: id,
+        },
+      });
+      if (req.files.length > 0) {
+        for (const file of req.files) {
+          await db.ProductImage.create({
+            product_id: id,
+            image_filename: file.filename,
+          });
+        }
+      }
+
+      //Si el producto tiene más de una imagen, eliminar la por defecto
+      const product = await db.Product.findByPk(id, {
+        include: ["images"],
+      });
+      if (product.images.length > 1) {
+        await db.ProductImage.destroy({
+          where: {
+            product_id: id,
+            image_filename: "default-product-image.png",
+          },
+        });
+      }
+
+      res.redirect("/products/detail/" + id);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  delete: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const images = await db.ProductImage.findAll({
+        where: {
+          product_id: id,
+        },
+      });
+      images.forEach((image) => {
+        if (image.image_filename != "default-product-image.png") {
+          fs.unlinkSync(
+            path.join(
+              __dirname,
+              "../public/images/products/",
+              image.image_filename
+            )
+          );
+        }
+      });
+      await db.ProductImage.destroy({
+        where: {
+          product_id: id,
+        },
+      });
+      await db.Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+      res.redirect("/products");
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  deleteImage: async (req, res) => {
+    const { id } = req.params;
+    const image = await db.ProductImage.findByPk(id);
+    const idProduct = image.product_id;
+    const products = await db.Product.findByPk(idProduct, {
+      include: ["images"],
+    });
+    if (!image) return res.redirect("/products");
+    try {
+      if (products.images.length > 1) {
+        isDeleted = await db.ProductImage.destroy({
+          where: {
+            id: id,
+          },
+        });
         fs.unlinkSync(
-          path.join(__dirname, "../public/images/products/", req.file.filename)
+          path.join(
+            __dirname,
+            "../public/images/products/",
+            image.image_filename
+          )
         );
       }
-      return res.render("products/create", {
-        errors: validations.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    const productData = {
-      name: req.body.name,
-      brand: req.body.brand,
-      category: req.body.category,
-      description: req.body.description,
-      color: req.body.color,
-      price: req.body.price,
-      image: req.file?.filename || "default-product-image.png",
-    };
-
-    Products.create(productData);
-
-    res.redirect("/products");
-  },
-
-  edit: (req, res) => {
-    const id = req.params.id;
-    const product = Products.getById(id);
-    if (product) {
-      res.render("products/edit", { product });
-    } else {
-      res.send("¡No existe el producto que desea modificar!");
+      res.status(200);
+    } catch (error) {
+      console.log(error);
     }
   },
-
-  update: (req, res) => {
-    const validations = validationResult(req);
-
-    if (validations.errors.length > 0) {
-      if (req.file) {
-        fs.unlinkSync(
-          path.join(__dirname, "../public/images/products/", req.file.filename)
-        );
-      }
-      return res.render("products/edit", {
-        errors: validations.mapped(),
-        product: req.body,
-      });
-    }
-
-    const id = req.params.id;
-    const product = Products.getById(id);
-    const updateProductData = {
-      name: req.body.name,
-      brand: req.body.brand,
-      category: req.body.category,
-      description: req.body.description,
-      color: req.body.color,
-      price: req.body.price,
-      image: req.file?.filename || product.image
-    };
-
-    if (Products.update(id, updateProductData)) {
-      res.redirect("/products/detail/" + req.params.id);
-    } else {
-      res.send("¡No existe el producto que desea modificar!");
-    }
-  },
-
+  
   productCart: (req, res) => {
     if (cartList.length != 0) {
       res.render("products/productCart", { products: cartList });
     } else {
       res.render("products/cartEmpty");
     }
-  },
-
-  delete: (req, res) => {
-    const id = req.params.id;
-    Products.detele(id);
-    res.redirect("/products");
   },
 
   buy: (req, res) => {

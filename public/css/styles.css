@@ -17,6 +17,8 @@ body{
 }
 
 .main-header{
+  position : fixed;
+  z-index: 100;
   width: 100%;
   background-color: white;
 }
@@ -40,7 +42,7 @@ body{
 }
 
 .main-header-logo{
-  width: 65px;
+  width: 45px;
 }
 
 .navbar-top, .navbar-bottom {
@@ -101,35 +103,13 @@ body{
 
 .main-header-banner-title{
   position: absolute;
-  top: 10%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-weight: 800;
+  font-weight: 900;
+  font-size: 22px;
   transition: all;
   transition-duration: 300ms;
-}
-
-.main-header-banner-btn{
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  color: white;
-  padding: 0.75em 1.5em;
-  border-radius: 20px;
-  border: 1px solid black;
-  transition: all;
-  transition-duration: 300ms;
-  z-index: 1;
-}
-
-.main-header-banner-btn:hover{
-  cursor: pointer;
-  background-color: var(--color4);
-  color: black;
-  border: 1px solid black;
-  scale: 1.025;
 }
 
 footer{
@@ -184,10 +164,9 @@ footer{
   }
 
   .main-header-banner-title{
-    top: 30%;
+    top: 50%;
     left: 20%;
-    transform: translate(-50%, -50%);
-    font-weight: 800;
+    font-size: 32px;
   }
   
   .main-header-banner-btn{
@@ -200,6 +179,9 @@ footer{
     flex-direction: row-reverse;
   }
 
+  .main-header-logo{
+    width: 55px;
+  }
 
 }
 
@@ -216,6 +198,15 @@ footer{
     
       .navbar-bottom{
         display: none;
+      }
+      .main-header-banner-title{
+        top: 50%;
+        left: 20%;
+        font-size: 36px;
+      }
+
+      .main-header-logo{
+        width: 65px;
       }
 }
 
@@ -239,4 +230,25 @@ footer{
   text-decoration: none;
   color: var(--color3);
   background: var(--color1) ;
+}
+
+.btn {
+  background-color: var(--color1);
+  color: white;
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  border: 1px solid black;
+  transition: all;
+  transition-duration: 300ms;
+  z-index: 1;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  scale: 1.025;
 }
