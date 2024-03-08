@@ -23,9 +23,7 @@
               class="input-field"
               value="<%= product.name %>"
               />
-              <% if (locals.errors && errors.name) { %>
-                <p class="error"><%= errors.name.msg %></p>
-                <% } %>
+              <p id="nameError" class="error"><%= locals.errors && errors.name?.msg %></p>
             </div>
             <div class="primer-div">
               <label for="brand">Marca:</label>
@@ -35,9 +33,7 @@
                   <option value="<%= brand.id %>" <%= product.brand_id == brand.id ? 'selected' : null %>> <%= brand.name %></option>
                 <% }) %>
               </select>
-              <% if (locals.errors && errors.brand) { %>
-                <p class="error"><%= errors.brand.msg %></p>
-                <% } %>
+              <p id="brandError" class="error"><%= locals.errors && errors.brand?.msg %></p>
             </div>
             </div>
             <div class="primera-linea">
@@ -49,9 +45,7 @@
                     <option value="<%= color.id %>" <%= product.color_id == color.id ? 'selected' : null %>> <%= color.name %></option>
                   <% }) %>
                 </select>
-                <% if (locals.errors && errors.color) { %>
-                  <p class="error"><%= errors.color.msg %></p>
-                  <% } %>
+                <p id="colorError" class="error"><%= locals.errors && errors.color?.msg %></p>
               </div>
               <div class="primer-div">
                 <label for="price">Precio:</label>
@@ -64,9 +58,7 @@
                 min="1"
                 value="<%= product.price %>"
                 />
-                <% if (locals.errors && errors.price) { %>
-                  <p class="error"><%= errors.price.msg %></p>
-                  <% } %>
+                <p id="priceError" class="error"><%= locals.errors && errors.price?.msg %></p>
               </div>
             </div>
               
@@ -79,16 +71,12 @@
                     <option value="<%= category.id %>" <%= product.category_id == category.id ? 'selected' : null %>> <%= category.name %></option>
                   <% }) %>
                 </select>
-                <% if (locals.errors && errors.category) { %>
-                  <p class="error"><%= errors.category.msg %></p>
-                  <% } %>
+                <p id="categoryError" class="error"><%= locals.errors && errors.category?.msg %></p>
               </div>
               <div class="primer-div">
                 <label for="stock_quantity">Cantidad de stock:</label>
                 <input type="number" id="stock_quantity" name="stock_quantity" class="input-field" value="<%= product.stock_quantity ? product.stock_quantity : null %>"  />
-                <% if (locals.errors && errors.stock_quantity) { %>
-                  <p class="error"><%= errors.stock_quantity.msg %></p>
-                  <% } %>
+                <p id="stockQuantityError" class="error"><%=locals.errors && errors.stock_quantity?.msg %></p>
               </div>
             </div>
           <label for="description">Descripción:</label>
@@ -98,9 +86,7 @@
             class="input-field"
             rows="4"
           ><%= product.description %></textarea>
-          <% if (locals.errors && errors.description) { %>
-            <p class="error"><%= errors.description.msg %></p>
-            <% } %>
+          <p id="descriptionError" class="error"><%= locals.errors && errors.description?.msg %></p>
 
             <label for="image">Imagenes:</label>
             <input
@@ -108,8 +94,10 @@
               type="file"
               id="image"
               name="images"
+              accept=".jpg, .jpeg, .png"
               multiple
             />
+            <p id="imageError" class="error"><%= locals.errors && errors.image?.msg %></p>
           <input type="text" name="id" hidden value="<%= product.id %>">
 
           <section class="galery-container">
@@ -132,6 +120,7 @@
         </a>
       </div>
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/productFormValidation.js"></script>
     <script src="/js/deleteProductImage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

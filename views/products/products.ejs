@@ -14,7 +14,7 @@
         <% }) %>
       </section>
       <!-- boton de nuevo producto -->
-      <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+      <% if (locals.isLogged && locals.userLogged.role.name == 'administrador') { %>
       <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
       <% } %>
     </main>

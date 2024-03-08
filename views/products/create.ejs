@@ -23,9 +23,7 @@
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" class="input-field"
             value="<%= locals.oldData && oldData.name ? oldData.name : null %>" />
-            <% if (locals.errors && errors.name) { %>
-            <p class="error"><%= errors.name.msg %></p>
-            <% } %>
+            <p id="nameError" class="error"><%= locals.errors && errors.name?.msg %></p>
           </div>
           <div class="primer-div">
             <label for="brand">Marca:</label>
@@ -35,9 +33,7 @@
                 <option value="<%= brand.id %>" <%= locals.oldData && oldData.brand == brand.id ? 'selected' : null %>> <%= brand.name %></option>
               <% }) %>
             </select>
-            <% if (locals.errors && errors.brand) { %>
-              <p class="error"><%= errors.brand.msg %></p>
-              <% } %>
+              <p id="brandError" class="error"><%= locals.errors && errors.brand?.msg %></p>
           </div>
         </div>
 
@@ -50,17 +46,13 @@
                 <option value="<%= color.id %>" <%= locals.oldData && oldData.color == color.id ? 'selected' : null %>> <%= color.name %></option>
               <% }) %>
             </select>
-            <% if (locals.errors && errors.color) { %>
-              <p class="error"><%= errors.color.msg %></p>
-              <% } %>
+              <p id="colorError" class="error"><%= locals.errors && errors.color?.msg %></p>
           </div>
 
           <div class="primer-div">
             <label for="price">Precio:</label>
             <input type="number" id="price" name="price" class="input-field" value="<%= locals.oldData && oldData.price ? oldData.price : null %>"  />
-            <% if (locals.errors && errors.price) { %>
-              <p class="error"><%= errors.price.msg %></p>
-              <% } %>
+              <p id="priceError" class="error"><%= locals.errors && errors.price?.msg %></p>
           </div>
         </div>
         <div class="primera-linea">
@@ -72,18 +64,14 @@
                 <option value="<%= category.id %>" <%= locals.oldData && oldData.category == category.id ? 'selected' : null %>> <%= category.name %></option>
               <% }) %>
             </select>
-            <% if (locals.errors && errors.category) { %>
-              <p class="error"><%= errors.category.msg %></p>
-              <% } %>
+              <p id="categoryError" class="error"><%= locals.errors && errors.category?.msg %></p>
           </div>
 
           <div class="primer-div">
 
             <label for="stock_quantity">Cantidad de stock:</label>
             <input type="number" id="stock_quantity" name="stock_quantity" class="input-field" value="<%= locals.oldData && oldData.stock_quantity ? oldData.stock_quantity : null %>"  />
-            <% if (locals.errors && errors.stock_quantity) { %>
-              <p class="error"><%= errors.stock_quantity.msg %></p>
-              <% } %>
+              <p id="stockQuantityError" class="error"><%=locals.errors && errors.stock_quantity?.msg %></p>
           </div>
         </div>
         <label for="description">Descripción:</label>
@@ -93,18 +81,17 @@
           class="input-field"
           rows="4"
         ><%= locals.oldData && oldData.description ? oldData.description : null %></textarea>
-        <% if (locals.errors && errors.description) { %>
-          <p class="error"><%= errors.description.msg %></p>
-          <% } %>
-
+          <p id="descriptionError" class="error"><%= locals.errors && errors.description?.msg %></p>
         <label for="image">Imagenes:</label>
         <input
           class="insert-img"
           type="file"
           id="image"
           name="images"
+          accept=".jpg, .jpeg, .png"
           multiple
         />
+        <p id="imageError" class="error"><%= locals.errors && errors.image?.msg %></p>
         <div class="button-ubicacion">
           <button type="submit">Crear</button>
         </div>
@@ -117,4 +104,5 @@
 
     <%- include('../partials/footer.ejs') %>
   </body>
+<script src="/js/productFormValidation.js"></script>
 </html>
