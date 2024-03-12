@@ -13,14 +13,22 @@ const { Op } = require("sequelize");
 
 const controller = {
   index: async (req, res) => {
+    const {category} = req.params;
+    let products;
     try {
-      const products = await db.Product.findAll({
-        include: ["category", "images", "brand"],
-      });
-      res.render("products/products", {
-        products,
-        cat: req.query.cat,
-      });
+      if(category){
+         products = await db.Product.findAll({
+          include: ["category", "images", "brand"],
+          where : {
+            '$category.name$' : category
+          }
+        });
+      }else {
+         products = await db.Product.findAll({
+          include: ["category", "images", "brand"],
+        });
+      }
+      res.render("products/products", { products });
     } catch (error) {
       console.error(error);
     }

@@ -14,50 +14,19 @@
       </video>
     </div>
     <main class="container">
+      <% categories.forEach(category => { %>
       <br />
-      <h2 class="subtitle">Celulares</h2>
+      <h2 class="subtitle"><%= category.name.toUpperCase(0) %></h2>
       <br />
       <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category.name ==
-        'Celular') { %>
+        <% products.forEach(product => { %> <% if (product.category.name ===
+        category.name) { %>
         <a href="/products/detail/<%= product.id %>">
           <%- include('./products/partials/card.ejs', {product}) %>
         </a>
         <% } %> <% }) %>
       </section>
-      <br />
-      <h2 class="subtitle">Accesorios</h2>
-      <br />
-      <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category.name ==
-        'Accesorio') { %>
-        <a href="/products/detail/<%= product.id %>">
-          <%- include('./products/partials/card.ejs', {product}) %>
-        </a>
-        <% } %> <% }) %>
-      </section>
-      <br />
-      <h2 class="subtitle">Tablets</h2>
-      <br />
-      <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category.name ==
-        'Tablets') { %>
-        <a href="/products/detail/<%= product.id %>">
-          <%- include('./products/partials/card.ejs', {product}) %>
-        </a>
-        <% } %> <% }) %>
-      </section>
-      <br />
-      <h2 class="subtitle">Computadoras</h2>
-      <br />
-      <section class="product-container">
-        <% products.forEach(product => { %> <% if (product.category.name ==
-        'Computadoras') { %>
-        <a href="/products/detail/<%= product.id %>">
-          <%- include('./products/partials/card.ejs', {product}) %>
-        </a>
-        <% } %> <% }) %>
-      </section>
+      <% }); %>
     </main>
     <%- include('./partials/footer.ejs') %>
   </body>

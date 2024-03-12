@@ -1,12 +1,19 @@
-const db = require("../database/models");
+const { Product, Category } = require('../database/models')
 
-const controller = {
+const mainController = {
   index: async (req, res) => {
-    const products = await db.Product.findAll({
-      include : ["category", "images", "brand"]
-    });
-    res.render("index", { products });
+    try {
+      res.render('index', {
+        products: await Product.findAll({
+          include: ['category', 'images', 'brand'],
+          limit : 20
+        }),
+        categories: await Category.findAll(),
+      })
+    } catch (error) {
+      console.error(error)
+    }
   },
-};
+}
 
-module.exports = controller;
+module.exports = mainController

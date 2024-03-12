@@ -6,8 +6,7 @@
     <%- include('../partials/header.ejs') %>
     <main class="main-products">
       <section class="product-container">
-        <% if (products.length > 0) { %> <% products.filter(e => cat ?
-        e.category.name == cat : true).forEach(product => { %>
+        <% if (products.length > 0) { %> <% products.forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
           <%- include('./partials/card.ejs', {product}) %>
         </a>
