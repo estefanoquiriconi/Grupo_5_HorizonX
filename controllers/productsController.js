@@ -1,14 +1,15 @@
 const fs = require("fs");
 const path = require("path");
-const Products = require("../models/Products");
-const { validationResult } = require("express-validator");
-
-const jsonFuncs = require("../public/js/jsonFuncs");
-let cartList = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../data/cart.json"), "utf-8")
-);
-
 const db = require("../database/models");
+const { validationResult } = require("express-validator");
+const { Op } = require("sequelize");
+
+// const Products = require("../models/Products");
+// const jsonFuncs = require("../public/js/jsonFuncs");
+// let cartList = JSON.parse(
+//   fs.readFileSync(path.resolve(__dirname, "../data/cart.json"), "utf-8")
+// );
+
 
 const controller = {
   index: async (req, res) => {
@@ -258,45 +259,69 @@ const controller = {
       console.log(error);
     }
   },
-  
-  productCart: (req, res) => {
-    if (cartList.length != 0) {
-      res.render("products/productCart", { products: cartList });
-    } else {
-      res.render("products/cartEmpty");
-    }
-  },
 
-  buy: (req, res) => {
-    const id = req.query.id;
-    const product = Products.getById(id);
-    jsonFuncs.newData(
-      product,
-      cartList,
-      path.resolve(__dirname, "../data/cart.json")
-    );
-    res.redirect("/products/productCart");
-  },
-
-  cartRemove: (req, res) => {
-    let id = req.query.id;
-    let i = 0;
-    cartList = cartList.filter((e) => {
-      if (i == 1) {
-        return true;
-      }
-      if (e.id == id) {
-        i = 1;
-        return false;
-      }
-      return true;
+  search: async (req, res) => {
+    try {
+      const search = req.query.q;
+      const products = await db.Product.findAll({
+      include: ['brand', 'category', 'images'],
+      where: {
+        [Op.or]: [
+          { name: { [Op.like]: `%${search}%` } },
+          { '$brand.name$': { [Op.like]: `%${search}%` } },
+        ],
+      },
+    })
+    console.log(products);
+    res.render("products/products", {
+      products,
+      cat: req.query.cat,
+      search
     });
-    jsonFuncs.updateData(
-      cartList,
-      path.resolve(__dirname, "../data/cart.json")
-    );
-    res.redirect("/products/productCart");
+    } catch (error) {
+      console.log(error);
+    }
+    
   },
+  
+  // productCart: (req, res) => {
+  //   if (cartList.length != 0) {
+  //     res.render("products/productCart", { products: cartList });
+  //   } else {
+  //     res.render("products/cartEmpty");
+  //   }
+  // },
+
+  // buy: (req, res) => {
+  //   const id = req.query.id;
+  //   const product = Products.getById(id);
+  //   jsonFuncs.newData(
+  //     product,
+  //     cartList,
+  //     path.resolve(__dirname, "../data/cart.json")
+  //   );
+  //   res.redirect("/products/productCart");
+  // },
+
+  // cartRemove: (req, res) => {
+  //   let id = req.query.id;
+  //   let i = 0;
+  //   cartList = cartList.filter((e) => {
+  //     if (i == 1) {
+  //       return true;
+  //     }
+  //     if (e.id == id) {
+  //       i = 1;
+  //       return false;
+  //     }
+  //     return true;
+  //   });
+  //   jsonFuncs.updateData(
+  //     cartList,
+  //     path.resolve(__dirname, "../data/cart.json")
+  //   );
+  //   res.redirect("/products/productCart");
+  // },
 };
 
 module.exports = controller;

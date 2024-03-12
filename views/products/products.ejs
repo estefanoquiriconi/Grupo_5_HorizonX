@@ -6,16 +6,32 @@
     <%- include('../partials/header.ejs') %>
     <main class="main-products">
       <section class="product-container">
-        <% products.filter(e => cat ? e.category.name == cat :
-        true).forEach(product => { %>
+        <% if (products.length > 0) { %> <% products.filter(e => cat ?
+        e.category.name == cat : true).forEach(product => { %>
         <a href="/products/detail/<%= product.id %>">
           <%- include('./partials/card.ejs', {product}) %>
         </a>
         <% }) %>
       </section>
       <!-- boton de nuevo producto -->
-      <% if (locals.isLogged && locals.userLogged.role.name == 'administrador') { %>
+      <% if (locals.isLogged && locals.userLogged.role.name == 'administrador')
+      { %>
       <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+      <% } %> <% } else { %>
+      <div class="not-found-container">
+          <h2 class="not-found-message">
+            Lo sentimos, no se encontró ningún resultado para <i class="search">"<%= search %>"</i>
+          </h2>
+          <p class="not-found-suggestion">
+            Te recomendamos verificar tu búsqueda o explorar nuestros <a href="/products">productos
+            disponibles</a>
+          </p>
+        <img
+          class="not-found-image"
+          src="/images/products/not-found.png"
+          alt="No hay resultados"
+        />
+      </div>
       <% } %>
     </main>
     <%- include('../partials/footer.ejs') %>

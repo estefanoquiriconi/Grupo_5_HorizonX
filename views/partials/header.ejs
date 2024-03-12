@@ -3,7 +3,9 @@
     <a href="/"
       ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
     /></a>
-    <input class="input-search" type="text" placeholder="Buscar..." />
+    <form action="/products/search" method="get" >
+      <input class="input-search" name="q" type="text" placeholder="Buscar..." />
+    </form>
     <ul class="navbar-top">
       <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
       <li><a href="/products">Administrar</a></li>
