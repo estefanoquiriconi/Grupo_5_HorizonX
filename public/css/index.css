@@ -105,7 +105,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   padding: 5px;
 }
 

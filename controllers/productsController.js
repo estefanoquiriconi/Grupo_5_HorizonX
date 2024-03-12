@@ -28,7 +28,7 @@ const controller = {
           include: ["category", "images", "brand"],
         });
       }
-      res.render("products/products", { products });
+      res.render("products/products", { products, search : category});
     } catch (error) {
       console.error(error);
     }

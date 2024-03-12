@@ -11,15 +11,11 @@
         <hr>
         <form action="/users/login" method="POST" class="login-form">
           <label for="email"> <i class="fa-solid fa-envelope"></i> Email</label>
-          <input type="email" name="email" class="icon-input" value="<%= locals.oldData && oldData.email ? oldData.email : null %>"/>
-          <% if (locals.errors && errors.email) { %>
-            <p class="error"><%= errors.email.msg %></p>
-          <% } %>
+          <input type="email" id="email" name="email" class="icon-input" value="<%= locals.oldData && oldData.email ? oldData.email : null %>"/>
+          <p id="emailError" class="error"><%= locals.errors && errors.email?.msg %></p>
           <label for="password"> <i class="fa-solid fa-lock"></i> Contraseña </label>
-          <input type="password" name="password"/>
-          <% if (locals.errors && errors.password) { %>
-            <p class="error"><%= errors.password.msg %></p>
-          <% } %>
+          <input id="password" type="password" name="password"/>
+          <p id="passwordError" class="error"><%= locals.errors && errors.password?.msg %></p>
           <div class="div-rec"><input type="checkbox" name="rememberUser" id="check">Recuerdame</div>
           <button class="login-btn" type="submit">Ingresar</button>
         </form>
@@ -31,4 +27,5 @@
     </main>
     <%- include('../partials/footer.ejs') %>
   </body>
+  <script src="/js/userLoginValidation.js"></script>
 </html>
