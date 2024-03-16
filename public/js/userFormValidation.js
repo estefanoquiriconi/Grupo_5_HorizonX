@@ -11,7 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const passwordError = document.querySelector('#passwordError')
   const imageError = document.querySelector('#imageError')
 
-  const form = document.querySelector('#formRegister')
+  const formRegister = document.querySelector('#formRegister')
+  const formProfile = document.querySelector('#formProfile')
 
   function validateImages(files) {
     if (!files[0]) return 'Tienes que subir una imagen'
@@ -36,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  form.addEventListener('submit', (event) => {
+  formRegister?.addEventListener('submit', (event) => {
     event.preventDefault()
 
     firstNameError.textContent = validateNames(firstName.value, 'nombre')
@@ -59,6 +60,24 @@ window.addEventListener('DOMContentLoaded', () => {
       !passwordError.textContent &&
       !imageError.textContent
     )
-      form.submit()
+      formRegister.submit()
+  })
+
+  formProfile?.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    firstNameError.textContent = validateNames(firstName.value, 'nombre')
+    lastNameError.textContent = validateNames(lastName.value, 'apellido')
+
+    email.value === ''
+      ? (emailError.textContent = 'Debes ingresar un email')
+      : (emailError.textContent = '')
+
+    if (
+      !firstNameError.textContent &&
+      !lastNameError.textContent &&
+      !emailError.textContent
+    )
+      formProfile.submit()
   })
 })

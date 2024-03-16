@@ -16,6 +16,7 @@
             action="/users/edit?_method=PUT"
             method="post"
             enctype="multipart/form-data"
+            id="formProfile"
           >
             <label for="firstName" class="label-profile">Nombre:</label>
             <input
@@ -26,9 +27,9 @@
               class="input-profile"
               value="<%= user.first_name %>"
             />
-            <% if (locals.errors && errors.firstName) { %>
-            <p class="error"><%= errors.firstName.msg %></p>
-            <% } %>
+            <p id="firstNameError" class="error">
+              <%= locals.errors && errors.firstName?.msg %>
+            </p>
             <label for="lastName" class="label-profile">Apellido:</label>
             <input
               type="text"
@@ -38,9 +39,9 @@
               class="input-profile"
               value="<%= user.last_name %>"
             />
-            <% if (locals.errors && errors.lastName) { %>
-            <p class="error"><%= errors.lastName.msg %></p>
-            <% } %>
+            <p id="lastNameError" class="error">
+              <%= locals.errors && errors.lastName?.msg %>
+            </p>
             <label for="email" class="label-profile">Email:</label>
             <input
               type="text"
@@ -50,9 +51,9 @@
               class="input-profile"
               value="<%= user.email %>"
             />
-            <% if (locals.errors && errors.email) { %>
-            <p class="error"><%= errors.email.msg %></p>
-            <% } %>
+            <p id="emailError" class="error">
+              <%= locals.errors && errors.email?.msg %>
+            </p>
             <label for="avatar" class="label-profile"
               >Actualizar imagen de perfil:</label
             >
@@ -72,5 +73,6 @@
       </div>
     </main>
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/userFormValidation.js"></script>
   </body>
 </html>
