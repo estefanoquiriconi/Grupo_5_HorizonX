@@ -36,7 +36,7 @@ module.exports = [
     if (!file) {
       throw new Error("Tienes que subir una imagen");
     } else {
-      let fileExtension = path.extname(file.originalname);
+      let fileExtension = path.extname(file.originalname).toLowerCase();
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
           `Las extensiones permitidas son ${acceptedExtensions.join(", ")}`
