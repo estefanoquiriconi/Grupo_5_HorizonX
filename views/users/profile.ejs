@@ -6,61 +6,69 @@
     <%- include('../partials/header.ejs') %>
     <main>
       <div class="profile-container">
-        <img src="/images/users/<%= user.avatar %>" alt="Avatar" class="avatar">
+        <img
+          src="/images/users/<%= user.avatar %>"
+          alt="Avatar"
+          class="avatar"
+        />
         <div class="user-info">
-          <h1 class="user-name"><%= user.first_name %> <%= user.last_name %></h1>
-          <p class="user-detail"><strong>Email:</strong> <%= user.email %></p>
-          <p class="user-detail"><strong>Rol:</strong> <%= user.role.name %></p>
-          <a href="/users/logout" class="logout-button">Cerrar Sesión</a>
-        </div>
-      </div>
-      <div class="form-div">
-        <h4>Editar Perfil</h4>
-        <form
-          action="/users/edit?_method=PUT"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          <input
-            type="text"
-            name="firstName"
-            placeholder="Nombre"
-            class="txt-inp"
-            value="<%= user.first_name %>"
-          />
-          <% if (locals.errors && errors.firstName) { %>
+          <form
+            action="/users/edit?_method=PUT"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label for="firstName" class="label-profile">Nombre:</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Nombre"
+              class="input-profile"
+              value="<%= user.first_name %>"
+            />
+            <% if (locals.errors && errors.firstName) { %>
             <p class="error"><%= errors.firstName.msg %></p>
-          <% } %>
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Apellido"
-            class="txt-inp"
-            value="<%= user.last_name %>"
-          />
-          <% if (locals.errors && errors.lastName) { %>
+            <% } %>
+            <label for="lastName" class="label-profile">Apellido:</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Apellido"
+              class="input-profile"
+              value="<%= user.last_name %>"
+            />
+            <% if (locals.errors && errors.lastName) { %>
             <p class="error"><%= errors.lastName.msg %></p>
-          <% } %>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            class="txt-inp"
-            value="<%= user.email %>"
-          />
-          <% if (locals.errors && errors.email) { %>
+            <% } %>
+            <label for="email" class="label-profile">Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="input-profile"
+              value="<%= user.email %>"
+            />
+            <% if (locals.errors && errors.email) { %>
             <p class="error"><%= errors.email.msg %></p>
-          <% } %>
-          <br>
-          <label for="image">Imagen de perfil: </label>
-          <br>
-          <input type="file" name="avatar" accept="image/png, image/jpeg" id="image"/>
-          <br>
-          <br>
-          <div class="div-btn-accept">
-            <button type="submit" id="reg-pr-btn">Aceptar cambios</button>
-          </div>
-        </form>
+            <% } %>
+            <label for="avatar" class="label-profile"
+              >Actualizar imagen de perfil:</label
+            >
+            <input
+              type="file"
+              name="avatar"
+              accept="image/png, image/jpeg"
+              id="avatar"
+              class="input-profile"
+            />
+            <div class="div-btn">
+              <button type="submit" class="btn">Guardar cambios</button>
+              <a href="/users/logout" class="btn">Cerrar Sesión</a>
+            </div>
+          </form>
+        </div>
       </div>
     </main>
     <%- include('../partials/footer.ejs') %>
