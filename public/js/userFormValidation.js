@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
       formRegister.submit()
   })
 
-  formProfile?.addEventListener('submit', (event) => {
+  formProfile?.addEventListener('submit', async (event) => {
     event.preventDefault()
 
     firstNameError.textContent = validateNames(firstName.value, 'nombre')
@@ -77,7 +77,15 @@ window.addEventListener('DOMContentLoaded', () => {
       !firstNameError.textContent &&
       !lastNameError.textContent &&
       !emailError.textContent
-    )
+    ) {
+      await Swal.fire({
+        icon: 'success',
+        title: 'Guardado',
+        showConfirmButton: false,
+        timer: 1000,
+        width : 300
+      })
       formProfile.submit()
+    }
   })
 })
