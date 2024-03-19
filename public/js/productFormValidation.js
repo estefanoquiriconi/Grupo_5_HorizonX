@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form')
+
+  const form = document.querySelector('#formCreate')
 
   const name = document.querySelector('#name')
   const brand = document.querySelector('#brand')
