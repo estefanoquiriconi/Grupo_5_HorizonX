@@ -30,7 +30,7 @@ module.exports = [
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png"];
     if (file) {
-      let fileExtension = path.extname(file.originalname);
+      let fileExtension = path.extname(file.originalname).toLowerCase();
       if (!acceptedExtensions.includes(fileExtension)) {
         throw new Error(
           `Las extensiones permitidas son ${acceptedExtensions.join(", ")}`
