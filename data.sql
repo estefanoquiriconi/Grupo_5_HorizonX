@@ -16,10 +16,10 @@ INSERT INTO `colors` (`name`, `cod_hex`) VALUES
   ("Grafito", "#242323"),
 
 INSERT INTO categories (name) VALUES
-('Celular'),
-('Accesorio')
-('Tablets'),
-('Computadoras')
+('celulares'),
+('accesorios')
+('tables'),
+('computadoras')
 
 INSERT INTO brands (name) VALUES
 ('Samsung'),

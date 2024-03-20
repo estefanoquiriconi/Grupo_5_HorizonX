@@ -7,7 +7,6 @@ const validateProduct = require('../middlewares/productFormValidationMiddleware'
 const authMiddleware = require("../middlewares/authMiddleware");
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
-router.get("/", controller.index);
 
 router.get("/detail/:id", controller.detail);
 
@@ -17,12 +16,16 @@ router.post("/create", uploadProduct.array('images'), validateProduct, controlle
 router.get("/edit/:id", authMiddleware, adminMiddleware, controller.edit);
 router.put("/edit/:id", uploadProduct.array('images'), validateProduct, controller.update);
 
-router.get("/productCart", authMiddleware, controller.productCart);
-router.post("/buy", controller.buy);
-router.delete("/buy", controller.cartRemove);
+// router.get("/productCart", authMiddleware, controller.productCart);
+// router.post("/buy", controller.buy);
+// router.delete("/buy", controller.cartRemove);
 
 router.delete("/delete/:id", authMiddleware, adminMiddleware, controller.delete);
 
 router.delete("/delete/image/:id", authMiddleware, adminMiddleware, controller.deleteImage);
+
+router.get("/search", controller.search);
+
+router.get("/:category?", controller.index);
 
 module.exports = router;

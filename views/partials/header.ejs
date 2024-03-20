@@ -3,17 +3,19 @@
     <a href="/"
       ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
     /></a>
-    <input class="input-search" type="text" placeholder="Buscar..." />
+    <form action="/products/search" method="get" >
+      <input class="input-search" name="q" type="text" placeholder="Buscar..." />
+    </form>
     <ul class="navbar-top">
       <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
       <li><a href="/products">Administrar</a></li>
       <% }else { %>
       <li><a href="/products">Todos</a></li>
       <% } %>
-      <li><a href="/products?cat=Celular">Smartphones</a></li>
-      <li><a href="/products?cat=Accesorio">Accesorios</a></li>
-      <li><a href="/products?cat=Tablets">Tablets</a></li>
-      <li><a href="/products?cat=Computadoras">Computadoras</a></li>
+      <li><a href="/products/celulares">Celulares</a></li>
+      <li><a href="/products/tablets">Tablets</a></li>
+      <li><a href="/products/computadoras">Computadoras</a></li>
+      <li><a href="/products/accesorios">Accesorios</a></li>
       <li>
         <a href="/users/login"><i class="fa-solid fa-user"></i> Cuenta</a>
       </li>

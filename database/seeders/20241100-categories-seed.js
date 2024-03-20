@@ -3,10 +3,10 @@ module.exports = {
     await queryInterface.bulkInsert(
       "categories",
       [
-        { id: 1, name: "Celular" },
-        { id: 2, name: "Accesorio" },
-        { id: 3, name: "Tablets" },
-        { id: 4, name: "Computadoras" },
+        { id: 1, name: "celulares" },
+        { id: 2, name: "accesorios" },
+        { id: 3, name: "tablets" },
+        { id: 4, name: "computadoras" },
       ],
       {}
     );

@@ -5,21 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function (event) {
       event.preventDefault();
       Swal.fire({
-        title: "Estás seguro que quieres eliminar la imagen?",
-        text: "No podrás revertir esto.",
+        title: "¿Estás seguro?",
+        text: "Esta acción no se puede deshacer",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#27374D",
         cancelButtonColor: "#27374D",
-        confirmButtonText: "Si, estoy seguro!",
+        confirmButtonText: "Si, eliminar!",
+        cancelButtonText : "Cancelar"
       }).then((result) => {
         if (result.isConfirmed) {
           const imageId = button.dataset.id;
           eliminarImagen(imageId);
           removeButton(imageId);
           Swal.fire({
-            title: "Eliminado!",
-            text: "La imagen ha sido eliminada.",
+            title: "Imagen eliminada!",
             icon: "success",
             confirmButtonColor: "#27374D",
           });
