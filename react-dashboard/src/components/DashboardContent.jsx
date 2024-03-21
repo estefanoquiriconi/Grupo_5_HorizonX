@@ -1,7 +1,7 @@
 import React from 'react'
 import { Categories } from './Categories'
 import { StatsSection } from './StatsSection'
-import { LastMovieCard } from './LastMovieCard'
+import { LastProductCard } from './LastProductCard'
 
 export const DashboardContent = () => {
   return (
@@ -9,7 +9,7 @@ export const DashboardContent = () => {
       <StatsSection />
       <div className='row'>
         <div className='col-lg-6 mb-4'>
-          <LastMovieCard />
+          <LastProductCard />
         </div>
         <div className='col-lg-6 mb-4'>
           <Categories />

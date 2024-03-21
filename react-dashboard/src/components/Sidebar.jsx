@@ -41,7 +41,7 @@ export const Sidebar = () => {
         <li className='nav-item'>
           <Link className='nav-link' to='/last'>
             <i className="fas fa-film"></i>
-            <span>Last Movie</span>
+            <span>Último Producto</span>
           </Link>
         </li>
         <li className='nav-item'>

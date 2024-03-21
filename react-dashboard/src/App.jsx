@@ -2,12 +2,12 @@ import './assets/css/app.css'
 import { Routes, Route } from 'react-router-dom'
 import { TopBar } from './components/TopBar'
 import { DashboardContent } from './components/DashboardContent'
-import { LastMovieCard } from './components/LastMovieCard'
 import { StatsSection } from './components/StatsSection'
 import { Error404 } from './components/Error404'
 import { Sidebar } from './components/Sidebar'
 import { Footer } from './components/Footer'
 import { Categories } from './components/Categories'
+import { LastProductCard } from './components/LastProductCard'
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
             <Routes>
               <Route path='/' element={<DashboardContent />} />
               <Route path='/genres' element={<Categories />} />
-              <Route path='/last' element={<LastMovieCard />} />
+              <Route path='/last' element={<LastProductCard />} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
             </Routes>

@@ -37,6 +37,7 @@ const productsRoutes = require("./routers/products.routes");
 const cartRoutes = require('./routers/cart.routes.js');
 
 const apiProductsRoutes = require('./routers/api/productsAPI.routes.js');
+const apiProductImageRoutes = require('./routers/api/productImageAPI.routes.js')
 const apiCategoriesRoutes = require('./routers/api/categoriesAPI.routes.js');
 
 express.Router().use(function (req, res, next) {
@@ -50,4 +51,5 @@ app.use("/products", productsRoutes);
 app.use("/cart", authMiddleware, cartRoutes);
 
 app.use("/api/products", apiProductsRoutes);
+app.use("/api/productImage", apiProductImageRoutes)
 app.use("/api/categories", apiCategoriesRoutes);

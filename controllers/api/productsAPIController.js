@@ -1,4 +1,5 @@
 const { Product, ProductImage } = require('../../database/models')
+const BASE_URL = 'http://localhost:8080'
 
 const productsAPIController = {
   index: async (req, res) => {
@@ -19,23 +20,19 @@ const productsAPIController = {
         } else {
           productsByCategory[category] = 1
         }
-      })
-
-      products.forEach((product) => {
-        product.setDataValue(
-          'detail',
-          'http://localhost:8080/api/products/' + product.id
-        )
+        product.setDataValue('detail', `${BASE_URL}/api/products/` + product.id)
       })
 
       res.json({
         meta: {
           status: 200,
           count: products.length,
-          url: 'http://localhost:8080/api/products',
+          url: `${BASE_URL}/api/products`,
         },
-        countByCategory: productsByCategory,
-        products,
+        data: {
+          countByCategory: productsByCategory,
+          products,
+        },
       })
     } catch (error) {
       console.error(error)
@@ -62,6 +59,33 @@ const productsAPIController = {
       res.json(product)
     } catch (error) {
       console.error(error)
+    }
+  },
+
+  last: async (req, res) => {
+    try {
+      const lastProduct = await Product.findOne({
+        order: [['id', 'DESC']],
+        include: [
+          'category',
+          'brand',
+          'color',
+          {
+            model: ProductImage,
+            as: 'images',
+            attributes: ['id', 'image_filename'],
+          },
+        ],
+        attributes: {
+          exclude: ['category_id', 'brand_id', 'color_id'],
+        },
+      })
+      lastProduct.images.forEach((image) =>
+        image.setDataValue('url', `${BASE_URL}/api/productImage/` + image.id)
+      )
+      res.json(lastProduct)
+    } catch (error) {
+      console.log(error)
     }
   },
 }
