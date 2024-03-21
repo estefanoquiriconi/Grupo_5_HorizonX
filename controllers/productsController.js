@@ -183,7 +183,7 @@ const controller = {
         include: ["images"],
       });
       if (product.images.length > 1) {
-        await db.ProductImage.destroy({
+        await ProductImage.destroy({
           where: {
             product_id: id,
             image_filename: "default-product-image.png",
@@ -257,7 +257,7 @@ const controller = {
       }
       res.status(200);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   },
 
@@ -274,14 +274,13 @@ const controller = {
         ],
       },
     })
-    console.log(products);
     res.render("products/products", {
       products,
       cat: req.query.cat,
       search
     });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     
   },

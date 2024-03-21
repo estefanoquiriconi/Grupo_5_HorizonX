@@ -38,7 +38,6 @@ async function eliminarImagen(id) {
     const response = await fetch(`/products/delete/image/${id}`, {
       method: "DELETE",
     });
-    console.log(response);
   } catch (error) {
     console.error(error);
   }

@@ -135,7 +135,6 @@ const controller = {
     const userEdit = await db.User.findOne({where:{id:req.session.userLogged.id}});
     
     if (validations.errors.length > 0) {
-      console.log(validations.mapped())
       if (req.file) {
         fs.unlinkSync(
           path.join(__dirname, "../public/images/users/", req.file.filename)
@@ -175,7 +174,7 @@ const controller = {
       }
       res.redirect("./profile")
     } catch(e) {
-      console.log(e.message)
+      console.error(e.message)
       res.redirect("./profile")
     }
   
