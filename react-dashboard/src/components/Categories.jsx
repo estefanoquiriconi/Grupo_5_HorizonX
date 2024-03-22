@@ -34,7 +34,7 @@ export const Categories = () => {
         {loading ? (
           <p className='text-center'>Cargando...</p>
         ) : error ? (
-          <p className='text-center'>{error}</p>
+          <p className='text-center  text-danger'>{error}</p>
         ) : (
           <div className='row'>
             {categories.map((category) => {

@@ -225,7 +225,7 @@ module.exports = {
         },
         {
           id: 21,
-          name: 'Galaxy Z 512gb Phantom Black',
+          name: 'Galaxy Z Phantom',
           description:
           'Procesador Octa-Core (3.36GHz,2.8GHz,2GHz) Almacenamiento 512 GB | Disponible: 453.5 GB Cámaras Frontal 4 MP / Trasera 50+12+10 MP Tamaño de pantalla 7.6" + QXGA+ -DynamicAMOLED 2X | HD+ DynamicAMOLED 2X',
           price: 364999.0,
@@ -236,7 +236,7 @@ module.exports = {
         },
         {
           id: 22,
-          name: 'Moto E22 4&4 Niagara',
+          name: 'Moto E22 Niagara',
           description:
           'Versión 12 | Modo Retrato: Sí | Fotos panorámica: Sí | Flash Frontal: Backlight | Tarjeta de memoria: Micro SD | Zoom Macro: 2MP (80.1°) F2.4 | Flash: digital (4x fotos/4x videos)',
           price: 130498.0,
@@ -247,7 +247,7 @@ module.exports = {
         },
         {
           id: 23,
-          name: 'Moto G32 Gris',
+          name: 'Moto G32',
           description:
           'Dimensiones: Alto 161.78 x 73.84 x 8.49 mm Ancho 73.84 Peso 180 g Pulgadas 6.49" (20:9)',
           price: 338175.0,
@@ -258,7 +258,7 @@ module.exports = {
         },
         {
           id: 24,
-          name: 'Moto G84 5G 256GB Ballad Blue',
+          name: 'Moto G84',
           description:
           'Cam. Principal Principal: 50 MP (84.1°) F1.88 / Gran angular y macro: 8 MP (118.6¬) F2.2 Memoria interna (ROM) 256 GB',
           price: 499999.0,
@@ -269,7 +269,7 @@ module.exports = {
         },
         {
           id: 25,
-          name: 'Redmi Note 11 128GB Celeste',
+          name: 'Redmi Note 11',
           description:
           'Cam. Principal 50 MB + 8 MB + 2 MB + 2 MB Memoria interna (ROM) 128 GB Mem. RAM 4 GB',
           price: 339999.0,
@@ -280,7 +280,7 @@ module.exports = {
         },
         {
           id: 26,
-          name: 'Samsung Galaxy A24 128GB Negro',
+          name: 'Galaxy A24',
           description:
           'Cam. Principal 50 MP Memoria interna (ROM) 128 GB Mem. RAM 6 GB',
           price: 524999.0,
@@ -291,7 +291,7 @@ module.exports = {
         },
         {
           id: 27,
-          name: 'Adaptador Samsung De Carga Rápida - Cable Tipo C (15w)',
+          name: 'Adaptador De Carga Rápida',
           description:
           'Características generales PD max. 15 W Interfaz USB-C Contenido del paquete Power Adapter USB-C to USB-C Cable',
           price: 36999.0,
@@ -302,7 +302,7 @@ module.exports = {
         },
         {
           id: 28,
-          name: 'Cargador Portátil Gadnic K42 10000 mAh 2 puestos USB + Display',
+          name: 'Cargador Portátil',
           description:
           'Dimensiones 14,9 * 7,6 * 1,5 cm Cargador portátil Modelo K42 Origen CHINA',
           price: 27000.0,
@@ -313,7 +313,7 @@ module.exports = {
         },
         {
           id: 29,
-          name: 'Cable Usb Apple Lightning One For All Cc3323 3mt Certificado',
+          name: 'Cable Usb Apple Lightning',
           description:
           'Cable One For All USB/Lightning CC3323 3 mt Blanco, compatible para Ipod, Iphone, Ipad. Carga y sincronización. Características Marca One For All Modelo CC3323 Color Blanco Tipo de producto Cables Uso Informática Tipo de cable USB Largo del cable 3mts Tipo de ficha Lightning / Usb Dimensiones Con packaging 11.6 x 9.6 x 3.0 Peso 0,04 kg Otras Características Plugs durables // Carga y sincroniza Garantía 6 meses Origen China',
           price: 11600.0,
@@ -324,7 +324,7 @@ module.exports = {
         },
         {
           id: 30,
-          name: 'Aro De Luz Led 26 Cm Luz Rgb Calida Fria + Trípode 2.10 Mt',
+          name: 'Aro De Luz + Trípode Mt',
           description:
           'ARO DE LUZ LED 26CM LUZ RGB CALIDA FRIA + TRIPODE 2.10MTS',
           price: 45500.0,
@@ -335,7 +335,7 @@ module.exports = {
         },
         {
           id: 31,
-          name: 'iPhone 13 128GB Midnight',
+          name: 'iPhone 13 Midnight',
           description:
           'Tu nuevo superpoder. Un chip super rápido que deja atrás a la competencia. Un gran salto en duración de batería que vas a notar todos los días',
           price: 2000000.0,
@@ -346,7 +346,7 @@ module.exports = {
         },
         {
           id: 32,
-          name: 'Samsung Galaxy A34 5G 128GB Lime',
+          name: 'Galaxy A34',
           description: 'Cam. Principal 48.0 MP + 8.0 MP + 5.0 MP Memoria interna (ROM) 128 GB',
           price: 696000.0,
           stock_quantity: 3,
@@ -356,7 +356,7 @@ module.exports = {
         },
         {
           id: 33,
-          name: 'Motorola Edge 40 256GB Negro Eclipse',
+          name: 'Edge 40',
           description:
           'Cam. Principal 50 MP + 13 MP Memoria interna (ROM) 256 GB Mem. RAM 8 GB',
           price: 999999.0,
@@ -367,7 +367,7 @@ module.exports = {
         },
         {
           id: 34,
-          name: 'Samsung Galaxy S21 Fe 5g 128 Gb 6 Ram Blanco',
+          name: 'Galaxy S21',
           description:
           'Pantalla AMOLED de 6.4". Tiene 3 cámaras traseras de 12Mpx/12Mpx/8Mpx. Cámara delantera de 32Mpx. Procesador Exynos 2100 Octa-Core Octa-Core de 2.9GHz con 6GB de RAM. Batería de 4500mAh con carga inalámbrica. Memoria interna de 128GB.',
           price: 850000.0,
@@ -378,7 +378,7 @@ module.exports = {
         },
         {
           id: 35,
-          name: 'Xiaomi Redmi Note 10S 6GB 128GB Ocean Blue Sin Cargador',
+          name: 'Redmi Note 10S',
           description:
           'Cam. Principal 64 Memoria interna (ROM) 128 GB Mem. RAM 6 GB',
           price: 467000.0,

@@ -1,6 +1,7 @@
 import React from 'react'
-import logoDh from '../assets/imagenes/logo-DH.png'
+import logoHorizonx from '../assets/imagenes/logo-horizonx.png'
 import { Link } from 'react-router-dom'
+import { CustomLink } from './CustomLink'
 
 export const Sidebar = () => {
   return (
@@ -14,42 +15,24 @@ export const Sidebar = () => {
           to='/'
         >
           <div className='sidebar-brand-icon'>
-            <img className='w-100' src={logoDh} alt='Digital House' />
+            HORIZON
+            <img className='w-25' src={logoHorizonx} alt='Digital House' />
           </div>
         </Link>
 
         <hr className='sidebar-divider my-0' />
 
-        <li className='nav-item active'>
-          <Link className='nav-link' to='/'>
-            <i className='fas fa-fw fa-tachometer-alt'></i>
-            <span>Dashboard</span>
-          </Link>
-        </li>
+        <CustomLink icon='fas fa-fw fa-tachometer-alt' text='Dashboard' to='/' />
 
         <hr className='sidebar-divider' />
 
         <div className='sidebar-heading'>Actions</div>
 
-        <li className='nav-item'>
-          <Link className='nav-link collapsed' to='/genres'>
-            <i className='fas fa-fw fa-table'></i>
-            <span>Categorías</span>
-          </Link>
-        </li>
+        <CustomLink icon='fas fa-fw fa-table' text='Productos' to='/products' />
+        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/genres' />
+        <CustomLink icon='fas fa-film' text='Último Producto' to='/last' />
+        <CustomLink icon='fas fa-fw fa-chart-area' text='Stats' to='/stats' />
 
-        <li className='nav-item'>
-          <Link className='nav-link' to='/last'>
-            <i className="fas fa-film"></i>
-            <span>Último Producto</span>
-          </Link>
-        </li>
-        <li className='nav-item'>
-          <Link className='nav-link' to='/stats'>
-            <i className='fas fa-fw fa-chart-area'></i>
-            <span>Stats</span>
-          </Link>
-        </li>
         <hr className='sidebar-divider d-none d-md-block' />
       </ul>
     </>

@@ -5,7 +5,7 @@ const productsAPIController = {
   index: async (req, res) => {
     try {
       const products = await Product.findAll({
-        include: ['category'],
+        include: ['category', 'brand', 'color', 'images'],
         attributes: {
           exclude: ['category_id', 'brand_id', 'color_id'],
         },
@@ -21,6 +21,12 @@ const productsAPIController = {
           productsByCategory[category] = 1
         }
         product.setDataValue('detail', `${BASE_URL}/api/products/` + product.id)
+        product.price = Number(product.price).toLocaleString('es-AR', {
+          minimumFractionDigits: 2,
+        })
+        product.images.forEach((image) =>
+          image.setDataValue('url', `${BASE_URL}/api/productImage/` + image.id)
+        )
       })
 
       res.json({
@@ -85,7 +91,7 @@ const productsAPIController = {
       )
       res.json(lastProduct)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   },
 }

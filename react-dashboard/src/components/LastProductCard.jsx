@@ -13,7 +13,6 @@ export const LastProductCard = () => {
       }
       const data = await response.json()
       setProduct(data)
-      console.log(data)
     } catch (error) {
       setError(error.message)
     } finally {
@@ -32,27 +31,34 @@ export const LastProductCard = () => {
           Último producto agregado
         </h5>
       </div>
-      {loading ? (
-        <p className='text-center'>Cargando...</p>
-      ) : error ? (
-        <p className='text-center'>{error}</p>
-      ) : (
-        <div className='card-body'>
-          {product.name}
-          <div className='text-center'>
-            <img
-              className='img-fluid px-3 px-sm-4 mt-3 mb-4'
-              style={{ width: '30rem' }}
-              src={product.images[0].url}
-              alt={product.images[0].image_filename}
-            />
-          </div>
-          <p>{product.description}</p>
-          <a className='btn btn-danger' target='_blank' rel='nofollow' href='/'>
-            Ver producto
-          </a>
-        </div>
-      )}
+      <div className='card-body'>
+        {loading ? (
+          <p className='text-center'>Cargando...</p>
+        ) : error ? (
+          <p className='text-center text-danger'>{error}</p>
+        ) : (
+          <>
+            {product.name}
+            <div className='text-center'>
+              <img
+                className='img-fluid px-3 px-sm-4 mt-3 mb-4'
+                style={{ width: '30rem' }}
+                src={product.images[0].url}
+                alt={product.images[0].image_filename}
+              />
+            </div>
+            <p>{product.description}</p>
+            <a
+              className='btn btn-danger'
+              target='_blank'
+              rel='nofollow'
+              href='/'
+            >
+              Ver producto
+            </a>
+          </>
+        )}
+      </div>
     </div>
   )
 }

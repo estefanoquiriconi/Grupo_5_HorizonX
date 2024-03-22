@@ -8,6 +8,7 @@ import { Sidebar } from './components/Sidebar'
 import { Footer } from './components/Footer'
 import { Categories } from './components/Categories'
 import { LastProductCard } from './components/LastProductCard'
+import { Products } from './components/Products'
 
 function App() {
   return (
@@ -17,11 +18,9 @@ function App() {
         <div id='content'>
           <TopBar />
           <div className='container-fluid'>
-            <div className='d-sm-flex align-items-center justify-content-between mb-4'>
-              <h1 className='h3 mb-0 text-gray-800'>HorizonX</h1>
-            </div>
             <Routes>
               <Route path='/' element={<DashboardContent />} />
+              <Route path='/products' element={<Products />} />
               <Route path='/genres' element={<Categories />} />
               <Route path='/last' element={<LastProductCard />} />
               <Route path='/stats' element={<StatsSection />} />
