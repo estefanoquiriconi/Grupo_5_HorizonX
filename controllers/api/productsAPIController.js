@@ -3,12 +3,29 @@ const BASE_URL = 'http://localhost:8080'
 
 const productsAPIController = {
   index: async (req, res) => {
+    const page = Number(req.query.page) || 1
+    const limit = Number(req.query.limit) || 10
+    const offset = (page - 1) * limit
+    const totalProducts = await Product.count()
+    const totalPages = Math.ceil(totalProducts / limit)
+
     try {
       const products = await Product.findAll({
-        include: ['category', 'brand', 'color', 'images'],
+        include: [
+          'category',
+          'brand',
+          'color',
+          {
+            model: ProductImage,
+            as: 'images',
+            attributes: ['id', 'image_filename'],
+          },
+        ],
         attributes: {
           exclude: ['category_id', 'brand_id', 'color_id'],
         },
+        offset,
+        limit,
       })
 
       const productsByCategory = {}
@@ -32,7 +49,10 @@ const productsAPIController = {
       res.json({
         meta: {
           status: 200,
-          count: products.length,
+          page,
+          limit,
+          totalProducts,
+          totalPages,
           url: `${BASE_URL}/api/products`,
         },
         data: {

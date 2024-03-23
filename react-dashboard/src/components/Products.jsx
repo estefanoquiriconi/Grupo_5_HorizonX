@@ -5,15 +5,21 @@ export const Products = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
+  const [totalPages, setTotalPages] = useState(null)
+  const [page, setPage] = useState(1)
+  const [limit, setLimit] = useState(5)
+
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/products')
+      const response = await fetch(
+        `http://localhost:8080/api/products?page=${page}&limit=${limit}`
+      )
       if (!response.ok) {
         throw new Error('Error al obtener los datos')
       }
       const data = await response.json()
       setProducts(data.data.products)
-      console.log(data.data.products)
+      setTotalPages(data.meta.totalPages)
     } catch (error) {
       setError(error.message)
     } finally {
@@ -24,6 +30,10 @@ export const Products = () => {
   useEffect(() => {
     fetchData()
   }, [])
+
+  useEffect(() => {
+    fetchData()
+  }, [page])
 
   return (
     <div className='card shadow mb-4'>
@@ -36,7 +46,7 @@ export const Products = () => {
         ) : error ? (
           <p className='text-center text-danger'>{error}</p>
         ) : (
-          <div className='row'>
+          <div className='row justify-content-center'>
             <table className='table'>
               <thead>
                 <tr className='text-gray-700'>
@@ -71,6 +81,31 @@ export const Products = () => {
                 })}
               </tbody>
             </table>
+            <nav className='text-center'>
+              <ul className='pagination'>
+                <li className='page-item'>
+                  <button
+                    className='page-link'
+                    disabled={page === 1}
+                    onClick={() => setPage(page - 1)}
+                  >
+                    Anterior
+                  </button>
+                </li>
+                <li className='page-item'>
+                  <button
+                    className='page-link'
+                    disabled={page === totalPages}
+                    onClick={() => setPage(page + 1)}
+                  >
+                    Siguiente
+                  </button>
+                </li>
+              </ul>
+              <span>
+                Página {page} de {totalPages}
+              </span>
+            </nav>
           </div>
         )}
       </div>
