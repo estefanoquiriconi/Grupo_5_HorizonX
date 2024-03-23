@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             role_id:{type: dataTypes.INTEGER},
       }
       const config = {
-            table: 'users',
+            tableName: 'users',
             timestamps: false
       }
       const User = sequelize.define('User', cols, config)

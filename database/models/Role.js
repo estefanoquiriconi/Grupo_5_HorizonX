@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
             name: {type: dataTypes.STRING, allowNull: false},
       }
       const config = {
-            table: 'roles',
+            tableName: 'roles',
             timestamps: false
       }
       const Role = sequelize.define('Role', cols, config)
