@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Input } from './Input'
 
 export const Products = () => {
   const [products, setProducts] = useState([])
@@ -33,12 +34,24 @@ export const Products = () => {
 
   useEffect(() => {
     fetchData()
-  }, [page])
+  }, [page, limit])
+
+  const handleLimit = (e) => {
+    const newLimit = e.target.value
+    if (newLimit <= 0) {
+      setLimit(1)
+    } else {
+      setLimit(newLimit)
+    }
+  }
 
   return (
     <div className='card shadow mb-4'>
-      <div className='card-header py-3'>
+      <div className='card-header py-3 d-flex justify-content-between align-items-center'>
         <h5 className='m-0 font-weight-bold text-gray-800'>Productos</h5>
+        <div className='d-flex'>
+          <Input value={limit} label='Límite' handle={handleLimit} />
+        </div>
       </div>
       <div className='card-body'>
         {loading ? (
