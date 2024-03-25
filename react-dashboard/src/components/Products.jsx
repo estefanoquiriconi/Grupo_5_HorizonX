@@ -30,10 +30,6 @@ export const Products = () => {
 
   useEffect(() => {
     fetchData()
-  }, [])
-
-  useEffect(() => {
-    fetchData()
   }, [page, limit])
 
   const handleLimit = (e) => {
