@@ -9,6 +9,7 @@ import { Footer } from './components/Footer'
 import { Categories } from './components/Categories'
 import { LastProductCard } from './components/LastProductCard'
 import { Products } from './components/Products'
+import { Users } from './components/Users'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path='/products' element={<Products />} />
               <Route path='/genres' element={<Categories />} />
               <Route path='/last' element={<LastProductCard />} />
+              <Route path='/users' element={<Users />} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
             </Routes>
