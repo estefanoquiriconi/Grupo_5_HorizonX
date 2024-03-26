@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { CategoryCard } from './CategoryCard'
+
 export const Categories = () => {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [notification, _setNotification] = useState('')
-  const [newCategory, setNewCategory] = useState('')
-  const location = useLocation()
 
   const getCategories = async () => {
     try {
@@ -53,52 +52,13 @@ export const Categories = () => {
       .catch((error) => setError(error.message))
   }
 
-  const onCreate = (event) => {
-    if (event.key === 'Enter') {
-      fetch('http://localhost:8080/api/categories', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: newCategory.toLowerCase() }),
-      })
-        .then((res) => {
-          if (!res.ok) {
-            setNotification('Debes ingresar como mínimo 3 caracteres')
-          } else {
-            return res.json()
-          }
-        })
-        .then((data) => {
-          setNotification(data.message)
-          getCategories()
-        })
-        .catch((error) => console.error(error))
-    }
-  }
-
   return (
     <div className='card shadow mb-4'>
       <div className='card-header py-3 d-flex justify-content-between align-items-center'>
         <h5 className='m-0 font-weight-bold text-gray-800'>Categorías</h5>
-        {location.pathname != '/' ? (
-          <div className='d-flex'>
-            <div className='input-group input-group mb-3 m-1 '>
-              <div className='input-group-prepend'>
-                <span className='input-group-text' id='inputGroup-sizing-sm'>
-                  Nueva categoría
-                </span>
-              </div>
-              <input
-                type='text'
-                className='form-control'
-                value={newCategory}
-                onChange={(e) => setNewCategory(e.target.value)}
-                onKeyDown={onCreate}
-              />
-            </div>
-          </div>
-        ) : null}
+        <Link className='btn btn-primary' to='/category/create'>
+          Nueva
+        </Link>
       </div>
       <div className='card-body'>
         {loading ? (

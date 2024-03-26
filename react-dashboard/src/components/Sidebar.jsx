@@ -7,7 +7,7 @@ export const Sidebar = () => {
   return (
     <>
       <ul
-        className='navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion'
+        className='navbar-nav bg-gradient-primary sidebar sidebar-dark accordion'
         id='accordionSidebar'
       >
         <Link
@@ -29,10 +29,9 @@ export const Sidebar = () => {
         <div className='sidebar-heading'>Actions</div>
 
         <CustomLink icon='fas fa-fw fa-table' text='Productos' to='/products' />
-        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/categories' />
         <CustomLink icon='fas fa-user-friends' text='Usuarios' to='/users' />
-        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/genres' />
-        <CustomLink icon='fas fa-film' text='Último Producto' to='/last' />
+        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/categories' />
+        <CustomLink icon='fas fa-bolt' text='Último Producto' to='/product/last' />
         <CustomLink icon='fas fa-fw fa-chart-area' text='Stats' to='/stats' />
         
 

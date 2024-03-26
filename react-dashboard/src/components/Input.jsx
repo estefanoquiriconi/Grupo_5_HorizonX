@@ -2,11 +2,9 @@ import React from 'react'
 
 export const Input = ({ type, value, label, handle }) => {
   return (
-    <div className='input-group input-group-sm mb-3 m-1 '>
+    <div className='input-group input-group mb-3 m-1 '>
       <div className='input-group-prepend'>
-        <span className='input-group-text' id='inputGroup-sizing-sm'>
-          {label}
-        </span>
+        <span className='input-group-text'>{label}</span>
       </div>
       <input
         type={type}

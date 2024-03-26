@@ -49,7 +49,7 @@ export const LastProductCard = () => {
             </div>
             <p>{product.description}</p>
             <a
-              className='btn btn-danger'
+              className='btn btn-primary'
               target='_blank'
               rel='nofollow'
               href='/'

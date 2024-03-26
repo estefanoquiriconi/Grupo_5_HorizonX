@@ -6,7 +6,7 @@ export const CategoryCard = ({ id, name, onDelete }) => {
   return (
     <>
       <div className='col-lg-6 mb-4'>
-        <div className='card bg-dark text-white shadow'>
+        <div className='card bg-info text-white shadow'>
           <div className='card-body d-flex justify-content-between align-items-center'>
             <span>{name}</span>
             {location.pathname != '/' ? (
@@ -17,10 +17,7 @@ export const CategoryCard = ({ id, name, onDelete }) => {
                 >
                   Editar
                 </Link>
-                <button
-                  className='btn btn-outline-light'
-                  onClick={() => onDelete(id)}
-                >
+                <button className='btn btn-outline-light' onClick={() => onDelete(id)}>
                   Eliminar
                 </button>
               </div>
