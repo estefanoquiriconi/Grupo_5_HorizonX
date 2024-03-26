@@ -1,5 +1,6 @@
 const { User } = require('../../database/models')
 const BASE_URL = 'http://localhost:8080'
+const path = require('path')
 
 const usersAPIController = {
   index: async (req, res) => {
@@ -64,7 +65,32 @@ const usersAPIController = {
         attributes: {
           exclude: ['role_id','password']},
       })
+        user.setDataValue('url', `${BASE_URL}/api/users/avatar/` + user.id)
+
       res.json(user)
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+  avatar: async (req, res) => {
+    try {
+      const user = await User.findOne({
+        where: {
+          id: req.params.userId,
+        },
+      })
+
+      if (!user) {
+        return res.status(404).send({ message: 'Usuario no encontrado' })
+      }
+
+      const avatarPath = path.join(
+        __dirname,
+        '../../public/images/users/' + user.avatar
+      )
+
+      res.sendFile(avatarPath)
     } catch (error) {
       console.error(error)
     }
