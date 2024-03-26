@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { Input } from './Input'
 
-export const Products = () => {
-  const [products, setProducts] = useState([])
+export const Users = () => {
+  const [usuario, setUsuario] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   const [totalPages, setTotalPages] = useState(null)
   const [page, setPage] = useState(1)
-  const [limit, setLimit] = useState(5)
+  const [limit, setLimit] = useState(10)
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/products?page=${page}&limit=${limit}`
+        `http://localhost:8080/api/users?page=${page}&limit=${limit}`
       )
       if (!response.ok) {
         throw new Error('Error al obtener los datos')
       }
       const data = await response.json()
-      setProducts(data.data.products)
+      setUsuario(data.data.users)
       setTotalPages(data.meta.totalPages)
     } catch (error) {
       setError(error.message)
@@ -44,14 +44,14 @@ export const Products = () => {
   return (
     <div className='card shadow mb-4'>
       <div className='card-header py-3 d-flex justify-content-between align-items-center'>
-        <h5 className='m-0 font-weight-bold text-gray-800'>Productos</h5>
+        <h5 className='m-0 font-weight-bold text-gray-800'>Usuarios</h5>
         <div className='d-flex'>
           <Input type={'number'} value={limit} label='Límite' handle={handleLimit} />
         </div>
       </div>
       <div className='card-body'>
         {loading ? (
-          <p className='text-center'>Cargando...</p>
+          <p className='text-center'>Obteniendo data...</p>
         ) : error ? (
           <p className='text-center text-danger'>{error}</p>
         ) : (
@@ -61,30 +61,24 @@ export const Products = () => {
                 <tr className='text-gray-700'>
                   <th scope='col'>#</th>
                   <th scope='col'>Imagen</th>
-                  <th scope='col'>Marca</th>
                   <th scope='col'>Nombre</th>
-                  <th scope='col'>Color</th>
-                  <th scope='col'>Precio</th>
-                  <th scope='col'>Stock</th>
+                  <th scope='col'>Rol</th>
                 </tr>
               </thead>
               <tbody>
-                {products.map((product, index) => {
+                {usuario.map((user, index) => {
                   return (
                     <tr key={index}>
                       <th scope='row'>{index + 1}</th>
                       <td>
                         <img
-                          src={product.images[0].url}
-                          alt={product.images[0].image_filename}
-                          style={{ width: '50px', height: '50px' }}
+                          src={user.avatar}
+                          alt={"Foto de perfil de " + user.fullName}
+                          style={{ width: '64px', height: '64px' }}
                         />
                       </td>
-                      <td>{product.brand.name}</td>
-                      <td>{product.name}</td>
-                      <td>{product.color.name}</td>
-                      <td>${product.price}</td>
-                      <td>{product.stock_quantity}</td>
+                      <td>{user.fullName}</td>
+                      <td>{user.role.name.charAt(0).toUpperCase() + user.role.name.slice(1)}</td>
                     </tr>
                   )
                 })}

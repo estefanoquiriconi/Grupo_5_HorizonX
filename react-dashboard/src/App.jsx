@@ -12,6 +12,7 @@ import { Categories } from './components/Categories'
 import { LastProductCard } from './components/LastProductCard'
 import { Products } from './components/Products'
 import EditCategory from './components/EditCategory'
+import { Users } from './components/Users'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path='/categories' element={<Categories />} />
               <Route path='/category/edit/:id' element={<EditCategory />} />
               <Route path='/last' element={<LastProductCard />} />
+              <Route path='/users' element={<Users />} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
             </Routes>
