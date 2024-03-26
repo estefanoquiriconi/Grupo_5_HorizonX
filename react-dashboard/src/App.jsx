@@ -13,6 +13,7 @@ import { LastProductCard } from './components/LastProductCard'
 import { Products } from './components/Products'
 import { Users } from './components/Users'
 import { FormCategory } from './components/FormCategory'
+import { LastUser } from './components/LastUser'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path='/category/create' element={<FormCategory />} />
               <Route path='/category/edit/:id' element={<FormCategory />} />
               <Route path='/users' element={<Users />} />
+              <Route path='/user/last' element={<LastUser/>} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
             </Routes>

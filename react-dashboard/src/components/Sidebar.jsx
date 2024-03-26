@@ -32,6 +32,7 @@ export const Sidebar = () => {
         <CustomLink icon='fas fa-user-friends' text='Usuarios' to='/users' />
         <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/categories' />
         <CustomLink icon='fas fa-bolt' text='Último Producto' to='/product/last' />
+        <CustomLink icon='fas fa-user' text='Ultimo Usuario' to='/user/last' />
         <CustomLink icon='fas fa-fw fa-chart-area' text='Stats' to='/stats' />
         
 
