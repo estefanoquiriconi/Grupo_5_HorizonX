@@ -1,4 +1,6 @@
 import './assets/css/app.css'
+import './assets/css/index.css'
+
 import { Routes, Route } from 'react-router-dom'
 import { TopBar } from './components/TopBar'
 import { DashboardContent } from './components/DashboardContent'
@@ -9,6 +11,7 @@ import { Footer } from './components/Footer'
 import { Categories } from './components/Categories'
 import { LastProductCard } from './components/LastProductCard'
 import { Products } from './components/Products'
+import EditCategory from './components/EditCategory'
 
 function App() {
   return (
@@ -21,7 +24,8 @@ function App() {
             <Routes>
               <Route path='/' element={<DashboardContent />} />
               <Route path='/products' element={<Products />} />
-              <Route path='/genres' element={<Categories />} />
+              <Route path='/categories' element={<Categories />} />
+              <Route path='/category/edit/:id' element={<EditCategory />} />
               <Route path='/last' element={<LastProductCard />} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />

@@ -29,7 +29,7 @@ export const Sidebar = () => {
         <div className='sidebar-heading'>Actions</div>
 
         <CustomLink icon='fas fa-fw fa-table' text='Productos' to='/products' />
-        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/genres' />
+        <CustomLink icon='fas fa-fw fa-table' text='Categorías' to='/categories' />
         <CustomLink icon='fas fa-film' text='Último Producto' to='/last' />
         <CustomLink icon='fas fa-fw fa-chart-area' text='Stats' to='/stats' />
 
