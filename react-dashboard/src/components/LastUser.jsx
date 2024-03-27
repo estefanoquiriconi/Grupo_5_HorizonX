@@ -27,30 +27,38 @@ export const LastUser = () => {
   return (
     <div className='card shadow mb-4'>
       <div className='card-header py-3 d-flex justify-content-between align-items-center'>
-        <h5 className='m-0 font-weight-bold text-gray-800'>Ultimo usuario creado</h5>
+        <h5 className='m-0 font-weight-bold text-gray-800'>
+          Ultimo usuario creado
+        </h5>
       </div>
       <div className='card-body'>
         {loading ? (
-          <p className='text-center'>Obteniendo data...</p>
+          <p className='text-center'>Obteniendo datos...</p>
         ) : error ? (
           <p className='text-center text-danger'>{error}</p>
         ) : (
-          <div className='row justify-content-center'>
-            <>
-            {usuario.fullName}
+          <div className='d-flex flex-column text-center'>
+            <div className='d-flex flex-column'>
+              <p className='mb-1'>
+                <strong>Nombre completo:</strong> {usuario.fullName}
+              </p>
+              <p className='mb-1'>
+                <strong>Email:</strong> {usuario.email}
+              </p>
+              <p>
+                <strong>Rol:</strong> {usuario.role.name}
+              </p>
+            </div>
             <div className='text-center'>
               <img
-                className='img-fluid px-3 px-sm-4 mt-3 mb-4'
-                style={{ width: '30rem' }}
+                className='mt-4 mb-4 avatar'
                 src={usuario.url}
                 alt={usuario.avatar}
               />
             </div>
-            <p>{usuario.role.name}</p>
-            </>
           </div>
         )}
       </div>
     </div>
-  );
-};
+  )
+}

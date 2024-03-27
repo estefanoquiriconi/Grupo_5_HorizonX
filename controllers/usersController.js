@@ -110,11 +110,9 @@ const controller = {
       first_name:firstName,
       last_name:lastName,
       email:email,
-      //...req.body,
       password: bcryptjs.hashSync(password, 10),
       avatar: req.file?.filename || "default-avatar-image.png",
-      role_id: 2,
-      //role:'cliente'
+      role_id: 1, //cliente
     };
 
     //User.create(userToCreate);
