@@ -46,9 +46,9 @@ const usersAPIController = {
   show: async (req, res) => {
     try {
       const user = await User.findByPk(req.params.id, {
-      include: ['role'],
-      attributes: {
-            exclude: ['role_id','password']},
+        include: ['role'],
+        attributes: {
+          exclude: ['role_id','password']},
       })
       user.setDataValue('avatar', `${BASE_URL}/images/users/` + user.avatar)
       res.json(user)
@@ -65,7 +65,7 @@ const usersAPIController = {
         attributes: {
           exclude: ['role_id','password']},
       })
-        user.setDataValue('url', `${BASE_URL}/api/users/avatar/` + user.id)
+      user.setDataValue('url', `${BASE_URL}/api/users/avatar/` + user.id)
 
       res.json(user)
     } catch (error) {
@@ -91,6 +91,16 @@ const usersAPIController = {
       )
 
       res.sendFile(avatarPath)
+    } catch (error) {
+      console.error(error)
+    }
+  },
+
+  count: async (req, res) => {
+    try {
+      return res.status(200).json({
+        total : await User.count()
+      })
     } catch (error) {
       console.error(error)
     }

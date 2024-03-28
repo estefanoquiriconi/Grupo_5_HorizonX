@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export const LastProductCard = () => {
   const [product, setProduct] = useState({})
@@ -38,7 +39,9 @@ export const LastProductCard = () => {
           <p className='text-center text-danger'>{error}</p>
         ) : (
           <>
-            {product.name}
+            <strong>
+              {product.brand.name} {product.name}
+            </strong>
             <div className='text-center'>
               <img
                 className='img-fluid px-3 px-sm-4 mt-3 mb-4'
@@ -48,14 +51,9 @@ export const LastProductCard = () => {
               />
             </div>
             <p>{product.description}</p>
-            <a
-              className='btn btn-primary'
-              target='_blank'
-              rel='nofollow'
-              href='/'
-            >
+            <Link className='btn btn-primary' to='/product/last'>
               Ver producto
-            </a>
+            </Link>
           </>
         )}
       </div>

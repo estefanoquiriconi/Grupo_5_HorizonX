@@ -114,6 +114,16 @@ const productsAPIController = {
       console.error(error)
     }
   },
+
+    count: async (req, res) => {
+    try {
+      return res.status(200).json({
+        total: await Product.count(),
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
 
 module.exports = productsAPIController

@@ -141,6 +141,16 @@ const categoriesAPIController = {
       })
     }
   },
+
+  count: async (req, res) => {
+    try {
+      return res.status(200).json({
+        total: await Category.count(),
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
 
 module.exports = categoriesAPIController
