@@ -48,7 +48,7 @@ export const StatsSection = () => {
                   title='Total de usuarios'
                   quantity={totalUsers}
                   borderColor='primary'
-                  icon='fa-film'
+                  icon='fa-users'
                 />
               </div>
               <div className='col-md-4 mb-4'>
@@ -56,7 +56,7 @@ export const StatsSection = () => {
                   title='Total de productos'
                   quantity={totalProducts}
                   borderColor='success'
-                  icon='fa-award'
+                  icon='fa-bolt'
                 />
               </div>
               <div className='col-md-4 mb-4'>
@@ -64,7 +64,7 @@ export const StatsSection = () => {
                   title='Total de categorías'
                   quantity={totalCategories}
                   borderColor='warning'
-                  icon='fa-user'
+                  icon='fa-star'
                 />
               </div>
             </div>
