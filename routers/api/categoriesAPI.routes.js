@@ -6,6 +6,7 @@ const categoryValidationMiddleware = require('../../middlewares/categoryValidati
 
 router.get('/', categoriesAPIController.index)
 router.post('/', categoryValidationMiddleware, categoriesAPIController.store)
+router.get('/count', categoriesAPIController.count)
 router.get('/:categoryId', categoriesAPIController.show)
 router.put('/:categoryId', categoryValidationMiddleware, categoriesAPIController.update)
 router.delete('/:categoryId', categoriesAPIController.destroy)

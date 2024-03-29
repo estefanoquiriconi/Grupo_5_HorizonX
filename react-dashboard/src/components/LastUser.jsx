@@ -28,7 +28,7 @@ export const LastUser = () => {
     <div className='card shadow mb-4'>
       <div className='card-header py-3 d-flex justify-content-between align-items-center'>
         <h5 className='m-0 font-weight-bold text-gray-800'>
-          Ultimo usuario creado
+          Último usuario creado
         </h5>
       </div>
       <div className='card-body'>
