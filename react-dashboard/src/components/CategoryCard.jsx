@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-export const CategoryCard = ({ id, name, onDelete }) => {
+export const CategoryCard = ({ id, name, productsCount, onDelete }) => {
   const location = useLocation()
   return (
     <>
@@ -9,6 +9,7 @@ export const CategoryCard = ({ id, name, onDelete }) => {
         <div className='card bg-info text-white shadow'>
           <div className='card-body d-flex justify-content-between align-items-center'>
             <span>{name}</span>
+            <span className=' align-self-end border border-4 border-secondary rounded-pill '>Cant:{productsCount}</span>
             {location.pathname != '/' ? (
               <div>
                 <Link

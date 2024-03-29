@@ -1,11 +1,28 @@
-const { Category } = require('../../database/models')
+const { Category, Product } = require('../../database/models')
 const { validationResult } = require('express-validator')
 const BASE_URL = 'http://localhost:8080'
+const { Sequelize } = require('sequelize')
+const db = require('../../database/config/config')
+const sequelize = new Sequelize(db.development.database,db.development.username,db.development.password, {
+  host:'localhost', dialect:'mysql'
+})
 
+
+/*SELECT COUNT(products.category_id), categories.name 
+FROM categories INNER JOIN products WHERE 
+products.category_id = categories.id GROUP BY categories.id;
+
+*/
 const categoriesAPIController = {
   index: async (req, res) => {
     try {
-      const categories = await Category.findAll()
+      const categories = await Category.findAll({
+        include: [{model:Product,as:'product',attributes:['name'], required:true}],
+        attributes: {
+        include: [
+          [sequelize.fn('COUNT', sequelize.col('product.category_id')), 'productsCount']
+        ]},
+      group:'Category.id'})
       categories.forEach((category) => {
         category.name =
           category.name.charAt(0).toUpperCase() + category.name.slice(1)
@@ -34,6 +51,11 @@ const categoriesAPIController = {
   show: async (req, res) => {
     try {
       const category = await Category.findByPk(req.params.categoryId)
+      const {count} = await Product.findAndCountAll({where: {category_id:req.params.categoryId}})
+      category.setDataValue(
+        'productCount',
+        count
+      )
       if (!category) {
         return res.status(404).json({
           success: false,
