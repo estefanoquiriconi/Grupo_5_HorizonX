@@ -9,7 +9,7 @@ export const CategoryCard = ({ id, name, productsCount, onDelete }) => {
         <div className='card bg-info text-white shadow'>
           <div className='card-body d-flex justify-content-between align-items-center'>
             <span>{name}</span>
-            <span className=' align-self-end border border-4 border-secondary rounded-pill '>Cant:{productsCount}</span>
+            <span className=' align-self-end border border-4 border-secondary rounded-pill '>{productsCount}</span>
             {location.pathname != '/' ? (
               <div>
                 <Link
