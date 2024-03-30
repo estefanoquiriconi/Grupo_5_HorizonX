@@ -82,7 +82,7 @@ module.exports = {
         },
         {
           id: 8,
-          name: "Apple Watch Series 9",
+          name: "Watch Series 9",
           description:
             "Una forma nueva y mágica de interactuar con tu Apple Watch sin siquiera tocarlo · Una pantalla con el doble de brillo · Combinaciones de cajas y correas neutras en carbono · esistente al agua hasta 50 metros",
           price: 138600.0,

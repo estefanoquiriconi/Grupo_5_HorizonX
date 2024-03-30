@@ -64,14 +64,12 @@ window.addEventListener('DOMContentLoaded', () => {
       ? (passwordError.textContent = 'Debes ingresar una contraseña')
       : (passwordError.textContent = '')
 
-    imageError.textContent = validateImages(image.files)
 
     if (
       !firstNameError.textContent &&
       !lastNameError.textContent &&
       !emailError.textContent &&
-      !passwordError.textContent &&
-      !imageError.textContent
+      !passwordError.textContent
     )
       formRegister.submit()
   })

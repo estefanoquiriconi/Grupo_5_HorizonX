@@ -1,5 +1,4 @@
 const bcryptjs = require("bcryptjs");
-const User = require("../models/User");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
@@ -134,12 +133,11 @@ const controller = {
     
     if (validations.errors.length > 0) {
       if (req.file) {
-        if (req.file.filename != "default-avatar-image.png") {
+        if (req.file.filename) {
           fs.unlinkSync(
             path.join(__dirname, "../public/images/users/", req.file.filename)
           );
         }
-        
       }
       return res.render("users/profile", {
         user: req.session.userLogged,
@@ -151,9 +149,11 @@ const controller = {
 
       if (checkMail < 1) {
         if(req.file){
-          fs.unlinkSync(
-            path.join(__dirname, "../public/images/users/", req.session.userLogged.avatar)
-          );
+          if(userEdit.avatar != 'default-avatar-image.png'){
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/users/", req.session.userLogged.avatar)
+            );
+          }
         }
         let avatarPath = req.file ? req.file.filename : req.session.userLogged.avatar
         req.session.userLogged.first_name = req.body.firstName
