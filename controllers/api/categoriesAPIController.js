@@ -1,13 +1,22 @@
 const { Category, Product } = require('../../database/models')
 const { validationResult } = require('express-validator')
 const BASE_URL = 'http://localhost:8080'
-const { Sequelize } = require('sequelize')
+const { Sequelize, QueryTypes } = require('sequelize')
 const db = require('../../database/config/config')
 const sequelize = new Sequelize(db.development.database,db.development.username,db.development.password, {
   host:'localhost', dialect:'mysql'
 })
 
-
+async function productsCountCategoryArray(array) {
+  let countArray = []
+  for (let index = 0; index < array.length; index++) {
+    
+    const element = await Product.count({where:{category_id:array[index].id}})
+    console.log(element)
+    countArray.push(element)
+  }
+  return countArray
+}
 /*SELECT COUNT(products.category_id), categories.name 
 FROM categories INNER JOIN products WHERE 
 products.category_id = categories.id GROUP BY categories.id;
@@ -16,20 +25,18 @@ products.category_id = categories.id GROUP BY categories.id;
 const categoriesAPIController = {
   index: async (req, res) => {
     try {
-      const categories = await Category.findAll({
-        include: [{model:Product,as:'product',attributes:['name'], required:true}],
-        attributes: {
-        include: [
-          [sequelize.fn('COUNT', sequelize.col('product.category_id')), 'productsCount']
-        ]},
-      group:'Category.id'})
-      categories.forEach((category) => {
+       const categories = await Category.findAll({})
+       const count = await productsCountCategoryArray(categories)
+      console.log(categories.length)
+      categories.forEach((category,i) => { 
         category.name =
           category.name.charAt(0).toUpperCase() + category.name.slice(1)
         category.setDataValue(
           'detail',
           `${BASE_URL}/api/categories/` + category.id
         )
+        category.setDataValue(
+          'productCount',count[i])
       })
       return res.json({
         meta: {
@@ -51,7 +58,7 @@ const categoriesAPIController = {
   show: async (req, res) => {
     try {
       const category = await Category.findByPk(req.params.categoryId)
-      const {count} = await Product.findAndCountAll({where: {category_id:req.params.categoryId}})
+      const count = await Product.count({where: {category_id:req.params.categoryId}})
       category.setDataValue(
         'productCount',
         count

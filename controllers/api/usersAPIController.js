@@ -3,6 +3,28 @@ const BASE_URL = 'http://localhost:8080'
 const path = require('path')
 
 const usersAPIController = {
+  onlyMails: async (req,res) => {
+    try {
+      const mails = await User.findAll({
+        attributes: ['email']
+      })
+      const mailArray = mails.map((obj => obj.email))
+      res.json({
+        meta: {
+          status: 200,
+        },
+        data: {mailArray},
+      })
+    } catch (error) {
+      return res.status(500).json({
+        success: false,
+        message: 'Hubo un error al verificar el mail',
+        error: error.message,
+      })
+    }
+    
+  },
+
   index: async (req, res) => {
     const page = Number(req.query.page) || 1
     const limit = Number(req.query.limit) || 10
@@ -50,7 +72,10 @@ const usersAPIController = {
         attributes: {
           exclude: ['role_id','password']},
       })
-      user.setDataValue('avatar', `${BASE_URL}/images/users/` + user.avatar)
+      if (user) {
+        user.setDataValue('avatar', `${BASE_URL}/images/users/` + user.avatar)
+      }
+      
       res.json(user)
     } catch (error) {
       console.error(error)
