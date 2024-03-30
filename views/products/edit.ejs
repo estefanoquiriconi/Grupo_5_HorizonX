@@ -70,7 +70,7 @@
                 <select name="category" id="category" class="input-field">
                   <option value="" selected disabled>Selecciona una categoría</option>
                   <% categories.forEach(category => { %>
-                    <option value="<%= category.id %>" <%= product.category_id == category.id ? 'selected' : null %>> <%= category.name %></option>
+                    <option value="<%= category.id %>" <%= product.category_id == category.id ? 'selected' : null %>> <%= category.name.charAt(0).toUpperCase() + category.name.slice(1) %></option>
                   <% }) %>
                 </select>
                 <p id="categoryError" class="error"><%= locals.errors && errors.category?.msg %></p>

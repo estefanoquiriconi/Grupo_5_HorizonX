@@ -134,9 +134,12 @@ const controller = {
     
     if (validations.errors.length > 0) {
       if (req.file) {
-        fs.unlinkSync(
-          path.join(__dirname, "../public/images/users/", req.file.filename)
-        );
+        if (req.file.filename != "default-avatar-image.png") {
+          fs.unlinkSync(
+            path.join(__dirname, "../public/images/users/", req.file.filename)
+          );
+        }
+        
       }
       return res.render("users/profile", {
         user: req.session.userLogged,
