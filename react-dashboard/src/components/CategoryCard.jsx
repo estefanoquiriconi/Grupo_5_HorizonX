@@ -22,7 +22,7 @@ export const CategoryCard = ({ id, name, productCount, onDelete }) => {
                   Eliminar
                 </button>
               </div>
-            ) : <span className=' align-self-end border border-4 border-secondary rounded-pill '>{productCount}</span>}
+            ) : <span className=' align-self-end '>{productCount}</span>}
           </div>
         </div>
       </div>

@@ -87,4 +87,4 @@ ALTER TABLE `shopping_carts` ADD CONSTRAINT `FK_a0796881-0c13-4e7a-895f-241c3dbd
 
 ALTER TABLE `cart_items` ADD CONSTRAINT `FK_a80c3104-f2de-46ac-9913-18eec14ad0a8` FOREIGN KEY (`cart_id`) REFERENCES `shopping_carts`(`id`)  ;
 
-ALTER TABLE `cart_items` ADD CONSTRAINT `FK_575ebe94-7b8f-4bfa-899a-d37ad19bd4c2` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)  ;
+ALTER TABLE `cart_items` ADD CONSTRAINT `FK_575ebe94-7b8f-4bfa-899a-d37ad19bd4c2` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ;
