@@ -1,6 +1,6 @@
 const db = require("../database/models");
 
-async function actualizarPrecioTotalCart(cartId) {
+async function calculateTotalPrice(cartId) {
   const items = await db.CartItem.findAll({
     where: { cart_id: cartId },
     include: [{ model: db.Product, as: "product" }],
@@ -12,6 +12,8 @@ async function actualizarPrecioTotalCart(cartId) {
   );
 
   await db.Cart.update({ total_price: totalPrice }, { where: { id: cartId } });
+
+  return totalPrice;
 }
 
 const cartController = {
@@ -36,6 +38,7 @@ const cartController = {
           },
         ],
       });
+      cart.total_price = await calculateTotalPrice(cart.id)
       cart.items.length === 0
         ? res.render("cart/empty")
         : res.render("cart/list", { cart });
@@ -78,8 +81,6 @@ const cartController = {
         await db.CartItem.create(itemData);
       }
 
-      actualizarPrecioTotalCart(cart.id);
-
       res.redirect("/cart");
     } catch (error) {
       console.error(error);
@@ -100,8 +101,6 @@ const cartController = {
           id: itemId,
         },
       });
-
-      await actualizarPrecioTotalCart(cart.id);
 
       res.redirect("/cart");
     } catch (error) {

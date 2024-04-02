@@ -71,6 +71,10 @@
           </form>
         </div>
       </div>
+      <% if (locals.isLogged && locals.userLogged.role.name == 'administrador')
+      { %>
+      <a href="/products/create"><i class="fa-solid fa-plus btn-new"></i></a>
+      <% } %> 
     </main>
     <%- include('../partials/footer.ejs') %>
     <script src="/js/userFormValidation.js"></script>
