@@ -1,7 +1,27 @@
-import React from 'react'
-import jordanwalke from '../assets/imagenes/jordan-walke.png'
+import React, { useEffect, useState } from 'react'
 
 export const TopBar = () => {
+
+  const [usuario, setUsuario] = useState({});
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/users/1");
+      if (!response.ok) {
+        throw new Error("Error al obtener los datos");
+      }
+      const data = await response.json();
+      setUsuario(data);
+    } catch (error) {
+      console.error(error.message)
+    }
+  };
+
+  useEffect (() => {
+    fetchData();
+  }, []);
+
+
   return (
     <nav className='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow'>
       <button
@@ -34,13 +54,13 @@ export const TopBar = () => {
         <li className='nav-item dropdown no-arrow'>
           <a className='nav-link dropdown-toggle' href='/' id='userDropdown'>
             <span className='mr-2 d-none d-lg-inline text-gray-600 small'>
-              Jordan Walke
+              {usuario.fullName}
             </span>
             <img
               className='img-profile rounded-circle'
-              src={jordanwalke}
-              alt='Jordan Walke - Creador de React'
-              style={{ width: '60px' }}
+              src={usuario.avatar}
+              alt={usuario.fullName}
+              style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
             />
           </a>
         </li>
