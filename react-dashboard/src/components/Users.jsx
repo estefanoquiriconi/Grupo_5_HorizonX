@@ -51,7 +51,7 @@ export const Users = () => {
       </div>
       <div className='card-body'>
         {loading ? (
-          <p className='text-center'>Obteniendo data...</p>
+          <p className='text-center'>Obteniendo datos...</p>
         ) : error ? (
           <p className='text-center text-danger'>{error}</p>
         ) : (
@@ -74,13 +74,12 @@ export const Users = () => {
                         <img
                           src={user.avatar}
                           alt={"Foto de perfil de " + user.fullName}
-                          style={{ width: '64px', height: '64px' }}
+                          style={{ width: '64px', height: '64px', borderRadius: '50%', objectFit: 'cover'  }}
                         />
                       </td>
                       <td>{user.fullName}</td>
                       <td>{user.role.name.charAt(0).toUpperCase() + user.role.name.slice(1)}</td>
-                    </tr>
-                  )
+                    </tr>                  )
                 })}
               </tbody>
             </table>
