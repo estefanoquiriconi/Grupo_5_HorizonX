@@ -10,6 +10,5 @@ window.addEventListener('DOMContentLoaded', () => {
         colorShow.style.backgroundColor = ee
         
         document.activeElement = null
-        console.log('i changed', textColor, ee  )
       })
     })
