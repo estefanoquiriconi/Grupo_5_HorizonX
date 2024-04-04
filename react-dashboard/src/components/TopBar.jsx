@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export const TopBar = () => {
-
+  const location = useLocation()
   const [usuario, setUsuario] = useState({});
 
   const fetchData = async () => {
@@ -24,6 +25,9 @@ export const TopBar = () => {
 
   return (
     <nav className='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow'>
+      {location.pathname == '/' ?
+        (<h1 className='h3 mb-0 text-gray-800'>DASHBOARD</h1>) :
+        (<></>)}
       <button
         id='sidebarToggleTop'
         className='btn btn-link d-md-none rounded-circle mr-3'
@@ -33,9 +37,9 @@ export const TopBar = () => {
 
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item dropdown no-arrow mx-1'>
-          <a className='nav-link dropdown-toggle' href='/' id='alertsDropdown'>
-            <i className='fas fa-bell fa-fw'></i>
-            <span className='badge badge-danger badge-counter'>3+</span>
+          <a className='nav-link dropdown-toggle' href='http://localhost:8080/' target='_blank' id='alertsDropdown'>
+          <i class="fas fa-external-link-alt"></i>
+            {/* <span className='badge badge-danger badge-counter'>3+</span> */}
           </a>
         </li>
 
@@ -46,7 +50,7 @@ export const TopBar = () => {
             id='messagesDropdown'
           >
             <i className='fas fa-envelope fa-fw'></i>
-            <span className='badge badge-danger badge-counter'>7</span>
+            {/* <span className='badge badge-danger badge-counter'>7</span> */}
           </a>
         </li>
 
