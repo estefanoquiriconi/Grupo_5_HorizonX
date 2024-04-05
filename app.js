@@ -40,6 +40,7 @@ const apiProductsRoutes = require('./routers/api/productsAPI.routes.js');
 const apiProductImageRoutes = require('./routers/api/productImageAPI.routes.js')
 const apiCategoriesRoutes = require('./routers/api/categoriesAPI.routes.js');
 const apiUsersRoutes = require('./routers/api/userAPI.routes.js');
+const apiColorsRoutes = require('./routers/api/colorsAPI.routes.js');
 
 express.Router().use(function (req, res, next) {
   res.locals.session = req.session;
@@ -55,3 +56,4 @@ app.use("/api/products", apiProductsRoutes);
 app.use("/api/productImage", apiProductImageRoutes)
 app.use("/api/categories", apiCategoriesRoutes);
 app.use("/api/users",apiUsersRoutes)
+app.use("/api/colors", apiColorsRoutes);
