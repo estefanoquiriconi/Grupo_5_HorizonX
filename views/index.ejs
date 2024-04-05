@@ -4,6 +4,7 @@
   '/css/index.css'}) %>
   <body>
     <%- include('./partials/header.ejs') %>
+          
     <div class="main-header-banner">
       <h2 class="main-header-banner-title">Galaxy Z Flip5</h2>
       <video autoplay muted class="main-header-banner-video-mobile">
@@ -13,6 +14,11 @@
         <source src="/videos/HOME_B5_Main-KV_1440x640_pc_default.webm" />
       </video>
     </div>
+    <div class="image-slice">
+      <img src="/images/products/slice1.jpg" alt="Imagen 1">
+      <img src="/images/products/slice2.jpg" alt="Imagen 3">
+      <img src="/images/products/slice3.jpg" alt="Imagen 3">
+  </div>
     <main class="container">
       <% categories.forEach(category => { %>
       <br />

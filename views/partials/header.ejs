@@ -1,6 +1,6 @@
 <header class="main-header">
   <div class="main-header-top-bar">
-    <a href="/"
+    <a class="logo-link" href="/"
       ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
     /></a>
     <form action="/products/search" method="get" >
@@ -33,8 +33,19 @@
         <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
       </li>
       <li>
-        <a href="#"><i class="fa-solid fa-bars"></i></a>
+        <a href="#" class="submenu1"><i class="fa-solid fa-bars"></i></a>
+        <ul class="submenu2">
+          <% if (locals.isLogged && locals.userLogged.role == 'administrador') { %>
+            <li><a href="/products">Administrar</a></li>
+            <% }else { %>
+            <li><a href="/products">Todos</a></li>
+            <% } %>
+          <li><a href="/products/celulares">Celulares</a></li>
+          <li><a href="/products/tablets">Tablets</a></li>
+          <li><a href="/products/computadoras">Computadoras</a></li>
+          <li><a href="/products/accesorios">Accesorios</a></li>
+        </ul>
       </li>
     </ul>
   </div>
-</header>
+ </header>

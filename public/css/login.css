@@ -15,7 +15,7 @@ main {
   text-align: center;
   width: 80%;
   max-width: 600px;
-  margin-top: 150px;
+  margin-top: 20px;
 }
 
 h2 {
@@ -86,4 +86,65 @@ a:hover {
 
 i {
   color: var(--color1);
+}
+
+@media (max-width: 1300px){
+
+  .submenu2 {
+    display: none;
+    position: relative;
+    top: 55%;
+    right: 0;
+    z-index: 1; 
+    background-color: #DDE6ED; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    list-style: none;
+    border-radius: 5px;
+    opacity: 0; 
+    transition: opacity 3s ease, height 3s ease; 
+    height: 0; 
+    overflow: hidden;
+    font-size: 15px;
+  }
+  
+  .submenu1:hover + .submenu2,
+  .submenu2:hover {
+    display: block; 
+    color: #333;   
+  }
+  
+  .submenu2 li a {
+    color: black; 
+    font-size: 12px;
+  }
+  
+  .submenu2 li a:hover {
+    color: #9DB2BF;
+    font-size: 13px;
+  }
+  
+  }
+
+  
+.main-header2{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+  }
+.main-header-top-bar2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+
+.logo-link {
+  text-align: center;
+}
+
+.loginp {
+  margin: 0;
+  font-weight: bold;
 }
