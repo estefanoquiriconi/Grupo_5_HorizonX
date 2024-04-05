@@ -11,6 +11,7 @@ import { Footer } from './components/Footer'
 import { Categories } from './components/Categories'
 import { LastProductCard } from './components/LastProductCard'
 import { Products } from './components/Products'
+import { ProductDetail } from './components/ProductDetail';
 import { Users } from './components/Users'
 import { FormCategory } from './components/FormCategory'
 import { LastUser } from './components/LastUser'
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route path='/' element={<DashboardContent />} />
               <Route path='/products' element={<Products />} />
+              <Route path='/product/:id' element={<ProductDetail />} />
               <Route path='/product/last' element={<LastProductCard />} />
               <Route path='/categories' element={<Categories />} />
               <Route path='/category/create' element={<FormCategory />} />

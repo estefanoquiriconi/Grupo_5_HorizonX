@@ -82,6 +82,9 @@ const productsAPIController = {
           exclude: ['category_id', 'brand_id', 'color_id'],
         },
       })
+      product.images.forEach((image) =>
+        image.setDataValue('url', `${BASE_URL}/api/productImage/` + image.id)
+      )
       res.json(product)
     } catch (error) {
       console.error(error)

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Input } from './Input'
+import { Link } from 'react-router-dom'
 
 export const Products = () => {
   const [products, setProducts] = useState([])
@@ -74,11 +75,13 @@ export const Products = () => {
                     <tr key={index}>
                       <th scope='row'>{index + 1}</th>
                       <td>
+                      <Link to={`/product/${product.id}`}>
                         <img
                           src={product.images[0].url}
                           alt={product.images[0].image_filename}
                           style={{ width: '50px', height: '50px' }}
                         />
+                        </Link>
                       </td>
                       <td>{product.brand.name}</td>
                       <td>{product.name}</td>

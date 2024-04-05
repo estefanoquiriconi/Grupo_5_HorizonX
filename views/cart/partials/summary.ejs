@@ -2,7 +2,10 @@
   <h2 class="summary-title">Resumen de compra</h2>
   <div class="summary-row">
     <p>Productos</p>
-    <p>$<%= Number(cart.total_price).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+    <p>
+      $<%= Number(cart.total_price).toLocaleString('es-AR', {
+      minimumFractionDigits: 2 }) %>
+    </p>
   </div>
   <div class="summary-row">
     <p>Envío</p>
@@ -10,10 +13,20 @@
   </div>
   <div class="total summary-row">
     <p class="total">Total</p>
-    <p>$<%= (Number(cart.total_price) + 3500).toLocaleString('es-AR', { minimumFractionDigits: 2 }) %></p>
+    <p>
+      $<%= (Number(cart.total_price) + 3500).toLocaleString('es-AR', {
+      minimumFractionDigits: 2 }) %>
+    </p>
   </div>
   <div class="checkout-button">
-    <a href="/products" >Elegir más productos</a>
-    <button class="btn">Finalizar Compra</button>
+    <a href="/products">Elegir más productos</a>
+    <form
+      action="/cart/buy?_method=DELETE"
+      method="POST"
+      enctype="multipart/form-data"
+      id="buyForm"
+    >
+      <button id="btnCompra" class="btn">Finalizar Compra</button>
+    </form>
   </div>
 </div>

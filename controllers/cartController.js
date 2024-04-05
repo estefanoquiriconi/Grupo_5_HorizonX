@@ -87,6 +87,18 @@ const cartController = {
     }
   },
 
+  confirmBuy: async (req,res) => {
+    const userId = req.session.userLogged.id;
+    const cart = await db.Cart.findOne({where:{user_id:userId}})
+
+    try {
+      await db.CartItem.destroy({where: {cart_id:cart.id}})
+    } catch(e) {
+      console.error(e);
+    }
+    res.redirect("/cart")
+  },
+
   delete: async (req, res) => {
     const { itemId } = req.params;
     const userId = req.session.userLogged.id;
