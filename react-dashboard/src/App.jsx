@@ -15,6 +15,7 @@ import { ProductDetail } from './components/ProductDetail';
 import { Users } from './components/Users'
 import { FormCategory } from './components/FormCategory'
 import { LastUser } from './components/LastUser'
+import { Brands } from './components/Brands'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path='/user/last' element={<LastUser/>} />
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
+              <Route path='/brands' element={<Brands />} />
             </Routes>
           </div>
           <Footer />
