@@ -38,7 +38,7 @@ export const TopBar = () => {
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item dropdown no-arrow mx-1'>
           <a className='nav-link dropdown-toggle' href='http://localhost:8080/' target='_blank' id='alertsDropdown'>
-          <i class="fas fa-external-link-alt"></i>
+          <i className="fas fa-external-link-alt"></i>
             {/* <span className='badge badge-danger badge-counter'>3+</span> */}
           </a>
         </li>

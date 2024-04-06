@@ -70,7 +70,7 @@ export const ProductDetail = () => {
               <br />
               <p className="text-center">Color: {product.color.name}</p>
               <p className="text-center">En stock: {product.stock_quantity}</p>
-              <br />
+              
               <h3 className="text-center">
                 <strong>$ {product.price}</strong>
               </h3>

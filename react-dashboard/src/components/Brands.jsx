@@ -56,15 +56,16 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export const Brands = () => {
-    const [lastBrand, setLastBrand] = useState(null);
+    const [brands, setBrands] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const getLastBrand = async () => {
         try {
-            const lastBrand = await Brand.findOne({
-                order: [['id', 'DESC']]
-            });
+            const fetchBrands = await fetch('http://localhost:8080/api/brands')
+            const dataBrands = await fetchBrands.json()
+            const brands = dataBrands.data
+            //console.log(brands)
 
             if (!lastBrand) {
                 throw new Error('No se encontró ninguna marca.');
@@ -97,11 +98,14 @@ export const Brands = () => {
                         <p className='text-center text-danger'>{error}</p>
                     ) : (
                         <>
-                            <h5 className="text-center">
+                            {brands.map((brand, i) => {
+                            return (<h5 className="text-center" key={i}>
                                 <strong>
-                                    {lastBrand.name}
-                                </strong>
-                            </h5>
+                                    {brand.name}
+                                </strong> 
+                                {i+1<brands.length ? <hr/> : null}
+                            </h5>)
+                        })}
                         </>
                     )}
                 </div>

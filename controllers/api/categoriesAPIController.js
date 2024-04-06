@@ -8,7 +8,7 @@ async function productsCountCategoryArray(array) {
     const element = await Product.count({
       where: { category_id: array[index].id },
     })
-    console.log(element)
+    
     countArray.push(element)
   }
   return countArray
@@ -19,7 +19,7 @@ const categoriesAPIController = {
     try {
       const categories = await Category.findAll({})
       const count = await productsCountCategoryArray(categories)
-      console.log(categories.length)
+
       categories.forEach((category, i) => {
         category.name =
           category.name.charAt(0).toUpperCase() + category.name.slice(1)
