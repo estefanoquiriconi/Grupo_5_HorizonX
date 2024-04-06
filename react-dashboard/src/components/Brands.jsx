@@ -60,18 +60,18 @@ export const Brands = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const getLastBrand = async () => {
+    const getBrands = async () => {
         try {
             const fetchBrands = await fetch('http://localhost:8080/api/brands')
             const dataBrands = await fetchBrands.json()
             const brands = dataBrands.data
             //console.log(brands)
 
-            if (!lastBrand) {
+            if (!brands) {
                 throw new Error('No se encontró ninguna marca.');
             }
 
-            setLastBrand(lastBrand);
+            setBrands(brands);
         } catch (error) {
             setError(error.message);
         } finally {
@@ -80,7 +80,7 @@ export const Brands = () => {
     }
 
     useEffect(() => {
-        getLastBrand();
+        getBrands();
     }, []);
 
     return (
