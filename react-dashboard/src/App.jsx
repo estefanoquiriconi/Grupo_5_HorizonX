@@ -16,6 +16,7 @@ import { Users } from './components/Users'
 import { FormCategory } from './components/FormCategory'
 import { LastUser } from './components/LastUser'
 import { Brands } from './components/Brands'
+import { Colors } from './components/Colors'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Route path='/stats' element={<StatsSection />} />
               <Route path='*' element={<Error404 />} />
               <Route path='/brands' element={<Brands />} />
+              <Route path='/colors' element={<Colors />} />
             </Routes>
           </div>
           <Footer />
