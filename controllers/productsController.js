@@ -19,6 +19,7 @@ const controller = {
       }else {
          products = await Product.findAll({
           include: ["category", "images", "brand"],
+          order: [['id', 'DESC']],
         });
       }
       res.render("products/products", { products, search : category});
