@@ -9,11 +9,11 @@ export const Colors = () => {
   const getColors = async () => {
     try {
         const fColors = await fetch('http://localhost:8080/api/colors')
-        if (!colors) {
-            throw new Error('No se encontró ningun color');
-        }
         const dColors = await fColors.json()
-        const colors = dColors.data
+        const colors = dColors
+        if (!colors) {
+          throw new Error('No se encontró ningun color');
+      }
         setColors(colors);
     } catch (error){
         setError(error.message);
@@ -39,12 +39,12 @@ export const Colors = () => {
               <p className='text-center text-danger'>{error}</p>
               ) : (
                <>
-               {color.map((color, i) => {
+               {colors.map((color, i) => {
                   return (<h5 className="text-center" key={i}>
                     <strong>
                       {color.name}
                     </strong>
-                 {i+1<color.length ? <hr/> : null}
+                 {i+1<colors.length ? <hr/> : null}
                 </h5>)
              })}
             </>
