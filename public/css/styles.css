@@ -116,8 +116,17 @@ body{
   justify-content: center;
   align-items: center;
   font-weight: 900;
-  font-size: 20px;
 }
+
+.horizonL{
+  font-size: 20px;
+  padding-right: 5px;
+  transition: transform 0.3s ease; 
+}
+.horizonL:hover {
+  transform: scale(1.1);
+}
+
 
 a {
   text-decoration: none;
