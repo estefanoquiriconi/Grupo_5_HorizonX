@@ -60,3 +60,5 @@ app.use("/api/categories", apiCategoriesRoutes);
 app.use("/api/users",apiUsersRoutes)
 app.use("/api/colors", apiColorsRoutes);
 app.use("/api/brands", apiBrandsRoutes);
+
+app.use('*', mainRoutes)

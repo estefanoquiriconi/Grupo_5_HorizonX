@@ -6,6 +6,7 @@ const mainController = {
       res.render('index', {
         products: await Product.findAll({
           include: ['category', 'images', 'brand'],
+          order: [['id', 'DESC']],
           limit : 20
         }),
         categories: await Category.findAll(),
