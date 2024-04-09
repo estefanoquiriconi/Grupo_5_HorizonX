@@ -1,0 +1,19 @@
+.notification {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    padding: 1rem 1.5rem;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 0.5rem;
+  }
+  
+  .avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0px 50px 0px 50px;
+  }
+  

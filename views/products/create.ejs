@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create</title>
-    <link rel="stylesheet" href="/css/create.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-
+  <%- include('../partials/head.ejs', {title: 'Creación de producto', styles:
+  '/css/create.css'}) %>
   <body>
     <%- include('../partials/header.ejs') %>
     <div class="form-container">
@@ -41,10 +35,11 @@
         <div class="primera-linea">
           <div class="primer-div">
             <label for="color">Color:</label>
+            <div id="colorShow"></div>
             <select name="color" id="color" class="input-field">
               <option value="" selected disabled>Selecciona un color</option>
               <% colors.forEach(color => { %>
-                <option value="<%= color.id %>" <%= locals.oldData && oldData.color == color.id ? 'selected' : null %>> <%= color.name %></option>
+                <option id="<%=color.cod_hex%>" value="<%= color.id %>" <%= locals.oldData && oldData.color == color.id ? 'selected' : null %>> <%= color.name %></option>
               <% }) %>
             </select>
               <p id="colorError" class="error"><%= locals.errors && errors.color?.msg %></p>
@@ -58,11 +53,11 @@
         </div>
         <div class="primera-linea">
           <div class="primer-div">
-            <label for="category">Caregoría:</label>
+            <label for="category">Categoría:</label>
             <select name="category" id="category" class="input-field">
               <option value="" selected disabled>Selecciona una categoría</option>
               <% categories.forEach(category => { %>
-                <option value="<%= category.id %>" <%= locals.oldData && oldData.category == category.id ? 'selected' : null %>> <%= category.name %></option>
+                <option value="<%= category.id %>" <%= locals.oldData && oldData.category == category.id ? 'selected' : null %>> <%= category.name.charAt(0).toUpperCase() + category.name.slice(1) %></option>
               <% }) %>
             </select>
               <p id="categoryError" class="error"><%= locals.errors && errors.category?.msg %></p>
@@ -104,6 +99,8 @@
     </div>
 
     <%- include('../partials/footer.ejs') %>
-  </body>
+    <script src="/js/colorShow.js"></script>
 <script src="/js/productFormValidation.js"></script>
+  </body>
+  
 </html>

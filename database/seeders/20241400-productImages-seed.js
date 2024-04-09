@@ -344,11 +344,6 @@ module.exports = {
           image_filename: "Xiaomi_Redmi_Note_10S_1.jpg",
         },
         { 
-          id: 70, 
-          product_id: 35, 
-          image_filename: "Xiaomi_Redmi_Note_10S_2.jpg",
-        },
-        { 
           id: 71, 
           product_id: 35, 
           image_filename: "Xiaomi_Redmi_Note_10S_3.jpg",

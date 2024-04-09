@@ -1,8 +1,9 @@
+const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const methodOverride = require("method-override");
-const path = require("path");
+const cors = require('cors');
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware.js");
 const authMiddleware = require("./middlewares/authMiddleware");
@@ -28,11 +29,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(userLoggedMiddleware);
 app.use(express.json());
+app.use(cors());
 
 const mainRoutes = require("./routers/main.routes");
 const usersRoutes = require("./routers/users.routes");
 const productsRoutes = require("./routers/products.routes");
 const cartRoutes = require('./routers/cart.routes.js');
+
+const apiProductsRoutes = require('./routers/api/productsAPI.routes.js');
+const apiProductImageRoutes = require('./routers/api/productImageAPI.routes.js')
+const apiCategoriesRoutes = require('./routers/api/categoriesAPI.routes.js');
+const apiUsersRoutes = require('./routers/api/userAPI.routes.js');
+const apiColorsRoutes = require('./routers/api/colorsAPI.routes.js');
+const apiBrandsRoutes = require('./routers/api/brandsAPI.routes.js');
+
 
 express.Router().use(function (req, res, next) {
   res.locals.session = req.session;
@@ -43,3 +53,12 @@ app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productsRoutes);
 app.use("/cart", authMiddleware, cartRoutes);
+
+app.use("/api/products", apiProductsRoutes);
+app.use("/api/productImage", apiProductImageRoutes)
+app.use("/api/categories", apiCategoriesRoutes);
+app.use("/api/users",apiUsersRoutes)
+app.use("/api/colors", apiColorsRoutes);
+app.use("/api/brands", apiBrandsRoutes);
+
+app.use('*', mainRoutes)

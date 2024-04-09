@@ -3,7 +3,16 @@
   <%- include('../partials/head.ejs', {title: 'Login', styles:
   '/css/login.css'}) %>
   <body>
-    <%- include('../partials/header.ejs') %>
+    <header class="main-header2">
+      <div class="main-header-top-bar2">
+        <div class="logo-container">
+          <P class="horizonL">HORIZON </P>
+          <a class="logo-link" href="/"
+          ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
+        /></a>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="login-container">
         <h2>Iniciar sesión</h2>
@@ -26,7 +35,6 @@
       </div>
 
     </main>
-    <%- include('../partials/footer.ejs') %>
   </body>
   <script src="/js/userLoginValidation.js"></script>
 </html>

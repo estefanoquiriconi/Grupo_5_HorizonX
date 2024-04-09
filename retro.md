@@ -105,14 +105,19 @@ Trabajo sin valor añadido: Dejar de realizar tareas que no aportan valor al pro
 
 # Retrospectiva Sprint 7!
 ## Start Doing:
+No dormirse con los sprint. 
 
 ## More Of:
+Volver a trabajar como los sprints anteriores.
 
 ## Keep Doing:
+Reuniones.
 
 ## Less Off:
+Dejar las cosas para último momento.
 
 ## Stop Doing:
+No dejar que Estéfano haga todo.
 
 # Retrospectiva Sprint 8!
 ## Start Doing:

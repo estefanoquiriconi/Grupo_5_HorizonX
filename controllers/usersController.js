@@ -1,5 +1,4 @@
 const bcryptjs = require("bcryptjs");
-const User = require("../models/User");
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
@@ -110,11 +109,9 @@ const controller = {
       first_name:firstName,
       last_name:lastName,
       email:email,
-      //...req.body,
       password: bcryptjs.hashSync(password, 10),
       avatar: req.file?.filename || "default-avatar-image.png",
-      role_id: 2,
-      //role:'cliente'
+      role_id: 1, //cliente
     };
 
     //User.create(userToCreate);
@@ -135,11 +132,12 @@ const controller = {
     const userEdit = await db.User.findOne({where:{id:req.session.userLogged.id}});
     
     if (validations.errors.length > 0) {
-      console.log(validations.mapped())
       if (req.file) {
-        fs.unlinkSync(
-          path.join(__dirname, "../public/images/users/", req.file.filename)
-        );
+        if (req.file.filename) {
+          fs.unlinkSync(
+            path.join(__dirname, "../public/images/users/", req.file.filename)
+          );
+        }
       }
       return res.render("users/profile", {
         user: req.session.userLogged,
@@ -151,9 +149,11 @@ const controller = {
 
       if (checkMail < 1) {
         if(req.file){
-          fs.unlinkSync(
-            path.join(__dirname, "../public/images/users/", req.session.userLogged.avatar)
-          );
+          if(userEdit.avatar != 'default-avatar-image.png'){
+            fs.unlinkSync(
+              path.join(__dirname, "../public/images/users/", req.session.userLogged.avatar)
+            );
+          }
         }
         let avatarPath = req.file ? req.file.filename : req.session.userLogged.avatar
         req.session.userLogged.first_name = req.body.firstName
@@ -175,7 +175,7 @@ const controller = {
       }
       res.redirect("./profile")
     } catch(e) {
-      console.log(e.message)
+      console.error(e.message)
       res.redirect("./profile")
     }
   

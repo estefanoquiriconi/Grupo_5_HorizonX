@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const email = document.querySelector('#email')
   const password = document.querySelector('#password')
   const image = document.querySelector('#image')
-
+  const originalEmail = email.value
   const firstNameError = document.querySelector('#firstNameError')
   const lastNameError = document.querySelector('#lastNameError')
   const emailError = document.querySelector('#emailError')
@@ -37,6 +37,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function validateEmail(email, mailArray, fieldName) {
+    let check = mailArray.includes(email)
+    if (email === '') {
+      return 'Debes ingresar un email'
+    } else if (check && (email != originalEmail)) {
+      return 'Este mail ya está en uso'
+    } else {
+      return ''
+    }
+
+    
+  }
+
   formRegister?.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -51,27 +64,33 @@ window.addEventListener('DOMContentLoaded', () => {
       ? (passwordError.textContent = 'Debes ingresar una contraseña')
       : (passwordError.textContent = '')
 
-    imageError.textContent = validateImages(image.files)
 
     if (
       !firstNameError.textContent &&
       !lastNameError.textContent &&
       !emailError.textContent &&
-      !passwordError.textContent &&
-      !imageError.textContent
+      !passwordError.textContent
     )
       formRegister.submit()
   })
 
   formProfile?.addEventListener('submit', async (event) => {
     event.preventDefault()
+    let mailArray = []
+    try {
+      const mails = await fetch('../api/users/mails')
+      const response = await mails.json()
+      mailArray = response.data.mailArray
+    } catch (e) {
+      console.error(e)
+      console.log('pase por error')
+    }
+
 
     firstNameError.textContent = validateNames(firstName.value, 'nombre')
     lastNameError.textContent = validateNames(lastName.value, 'apellido')
-
-    email.value === ''
-      ? (emailError.textContent = 'Debes ingresar un email')
-      : (emailError.textContent = '')
+    emailError.textContent = validateEmail(email.value, mailArray, 'mail')
+    
 
     if (
       !firstNameError.textContent &&

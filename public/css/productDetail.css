@@ -163,3 +163,37 @@
     width: 400px;
   }
 }
+@media (max-width: 1300px){
+
+  .submenu2 {
+    display: none;
+    position: absolute; 
+    top: 55%; 
+    right: 0; 
+    z-index: 1; 
+    background-color: #DDE6ED; 
+    border: 1px solid #ccc;
+    padding: 10px; 
+    list-style: none;
+    border-radius: 5px;
+    transition: 10s;
+    font-size: 15px;
+  }
+  
+  .submenu1:hover + .submenu2,
+  .submenu2:hover {
+    display: block; 
+    color: #333;   
+  }
+  
+  .submenu2 li a {
+    color: black; 
+    font-size: 12px;
+  }
+  
+  .submenu2 li a:hover {
+    color: #9DB2BF;
+    font-size: 13px;
+  }
+  
+  }

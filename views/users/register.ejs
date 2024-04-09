@@ -3,7 +3,16 @@
   <%- include('../partials/head.ejs', {title: 'Registrate', styles:
   '/css/register.css'}) %>
   <body>
-    <%- include('../partials/header.ejs') %>
+    <header class="main-header2">
+      <div class="main-header-top-bar2">
+        <div class="logo-container">
+          <P class="horizonL">HORIZON</P>
+          <a class="logo-link" href="/"
+          ><img class="main-header-logo" src="/images/2logo.png" alt="Logo"
+        /></a>
+        </div>
+      </div>
+    </header>
     <main class="main-reg">
       <div class="form-div">
         <h3>Crear una cuenta</h3>
@@ -76,7 +85,7 @@
         </form>
       </div>
     </main>
-    <%- include('../partials/footer.ejs') %>
+
     <script src="/js/userFormValidation.js"></script>
   </body>
 </html>
